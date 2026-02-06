@@ -6,6 +6,7 @@ import KanbanBoard from '@/components/dashboard/KanbanBoard'
 import CalendarTimeline from '@/components/dashboard/CalendarTimeline'
 import BlockersPanel from '@/components/dashboard/BlockersPanel'
 import AgentStatusPanel from '@/components/dashboard/AgentStatusPanel'
+import { JackbotIdeas } from '@/components/dashboard/JackbotIdeas'
 
 interface ProjectData {
   projects: Array<{
@@ -138,7 +139,7 @@ export default function CommandCenter() {
               <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
                 🤖 Jackbot Command Center
               </h1>
-              <p className="text-slate-500 text-sm">Gospel Tuned Empire HQ</p>
+              <p className="text-slate-500 text-sm">AITuned.io HQ</p>
             </div>
             
             {/* View Toggle */}
@@ -258,6 +259,11 @@ export default function CommandCenter() {
                     <AgentStatusPanel agents={data.agents} />
                   </section>
 
+                  {/* Jackbot Ideas */}
+                  <section className="col-span-2 p-4 bg-slate-900 rounded-lg border border-cyan-500/30">
+                    <JackbotIdeas />
+                  </section>
+
                   {/* Timeline */}
                   <section className="p-4 bg-slate-900 rounded-lg border border-amber-500/30">
                     <h2 className="text-lg font-bold text-amber-400 mb-4">📅 Upcoming</h2>
@@ -294,7 +300,7 @@ export default function CommandCenter() {
 
       {/* Footer */}
       <footer className="mt-8 py-4 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>Jackbot Command Center v2.0 • Gospel Tuned Empire • Building to a Billion 🚀</p>
+        <p>Jackbot Command Center v2.0 • AITuned.io • Building to a Billion 🚀</p>
       </footer>
     </div>
   )

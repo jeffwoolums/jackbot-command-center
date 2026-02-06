@@ -1,0 +1,54 @@
+{
+  "featureRequests": [
+    {
+      "id": "feature-1",
+      "project": "lessoncraft",
+      "title": "Spanish localization",
+      "description": "Add Spanish language support for LessonCraft",
+      "priority": "P2",
+      "requester": "Jeff",
+      "status": "pending",
+      "createdAt": "2026-02-06T09:00:00Z"
+    },
+    {
+      "id": "feature-2",
+      "project": "lessoncraft",
+      "title": "Offline mode",
+      "description": "Allow teachers to use app without internet",
+      "priority": "P3",
+      "requester": "Robert",
+      "status": "pending",
+      "createdAt": "2026-02-05T15:30:00Z"
+    },
+    {
+      "id": "feature-3",
+      "project": "termlinkky",
+      "title": "Dark mode toggle",
+      "description": "Add system-aware dark/light mode",
+      "priority": "P4",
+      "requester": "Bryce",
+      "status": "pending",
+      "createdAt": "2026-02-04T11:20:00Z"
+    },
+    {
+      "id": "feature-4",
+      "project": "racestream",
+      "title": "API endpoint development",
+      "description": "Build V5 API endpoints for mobile apps",
+      "priority": "P1",
+      "requester": "Jeff",
+      "status": "pending",
+      "createdAt": "2026-02-06T08:45:00Z"
+    },
+    {
+      "id": "feature-5",
+      "project": "voice-clone",
+      "title": "Finish samples for all 3 agents",
+      "description": "Complete voice samples for Jackbot, Codex, and KIMI",
+      "priority": "P1",
+      "requester": "Jeff",
+      "status": "pending",
+      "createdAt": "2026-02-06T10:15:00Z"
+    }
+  ]
+}

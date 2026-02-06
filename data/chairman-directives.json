@@ -1,0 +1,40 @@
+{
+  "directives": [
+    {
+      "id": "directive-1",
+      "title": "Finish LessonCraft TestFlight build",
+      "description": "Need to get Build 8 out to testers ASAP",
+      "category": "Feature Request",
+      "project": "lessoncraft",
+      "status": "New",
+      "priority": "P1",
+      "createdAt": "2026-02-06T10:00:00Z",
+      "updatedAt": "2026-02-06T10:00:00Z",
+      "createdBy": "Jeff"
+    },
+    {
+      "id": "directive-2",
+      "title": "Polish TermLinkky UI",
+      "description": "App is still crashy and glitchy - needs polish",
+      "category": "Bug Fix",
+      "project": "termlinkky",
+      "status": "New",
+      "priority": "P1",
+      "createdAt": "2026-02-06T09:30:00Z",
+      "updatedAt": "2026-02-06T09:30:00Z",
+      "createdBy": "Jeff"
+    },
+    {
+      "id": "directive-3",
+      "title": "Build both Android and Apple versions",
+      "description": "All apps should have both platforms",
+      "category": "Priority Change",
+      "project": "lessoncraft",
+      "status": "Acknowledged",
+      "priority": "P2",
+      "createdAt": "2026-02-05T14:00:00Z",
+      "updatedAt": "2026-02-06T08:00:00Z",
+      "createdBy": "Jeff"
+    }
+  ]
+}

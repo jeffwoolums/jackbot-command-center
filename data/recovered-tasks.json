@@ -1,0 +1,84 @@
+{
+  "recoveredTasks": [
+    {
+      "id": "recovered-1",
+      "title": "LessonCraft Build 8 for TestFlight",
+      "description": "3 testers waiting: Robert, Bryce, Isaac",
+      "project": "lessoncraft",
+      "priority": "P1",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    },
+    {
+      "id": "recovered-2",
+      "title": "TeamsActionLoop: Push to 100% complete",
+      "description": "Final push needed to complete the project",
+      "project": "teams-action-loop",
+      "priority": "P1",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    },
+    {
+      "id": "recovered-3",
+      "title": "TermLinkky: Polish - still crashy/glitchy",
+      "description": "Polish UI and fix stability issues",
+      "project": "termlinkky",
+      "priority": "P1",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    },
+    {
+      "id": "recovered-4",
+      "title": "RaceStream V5: API endpoint development",
+      "description": "Develop new API endpoints for V5",
+      "project": "racestream",
+      "priority": "P2",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    },
+    {
+      "id": "recovered-5",
+      "title": "Content Pipeline: X/social page for building in public",
+      "description": "Create social media presence for building in public",
+      "project": "gospel-tuned",
+      "priority": "P3",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    },
+    {
+      "id": "recovered-6",
+      "title": "Spanish localization for LessonCraft",
+      "description": "Add Spanish language support",
+      "project": "lessoncraft",
+      "priority": "P2",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    },
+    {
+      "id": "recovered-7",
+      "title": "Android versions needed",
+      "description": "\"build both Android and Apple\" - Jeff",
+      "project": "lessoncraft",
+      "priority": "P2",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    },
+    {
+      "id": "recovered-8",
+      "title": "Voice Clone: Finish samples for all 3 agents",
+      "description": "Complete voice samples for Jackbot, Codex, and KIMI",
+      "project": "voice-clone",
+      "priority": "P1",
+      "status": "pending",
+      "recoveredFrom": "Jeff's history",
+      "recoveredAt": "2026-02-06T10:21:00Z"
+    }
+  ]
+}

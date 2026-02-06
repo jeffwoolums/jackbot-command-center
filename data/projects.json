@@ -1,0 +1,265 @@
+{
+  "projects": [
+    {
+      "id": "lessoncraft",
+      "name": "LessonCraft",
+      "status": "active",
+      "progress": 90,
+      "nextAction": "Build TestFlight release",
+      "owner": "Jackbot",
+      "description": "AI-powered lesson planning app",
+      "priority": "high"
+    },
+    {
+      "id": "gospel-tuned",
+      "name": "AITuned.io Empire",
+      "status": "active",
+      "progress": 20,
+      "nextAction": "Start development phase",
+      "owner": "Jackbot",
+      "description": "The master plan - AI empire",
+      "priority": "high"
+    },
+    {
+      "id": "termlinkky",
+      "name": "TermLinkky",
+      "status": "active",
+      "progress": 75,
+      "nextAction": "Polish UI and UX",
+      "owner": "Jackbot",
+      "description": "Terminal-based link sharing",
+      "priority": "medium"
+    },
+    {
+      "id": "jiggybot",
+      "name": "JiggyBot",
+      "status": "blocked",
+      "progress": 40,
+      "nextAction": "Order and wire up hardware",
+      "owner": "Codex",
+      "description": "Physical robot companion",
+      "priority": "low"
+    },
+    {
+      "id": "racestream",
+      "name": "RaceStream.net",
+      "status": "active",
+      "progress": 100,
+      "nextAction": "Monitor and maintain",
+      "owner": "Jackbot",
+      "description": "Live racing stream platform",
+      "priority": "medium"
+    },
+    {
+      "id": "teams-action-loop",
+      "name": "TeamsActionLoop",
+      "status": "active",
+      "progress": 85,
+      "nextAction": "Final push to completion",
+      "owner": "Codex",
+      "description": "MS Teams automation workflow",
+      "priority": "high"
+    },
+    {
+      "id": "voice-clone",
+      "name": "Voice Clone",
+      "status": "blocked",
+      "progress": 50,
+      "nextAction": "Collect voice samples",
+      "owner": "KIMI",
+      "description": "Custom TTS voice training",
+      "priority": "medium"
+    },
+    {
+      "id": "command-center",
+      "name": "Command Center",
+      "status": "active",
+      "progress": 95,
+      "nextAction": "Final testing and polish",
+      "owner": "Jackbot",
+      "description": "This dashboard!",
+      "priority": "high"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "TestFlight build for LessonCraft",
+      "project": "lessoncraft",
+      "status": "inprogress",
+      "priority": "high",
+      "owner": "Jackbot"
+    },
+    {
+      "id": "task-2",
+      "title": "Design AITuned architecture",
+      "project": "gospel-tuned",
+      "status": "backlog",
+      "priority": "high",
+      "owner": "Jackbot"
+    },
+    {
+      "id": "task-3",
+      "title": "Fix TermLinkky connection drops",
+      "project": "termlinkky",
+      "status": "inprogress",
+      "priority": "medium",
+      "owner": "Codex"
+    },
+    {
+      "id": "task-4",
+      "title": "Order servo motors for JiggyBot",
+      "project": "jiggybot",
+      "status": "blocked",
+      "priority": "medium",
+      "owner": "Jeff"
+    },
+    {
+      "id": "task-5",
+      "title": "Add multi-camera support to RaceStream",
+      "project": "racestream",
+      "status": "done",
+      "priority": "high",
+      "owner": "Jackbot"
+    },
+    {
+      "id": "task-6",
+      "title": "Test Teams webhook integration",
+      "project": "teams-action-loop",
+      "status": "inprogress",
+      "priority": "high",
+      "owner": "Codex"
+    },
+    {
+      "id": "task-7",
+      "title": "Record Jeff voice samples",
+      "project": "voice-clone",
+      "status": "blocked",
+      "priority": "high",
+      "owner": "Jeff"
+    },
+    {
+      "id": "task-8",
+      "title": "Add Kanban board to Command Center",
+      "project": "command-center",
+      "status": "inprogress",
+      "priority": "high",
+      "owner": "Jackbot"
+    },
+    {
+      "id": "task-9",
+      "title": "Setup CI/CD for LessonCraft",
+      "project": "lessoncraft",
+      "status": "backlog",
+      "priority": "medium",
+      "owner": "Codex"
+    },
+    {
+      "id": "task-10",
+      "title": "Research AI church tools market",
+      "project": "gospel-tuned",
+      "status": "done",
+      "priority": "high",
+      "owner": "KIMI"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "blocker-1",
+      "title": "JiggyBot hardware not ordered",
+      "project": "jiggybot",
+      "description": "Need to decide on servo motors and order from supplier",
+      "impact": "high",
+      "needsDecision": true,
+      "createdAt": "2025-02-05"
+    },
+    {
+      "id": "blocker-2",
+      "title": "Voice samples needed",
+      "project": "voice-clone",
+      "description": "Jeff needs to record 30 min of voice samples for training",
+      "impact": "medium",
+      "needsDecision": true,
+      "createdAt": "2025-02-04"
+    },
+    {
+      "id": "blocker-3",
+      "title": "Apple Developer cert expiring",
+      "project": "lessoncraft",
+      "description": "Provisioning profile expires Feb 15 - needs renewal",
+      "impact": "high",
+      "needsDecision": false,
+      "createdAt": "2025-02-06"
+    }
+  ],
+  "agents": [
+    {
+      "id": "jackbot",
+      "name": "Jackbot",
+      "status": "active",
+      "currentTask": "Building Command Center dashboard",
+      "avatar": "🤖",
+      "specialty": "Strategy & Architecture"
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "status": "idle",
+      "currentTask": null,
+      "avatar": "💪",
+      "specialty": "Heavy lifting & Execution"
+    },
+    {
+      "id": "kimi",
+      "name": "KIMI",
+      "status": "idle",
+      "currentTask": null,
+      "avatar": "👩‍💼",
+      "specialty": "Research & Communication"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "event-1",
+      "title": "LessonCraft TestFlight",
+      "date": "2025-02-08",
+      "type": "deadline",
+      "project": "lessoncraft"
+    },
+    {
+      "id": "event-2",
+      "title": "TeamsActionLoop Demo",
+      "date": "2025-02-10",
+      "type": "milestone",
+      "project": "teams-action-loop"
+    },
+    {
+      "id": "event-3",
+      "title": "Daily Heartbeat",
+      "date": "recurring",
+      "type": "cron",
+      "schedule": "Every 30 min"
+    },
+    {
+      "id": "event-4",
+      "title": "Email Check",
+      "date": "recurring",
+      "type": "cron",
+      "schedule": "4x daily"
+    },
+    {
+      "id": "event-5",
+      "title": "AITuned MVP",
+      "date": "2025-03-01",
+      "type": "milestone",
+      "project": "gospel-tuned"
+    },
+    {
+      "id": "event-6",
+      "title": "Apple Cert Renewal",
+      "date": "2025-02-15",
+      "type": "deadline",
+      "project": "lessoncraft"
+    }
+  ]
+}
