@@ -1,53 +1,101 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
+import ProjectCards from '@/components/dashboard/ProjectCards'
+import KanbanBoard from '@/components/dashboard/KanbanBoard'
+import CalendarTimeline from '@/components/dashboard/CalendarTimeline'
+import BlockersPanel from '@/components/dashboard/BlockersPanel'
+import AgentStatusPanel from '@/components/dashboard/AgentStatusPanel'
 
-interface Session {
-  key: string
-  kind: string
-  model: string
-  age: string
-  tokens: string
+interface ProjectData {
+  projects: Array<{
+    id: string
+    name: string
+    status: 'active' | 'blocked' | 'complete'
+    progress: number
+    nextAction: string
+    owner: string
+    description: string
+    priority: string
+  }>
+  tasks: Array<{
+    id: string
+    title: string
+    project: string
+    status: string
+    priority: string
+    owner: string
+  }>
+  blockers: Array<{
+    id: string
+    title: string
+    project: string
+    description: string
+    impact: 'high' | 'medium' | 'low'
+    needsDecision: boolean
+    createdAt: string
+  }>
+  agents: Array<{
+    id: string
+    name: string
+    status: 'active' | 'idle' | 'offline'
+    currentTask: string | null
+    avatar: string
+    specialty: string
+  }>
+  timeline: Array<{
+    id: string
+    title: string
+    date: string
+    type: 'deadline' | 'milestone' | 'cron'
+    project?: string
+    schedule?: string
+  }>
 }
 
-interface CronJob {
-  id: string
-  name: string
-  schedule: string
-  next: string
-  status: string
-}
+type ViewMode = 'overview' | 'kanban' | 'timeline'
 
 export default function CommandCenter() {
   const [currentTime, setCurrentTime] = useState(new Date())
-  const [sessions, setSessions] = useState<Session[]>([])
-  const [cronJobs, setCronJobs] = useState<CronJob[]>([])
+  const [data, setData] = useState<ProjectData | null>(null)
   const [loading, setLoading] = useState(true)
+  const [viewMode, setViewMode] = useState<ViewMode>('overview')
   const [spawnTask, setSpawnTask] = useState('')
   const [spawning, setSpawning] = useState(false)
 
-  // Fetch real data
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch('/api/status')
-        const data = await res.json()
-        if (data.sessions) setSessions(data.sessions)
-        if (data.cronJobs) setCronJobs(data.cronJobs)
-      } catch (e) {
-        console.error('Failed to fetch status:', e)
-      }
-      setLoading(false)
+  const fetchData = useCallback(async () => {
+    try {
+      const res = await fetch('/api/projects', { cache: 'no-store' })
+      const projectData = await res.json()
+      setData(projectData)
+    } catch (e) {
+      console.error('Failed to fetch:', e)
     }
-    fetchData()
-    const interval = setInterval(fetchData, 5000) // Poll every 5s
-    return () => clearInterval(interval)
+    setLoading(false)
   }, [])
+
+  useEffect(() => {
+    fetchData()
+    const interval = setInterval(fetchData, 10000) // Poll every 10s
+    return () => clearInterval(interval)
+  }, [fetchData])
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
     return () => clearInterval(timer)
   }, [])
+
+  const handleTaskMove = async (taskId: string, newStatus: string) => {
+    try {
+      await fetch('/api/projects', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ taskId, newStatus })
+      })
+    } catch (e) {
+      console.error('Failed to update task:', e)
+    }
+  }
 
   const spawnAgent = async () => {
     if (!spawnTask.trim()) return
@@ -70,126 +118,183 @@ export default function CommandCenter() {
   })
 
   const formatDate = (date: Date) => date.toLocaleDateString('en-US', { 
-    weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'
+    weekday: 'long', month: 'long', day: 'numeric'
   })
 
+  // Calculate stats
+  const activeProjects = data?.projects.filter(p => p.status === 'active').length || 0
+  const blockedProjects = data?.projects.filter(p => p.status === 'blocked').length || 0
+  const avgProgress = data?.projects.length 
+    ? Math.round(data.projects.reduce((sum, p) => sum + p.progress, 0) / data.projects.length) 
+    : 0
+
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-8">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Header */}
-      <header className="flex justify-between items-start mb-8">
-        <div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-yellow-500 to-amber-300 bg-clip-text text-transparent">
-            🤖 Jackbot Command Center
-          </h1>
-          <p className="text-slate-400 mt-2">AI Empire Operations Dashboard</p>
-        </div>
-        <div className="text-right">
-          <div className="text-3xl font-mono text-amber-400">{formatTime(currentTime)}</div>
-          <div className="text-slate-400">{formatDate(currentTime)}</div>
-          <div className="mt-2 flex items-center justify-end gap-2">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-            <span className="text-green-400 text-sm">LIVE</span>
+      <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800 px-6 py-4">
+        <div className="flex justify-between items-center max-w-[1800px] mx-auto">
+          <div className="flex items-center gap-6">
+            <div>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
+                🤖 Jackbot Command Center
+              </h1>
+              <p className="text-slate-500 text-sm">Gospel Tuned Empire HQ</p>
+            </div>
+            
+            {/* View Toggle */}
+            <div className="flex bg-slate-900 rounded-lg p-1">
+              {(['overview', 'kanban', 'timeline'] as ViewMode[]).map((mode) => (
+                <button
+                  key={mode}
+                  onClick={() => setViewMode(mode)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                    viewMode === mode
+                      ? 'bg-amber-500 text-black'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  {mode === 'overview' && '📊 Overview'}
+                  {mode === 'kanban' && '📋 Kanban'}
+                  {mode === 'timeline' && '📅 Timeline'}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-6">
+            {/* Live indicator */}
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-green-400 text-sm font-medium">LIVE</span>
+            </div>
+            
+            {/* Time */}
+            <div className="text-right">
+              <div className="text-xl font-mono text-amber-400">{formatTime(currentTime)}</div>
+              <div className="text-slate-500 text-sm">{formatDate(currentTime)}</div>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Spawn Agent */}
-      <div className="mb-8 p-4 bg-slate-900 rounded-lg border border-amber-500/30">
-        <div className="flex gap-4">
-          <input
-            type="text"
-            value={spawnTask}
-            onChange={(e) => setSpawnTask(e.target.value)}
-            placeholder="Enter task for Codex agent..."
-            className="flex-1 bg-slate-800 border border-slate-700 rounded px-4 py-2 text-white placeholder-slate-500"
-            onKeyDown={(e) => e.key === 'Enter' && spawnAgent()}
-          />
-          <button
-            onClick={spawnAgent}
-            disabled={spawning || !spawnTask.trim()}
-            className="bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-black font-bold px-6 py-2 rounded"
-          >
-            {spawning ? 'Spawning...' : '🚀 Spawn Agent'}
-          </button>
-        </div>
-      </div>
-
-      {/* Stats Row */}
-      <div className="grid grid-cols-4 gap-6 mb-8">
-        <div className="p-4 bg-slate-900 rounded-lg border border-green-500/30">
-          <div className="text-slate-400 text-sm mb-1">System Status</div>
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-            <span className="text-2xl font-bold text-green-400">ONLINE</span>
+      <main className="p-6 max-w-[1800px] mx-auto">
+        {/* Spawn Agent Bar */}
+        <div className="mb-6 p-4 bg-slate-900 rounded-lg border border-amber-500/30">
+          <div className="flex gap-4">
+            <input
+              type="text"
+              value={spawnTask}
+              onChange={(e) => setSpawnTask(e.target.value)}
+              placeholder="🚀 Spawn a Codex agent with a task..."
+              className="flex-1 bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+              onKeyDown={(e) => e.key === 'Enter' && spawnAgent()}
+            />
+            <button
+              onClick={spawnAgent}
+              disabled={spawning || !spawnTask.trim()}
+              className="bg-amber-500 hover:bg-amber-400 disabled:opacity-50 disabled:hover:bg-amber-500 text-black font-bold px-6 py-2.5 rounded-lg transition-colors"
+            >
+              {spawning ? '⏳ Spawning...' : '🚀 Spawn'}
+            </button>
           </div>
         </div>
-        <div className="p-4 bg-slate-900 rounded-lg border border-slate-700">
-          <div className="text-slate-400 text-sm mb-1">Active Sessions</div>
-          <div className="text-2xl font-bold">{sessions.length}</div>
-        </div>
-        <div className="p-4 bg-slate-900 rounded-lg border border-slate-700">
-          <div className="text-slate-400 text-sm mb-1">Cron Jobs</div>
-          <div className="text-2xl font-bold">{cronJobs.length}</div>
-        </div>
-        <div className="p-4 bg-slate-900 rounded-lg border border-slate-700">
-          <div className="text-slate-400 text-sm mb-1">Voice System</div>
-          <div className="text-2xl font-bold text-green-400">READY</div>
-        </div>
-      </div>
 
-      {/* Main Grid */}
-      <div className="grid grid-cols-2 gap-6">
-        {/* Sessions */}
-        <div className="p-4 bg-slate-900 rounded-lg border border-slate-700">
-          <h2 className="text-lg font-bold text-amber-400 mb-4">Live Sessions</h2>
-          {loading ? (
-            <div className="text-slate-500">Loading...</div>
-          ) : sessions.length === 0 ? (
-            <div className="text-slate-500">No active sessions</div>
-          ) : (
-            <div className="space-y-2 max-h-64 overflow-y-auto">
-              {sessions.map((s, i) => (
-                <div key={i} className="p-3 bg-slate-800 rounded flex justify-between items-center">
-                  <div>
-                    <div className="font-mono text-sm">{s.key?.slice(0, 30)}...</div>
-                    <div className="text-xs text-slate-400">{s.model}</div>
-                  </div>
-                  <div className="text-xs text-slate-400">{s.age}</div>
-                </div>
-              ))}
+        {/* Quick Stats */}
+        <div className="grid grid-cols-5 gap-4 mb-6">
+          <div className="p-4 bg-slate-900 rounded-lg border border-green-500/30">
+            <div className="text-slate-400 text-sm">Active</div>
+            <div className="text-2xl font-bold text-green-400">{activeProjects}</div>
+          </div>
+          <div className="p-4 bg-slate-900 rounded-lg border border-red-500/30">
+            <div className="text-slate-400 text-sm">Blocked</div>
+            <div className="text-2xl font-bold text-red-400">{blockedProjects}</div>
+          </div>
+          <div className="p-4 bg-slate-900 rounded-lg border border-amber-500/30">
+            <div className="text-slate-400 text-sm">Avg Progress</div>
+            <div className="text-2xl font-bold text-amber-400">{avgProgress}%</div>
+          </div>
+          <div className="p-4 bg-slate-900 rounded-lg border border-blue-500/30">
+            <div className="text-slate-400 text-sm">Tasks</div>
+            <div className="text-2xl font-bold text-blue-400">{data?.tasks.length || 0}</div>
+          </div>
+          <div className="p-4 bg-slate-900 rounded-lg border border-purple-500/30">
+            <div className="text-slate-400 text-sm">Agents</div>
+            <div className="text-2xl font-bold text-purple-400">
+              {data?.agents.filter(a => a.status !== 'offline').length || 0}
             </div>
-          )}
+          </div>
         </div>
 
-        {/* Cron Jobs */}
-        <div className="p-4 bg-slate-900 rounded-lg border border-slate-700">
-          <h2 className="text-lg font-bold text-amber-400 mb-4">Scheduled Jobs</h2>
-          {loading ? (
-            <div className="text-slate-500">Loading...</div>
-          ) : cronJobs.length === 0 ? (
-            <div className="text-slate-500">No cron jobs</div>
-          ) : (
-            <div className="space-y-2 max-h-64 overflow-y-auto">
-              {cronJobs.map((job, i) => (
-                <div key={i} className="p-3 bg-slate-800 rounded flex justify-between items-center">
-                  <div>
-                    <div className="font-medium">{job.name}</div>
-                    <div className="text-xs text-slate-400">{job.schedule}</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-xs text-green-400">{job.status}</div>
-                    <div className="text-xs text-slate-400">Next: {job.next}</div>
-                  </div>
+        {loading ? (
+          <div className="flex items-center justify-center h-64">
+            <div className="text-slate-500 text-lg">Loading dashboard...</div>
+          </div>
+        ) : !data ? (
+          <div className="flex items-center justify-center h-64">
+            <div className="text-red-500 text-lg">Failed to load data</div>
+          </div>
+        ) : (
+          <>
+            {/* OVERVIEW MODE */}
+            {viewMode === 'overview' && (
+              <div className="space-y-6">
+                {/* Project Cards */}
+                <section>
+                  <h2 className="text-lg font-bold text-amber-400 mb-4">📂 Projects</h2>
+                  <ProjectCards projects={data.projects} />
+                </section>
+
+                {/* Bottom Grid: Blockers, Agents, Timeline */}
+                <div className="grid grid-cols-3 gap-6">
+                  {/* Blockers */}
+                  <section className="p-4 bg-slate-900 rounded-lg border border-red-500/30">
+                    <h2 className="text-lg font-bold text-red-400 mb-4">🚨 Blockers</h2>
+                    <BlockersPanel blockers={data.blockers} />
+                  </section>
+
+                  {/* Agents */}
+                  <section className="p-4 bg-slate-900 rounded-lg border border-purple-500/30">
+                    <h2 className="text-lg font-bold text-purple-400 mb-4">🤖 Agents</h2>
+                    <AgentStatusPanel agents={data.agents} />
+                  </section>
+
+                  {/* Timeline */}
+                  <section className="p-4 bg-slate-900 rounded-lg border border-amber-500/30">
+                    <h2 className="text-lg font-bold text-amber-400 mb-4">📅 Upcoming</h2>
+                    <CalendarTimeline events={data.timeline} />
+                  </section>
                 </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
+              </div>
+            )}
+
+            {/* KANBAN MODE */}
+            {viewMode === 'kanban' && (
+              <section>
+                <h2 className="text-lg font-bold text-amber-400 mb-4">📋 Task Board</h2>
+                <KanbanBoard initialTasks={data.tasks} onTaskMove={handleTaskMove} />
+              </section>
+            )}
+
+            {/* TIMELINE MODE */}
+            {viewMode === 'timeline' && (
+              <div className="grid grid-cols-2 gap-6">
+                <section className="p-6 bg-slate-900 rounded-lg border border-slate-700">
+                  <h2 className="text-lg font-bold text-amber-400 mb-4">📅 Timeline & Deadlines</h2>
+                  <CalendarTimeline events={data.timeline} />
+                </section>
+                <section className="p-6 bg-slate-900 rounded-lg border border-red-500/30">
+                  <h2 className="text-lg font-bold text-red-400 mb-4">🚨 Blockers</h2>
+                  <BlockersPanel blockers={data.blockers} />
+                </section>
+              </div>
+            )}
+          </>
+        )}
+      </main>
 
       {/* Footer */}
-      <footer className="mt-8 text-center text-slate-500 text-sm">
-        <p>Jackbot Command Center v1.1 • Gospel Tuned Empire • Building to a Billion 🚀</p>
+      <footer className="mt-8 py-4 border-t border-slate-800 text-center text-slate-500 text-sm">
+        <p>Jackbot Command Center v2.0 • Gospel Tuned Empire • Building to a Billion 🚀</p>
       </footer>
     </div>
   )

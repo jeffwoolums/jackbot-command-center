@@ -7,7 +7,7 @@ import { StatusDot } from '@/components/ui/StatusDot'
 interface VoiceSystem {
   id: string
   name: string
-  status: 'online' | 'offline' | 'limited'
+  status: 'ready' | 'idle' | 'active' | 'building' | 'online' | 'offline'
   engine: string
   cost: string
   voices: number
@@ -19,7 +19,7 @@ interface VoiceClone {
   id: string
   name: string
   agent: string
-  status: 'ready' | 'training' | 'failed'
+  status: 'ready' | 'idle' | 'active' | 'building' | 'training' | 'failed'
   quality: number
   samples: number
   lastTested: string
@@ -50,7 +50,7 @@ export function VoiceStatus() {
     {
       id: 'elevenlabs',
       name: 'ElevenLabs',
-      status: 'limited',
+      status: 'idle',
       engine: 'Cloud (sag)',
       cost: '$22/mo',
       voices: 1,
@@ -138,7 +138,7 @@ export function VoiceStatus() {
                 <div className="text-right">
                   <div className={`text-sm font-medium ${
                     system.status === 'online' ? 'text-green-400' :
-                    system.status === 'limited' ? 'text-yellow-400' :
+                    system.status === 'idle' ? 'text-yellow-400' :
                     'text-red-400'
                   }`}>
                     {system.cost}

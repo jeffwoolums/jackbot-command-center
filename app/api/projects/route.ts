@@ -1,71 +1,45 @@
 import { NextResponse } from 'next/server'
+import { promises as fs } from 'fs'
+import path from 'path'
 
-// Mock project data - would connect to git repos in production
-const mockProjects = [
-  {
-    id: 'lessoncraft',
-    name: 'LessonCraft',
-    description: 'AI-powered lesson planning platform',
-    status: 'building' as const,
-    progress: 85,
-    url: 'https://lessoncraft.aituned.io',
-    repo: 'https://github.com/aituned/lessoncraft',
-    lastCommit: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-    branch: 'main',
-    buildStatus: 'success',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind', 'OpenAI']
-  },
-  {
-    id: 'gospel-tuned-core',
-    name: 'Gospel Tuned Core',
-    description: 'Core gospel content generation system',
-    status: 'building' as const,
-    progress: 60,
-    repo: 'https://github.com/aituned/gospel-tuned-core',
-    lastCommit: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
-    branch: 'main',
-    buildStatus: 'building',
-    technologies: ['Python', 'FastAPI', 'OpenAI', 'PostgreSQL']
-  },
-  {
-    id: 'jackbot-command-center',
-    name: 'Jackbot Command Center',
-    description: 'Central operations dashboard',
-    status: 'building' as const,
-    progress: 40,
-    repo: 'https://github.com/aituned/jackbot-command-center',
-    lastCommit: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-    branch: 'main',
-    buildStatus: 'building',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind', 'OpenClaw API']
-  },
-  {
-    id: 'scrollwork',
-    name: 'Scrollwork',
-    description: 'AI-generated scroll art platform',
-    status: 'planning' as const,
-    progress: 10,
-    repo: 'https://github.com/aituned/scrollwork',
-    lastCommit: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString(),
-    branch: 'planning',
-    buildStatus: 'pending',
-    technologies: ['React', 'Canvas API', 'Stable Diffusion']
-  },
-  {
-    id: 'aituned-platform',
-    name: 'AI Tuned Platform',
-    description: 'Main platform website',
-    status: 'live' as const,
-    progress: 100,
-    url: 'https://aituned.io',
-    repo: 'https://github.com/aituned/aituned-site',
-    lastCommit: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
-    branch: 'main',
-    buildStatus: 'success',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind', 'Cloudflare']
-  }
-]
+export const dynamic = 'force-dynamic'
+
+const dataPath = path.join(process.cwd(), 'data', 'projects.json')
 
 export async function GET() {
-  return NextResponse.json({ projects: mockProjects })
+  try {
+    const data = await fs.readFile(dataPath, 'utf-8')
+    return NextResponse.json(JSON.parse(data))
+  } catch (error) {
+    console.error('Failed to load projects:', error)
+    // Return empty data structure on error
+    return NextResponse.json({
+      projects: [],
+      tasks: [],
+      blockers: [],
+      agents: [],
+      timeline: []
+    })
+  }
+}
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json()
+    const { taskId, newStatus } = body
+
+    const data = await fs.readFile(dataPath, 'utf-8')
+    const parsed = JSON.parse(data)
+
+    // Update task status
+    parsed.tasks = parsed.tasks.map((task: { id: string; status: string }) => 
+      task.id === taskId ? { ...task, status: newStatus } : task
+    )
+
+    await fs.writeFile(dataPath, JSON.stringify(parsed, null, 2))
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error('Failed to update task:', error)
+    return NextResponse.json({ error: 'Failed to update' }, { status: 500 })
+  }
 }
