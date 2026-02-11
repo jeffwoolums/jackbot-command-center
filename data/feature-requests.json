@@ -1,54 +1,214 @@
 {
-  "featureRequests": [
-    {
-      "id": "feature-1",
-      "project": "lessoncraft",
-      "title": "Spanish localization",
-      "description": "Add Spanish language support for LessonCraft",
-      "priority": "P2",
-      "requester": "Jeff",
-      "status": "pending",
-      "createdAt": "2026-02-06T09:00:00Z"
-    },
-    {
-      "id": "feature-2",
-      "project": "lessoncraft",
-      "title": "Offline mode",
-      "description": "Allow teachers to use app without internet",
-      "priority": "P3",
-      "requester": "Robert",
-      "status": "pending",
-      "createdAt": "2026-02-05T15:30:00Z"
-    },
-    {
-      "id": "feature-3",
-      "project": "termlinkky",
-      "title": "Dark mode toggle",
-      "description": "Add system-aware dark/light mode",
-      "priority": "P4",
-      "requester": "Bryce",
-      "status": "pending",
-      "createdAt": "2026-02-04T11:20:00Z"
-    },
-    {
-      "id": "feature-4",
-      "project": "racestream",
-      "title": "API endpoint development",
-      "description": "Build V5 API endpoints for mobile apps",
-      "priority": "P1",
-      "requester": "Jeff",
-      "status": "pending",
-      "createdAt": "2026-02-06T08:45:00Z"
-    },
-    {
-      "id": "feature-5",
-      "project": "voice-clone",
-      "title": "Finish samples for all 3 agents",
-      "description": "Complete voice samples for Jackbot, Codex, and KIMI",
-      "priority": "P1",
-      "requester": "Jeff",
-      "status": "pending",
-      "createdAt": "2026-02-06T10:15:00Z"
-    }
-  ]
+    "featureRequests": [
+        {
+            "id": "feature-1",
+            "project": "lessoncraft",
+            "title": "Spanish localization",
+            "description": "Add Spanish language support for LessonCraft",
+            "priority": "P2",
+            "requester": "Jeff",
+            "status": "pending",
+            "createdAt": "2026-02-06T09:00:00Z"
+        },
+        {
+            "id": "feature-2",
+            "project": "lessoncraft",
+            "title": "Offline mode",
+            "description": "Allow teachers to use app without internet",
+            "priority": "P3",
+            "requester": "Robert",
+            "status": "pending",
+            "createdAt": "2026-02-05T15:30:00Z"
+        },
+        {
+            "id": "feature-4",
+            "project": "racestream",
+            "title": "API endpoint development",
+            "description": "Build V5 API endpoints for mobile apps",
+            "priority": "P1",
+            "requester": "Jeff",
+            "status": "pending",
+            "createdAt": "2026-02-06T08:45:00Z"
+        },
+        {
+            "id": "feature-1770399358973",
+            "title": "Add Protestant faith app",
+            "description": "Add Protestant denomination to Gospel Tuned lineup",
+            "priority": "P3",
+            "requester": "Jeff",
+            "project": "gospel-tuned",
+            "status": "pending",
+            "createdAt": "2026-02-06T17:35:58.973Z"
+        },
+        {
+            "id": "feature-1770399489375",
+            "title": "Missionary version of LessonCraft",
+            "description": "Build a missionary-focused version of LessonCraft for LDS missionaries",
+            "priority": "P3",
+            "requester": "Jeff",
+            "project": "lessoncraft",
+            "status": "pending",
+            "createdAt": "2026-02-06T17:38:09.375Z"
+        },
+        {
+            "id": "feature-20260209-1",
+            "title": "Personal Fireside UI",
+            "description": "Build dedicated UI for browsing and playing Personal Fireside episodes in the app",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-09T00:00:00Z",
+            "completedAt": "2026-02-10T00:00:00Z",
+            "notes": "Firesides now accessible via Study tab and Be Inspired view"
+        },
+        {
+            "id": "feature-20260209-2",
+            "title": "Daily Devotional UI (Morning Light)",
+            "description": "Build dedicated UI for daily devotionals with calendar view and audio player",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-09T00:00:00Z",
+            "completedAt": "2026-02-10T00:00:00Z",
+            "notes": "Morning Light banner on Home screen + archive in Be Inspired view"
+        },
+        {
+            "id": "feature-20260209-3",
+            "title": "In-App Art Gallery Browser",
+            "description": "Browse AI Tuned artwork by topic, add to lessons. ArtworkBrowserView.swift",
+            "priority": "P2",
+            "requester": "Jeff",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-10T00:00:00Z",
+            "completedAt": "2026-02-10T00:00:00Z",
+            "notes": "Gospel Art Gallery section added to Home screen — commit 83a9b0b"
+        },
+        {
+            "id": "feature-20260210-1",
+            "title": "LessonCraft Media Dashboard",
+            "description": "Web dashboard on command center showing all R2 media assets, play audio, view images, completion status",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "command-center",
+            "status": "complete",
+            "createdAt": "2026-02-10T11:51:00Z",
+            "completedAt": "2026-02-10T12:05:00Z"
+        },
+        {
+            "id": "feature-20260210-4",
+            "title": "Cover images for all content cards",
+            "description": "Generate beautiful LDS devotional art for each CFM week, Easter episode, Fireside, and Morning Light card. Image at top of card with title below. Use Gemini v3 style. Upload to R2, wire into catalog.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-10T12:34:00Z",
+            "completedAt": "2026-02-10T23:00:00Z",
+            "notes": "52 CFM covers + 8 new fireside art uploaded to R2. All wired into catalog."
+        },
+        {
+            "id": "feature-20260210-2",
+            "title": "Content standing approval — build freely via catalog API",
+            "description": "Jeff approved blanket content production as long as it goes through R2 + Cloudflare Workers catalog system. No hardcoding in app.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "lessoncraft-content",
+            "status": "approved",
+            "createdAt": "2026-02-10T00:00:00Z"
+        },
+        {
+            "id": "feature-20260210-3",
+            "title": "Easter artwork — v3 LDS devotional style locked in",
+            "description": "Approved style: soft diffused light, muted palette, approachable Christ, no halos/crosses/baroque. Generator: Gemini.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "ai-tuned-art",
+            "status": "approved",
+            "createdAt": "2026-02-10T00:00:00Z"
+        },
+        {
+            "id": "feature-20260210-5",
+            "title": "Share Card feature",
+            "description": "ShareCardRenderer renders 1080x1350px share images. Share button in episode player toolbar. Shares image + lessoncraft.app/daily/{id} URL for growth loop.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-10T00:00:00Z",
+            "completedAt": "2026-02-10T00:00:00Z",
+            "notes": "Commit 4687441"
+        },
+        {
+            "id": "feature-20260210-6",
+            "title": "Web Preview /daily/{id} pages",
+            "description": "Cloudflare Worker serving /daily/{episodeId} pages with OG/Twitter meta tags, artwork hero, audio player, App Store button. Apple Universal Links (AASA) deployed.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-10T00:00:00Z",
+            "completedAt": "2026-02-10T23:00:00Z",
+            "notes": "Deployed to api.aituned.io. Still needs lessoncraft.app domain routing (Jeff action)."
+        },
+        {
+            "id": "feature-20260210-7",
+            "title": "Intent-driven Home screen redesign",
+            "description": "New Home screen: time-of-day greeting, Morning Light banner, 3 intent cards (Prepare/Learn/Be Inspired), Continue Listening, This Week's Study. New tabs: Home/Prepare/Study/Profile. Killed Fireside tab.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-10T00:00:00Z",
+            "completedAt": "2026-02-10T23:00:00Z",
+            "notes": "Commit 9f7cdb4. Jeff approved the design."
+        },
+        {
+            "id": "feature-20260210-8",
+            "title": "Artwork similarity audit",
+            "description": "Pull all 113 R2 images, compare pairs visually. Flag duplicates/too-similar, categorize: keep/rework/replace/invert. Generate replacements with varied compositions.",
+            "priority": "P2",
+            "requester": "Jeff",
+            "project": "ai-tuned-art",
+            "status": "in-progress",
+            "createdAt": "2026-02-10T23:00:00Z",
+            "notes": "20 new diverse pieces being generated. Full visual audit pending."
+        },
+        {
+            "id": "feature-20260210-9",
+            "title": "Voice re-generation with new roster",
+            "description": "Re-generate all existing audio with locked-in voice roster: Jared/Cedar, Nathan/Ash, Sarah/Nova, Emily/Marin, Hannah/Sage, Kristi/Nova. Existing audio uses old nova/onyx voices.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "lessoncraft-content",
+            "status": "pending",
+            "createdAt": "2026-02-10T23:00:00Z",
+            "notes": "Future overnight job. TTS proxy updated for new voices."
+        },
+        {
+            "id": "feature-20260210-10",
+            "title": "lessoncraft.app domain routing for deep links",
+            "description": "Set up lessoncraft.app DNS to route to Cloudflare Worker for /daily/{id} deep links and Apple Universal Links.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "pending",
+            "createdAt": "2026-02-10T23:00:00Z",
+            "notes": "Needs Jeff to configure domain. AASA file ready."
+        },
+        {
+            "id": "feature-20260210-11",
+            "title": "Read-along narration text in documentary segments",
+            "description": "Add synchronized text display during audio playback for documentary episodes",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-10T00:00:00Z",
+            "completedAt": "2026-02-10T00:00:00Z",
+            "notes": "Commit 85f0c00"
+        }
+    ]
 }

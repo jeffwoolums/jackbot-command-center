@@ -1,265 +1,124 @@
 {
-  "projects": [
-    {
-      "id": "lessoncraft",
-      "name": "LessonCraft",
-      "status": "active",
-      "progress": 90,
-      "nextAction": "Build TestFlight release",
-      "owner": "Jackbot",
-      "description": "AI-powered lesson planning app",
-      "priority": "high"
-    },
-    {
-      "id": "gospel-tuned",
-      "name": "AITuned.io Empire",
-      "status": "active",
-      "progress": 20,
-      "nextAction": "Start development phase",
-      "owner": "Jackbot",
-      "description": "The master plan - AI empire",
-      "priority": "high"
-    },
-    {
-      "id": "termlinkky",
-      "name": "TermLinkky",
-      "status": "active",
-      "progress": 75,
-      "nextAction": "Polish UI and UX",
-      "owner": "Jackbot",
-      "description": "Terminal-based link sharing",
-      "priority": "medium"
-    },
-    {
-      "id": "jiggybot",
-      "name": "JiggyBot",
-      "status": "blocked",
-      "progress": 40,
-      "nextAction": "Order and wire up hardware",
-      "owner": "Codex",
-      "description": "Physical robot companion",
-      "priority": "low"
-    },
-    {
-      "id": "racestream",
-      "name": "RaceStream.net",
-      "status": "active",
-      "progress": 100,
-      "nextAction": "Monitor and maintain",
-      "owner": "Jackbot",
-      "description": "Live racing stream platform",
-      "priority": "medium"
-    },
-    {
-      "id": "teams-action-loop",
-      "name": "TeamsActionLoop",
-      "status": "active",
-      "progress": 85,
-      "nextAction": "Final push to completion",
-      "owner": "Codex",
-      "description": "MS Teams automation workflow",
-      "priority": "high"
-    },
-    {
-      "id": "voice-clone",
-      "name": "Voice Clone",
-      "status": "blocked",
-      "progress": 50,
-      "nextAction": "Collect voice samples",
-      "owner": "KIMI",
-      "description": "Custom TTS voice training",
-      "priority": "medium"
-    },
-    {
-      "id": "command-center",
-      "name": "Command Center",
-      "status": "active",
-      "progress": 95,
-      "nextAction": "Final testing and polish",
-      "owner": "Jackbot",
-      "description": "This dashboard!",
-      "priority": "high"
-    }
-  ],
-  "tasks": [
-    {
-      "id": "task-1",
-      "title": "TestFlight build for LessonCraft",
-      "project": "lessoncraft",
-      "status": "inprogress",
-      "priority": "high",
-      "owner": "Jackbot"
-    },
-    {
-      "id": "task-2",
-      "title": "Design AITuned architecture",
-      "project": "gospel-tuned",
-      "status": "backlog",
-      "priority": "high",
-      "owner": "Jackbot"
-    },
-    {
-      "id": "task-3",
-      "title": "Fix TermLinkky connection drops",
-      "project": "termlinkky",
-      "status": "inprogress",
-      "priority": "medium",
-      "owner": "Codex"
-    },
-    {
-      "id": "task-4",
-      "title": "Order servo motors for JiggyBot",
-      "project": "jiggybot",
-      "status": "blocked",
-      "priority": "medium",
-      "owner": "Jeff"
-    },
-    {
-      "id": "task-5",
-      "title": "Add multi-camera support to RaceStream",
-      "project": "racestream",
-      "status": "done",
-      "priority": "high",
-      "owner": "Jackbot"
-    },
-    {
-      "id": "task-6",
-      "title": "Test Teams webhook integration",
-      "project": "teams-action-loop",
-      "status": "inprogress",
-      "priority": "high",
-      "owner": "Codex"
-    },
-    {
-      "id": "task-7",
-      "title": "Record Jeff voice samples",
-      "project": "voice-clone",
-      "status": "blocked",
-      "priority": "high",
-      "owner": "Jeff"
-    },
-    {
-      "id": "task-8",
-      "title": "Add Kanban board to Command Center",
-      "project": "command-center",
-      "status": "inprogress",
-      "priority": "high",
-      "owner": "Jackbot"
-    },
-    {
-      "id": "task-9",
-      "title": "Setup CI/CD for LessonCraft",
-      "project": "lessoncraft",
-      "status": "backlog",
-      "priority": "medium",
-      "owner": "Codex"
-    },
-    {
-      "id": "task-10",
-      "title": "Research AI church tools market",
-      "project": "gospel-tuned",
-      "status": "done",
-      "priority": "high",
-      "owner": "KIMI"
-    }
-  ],
-  "blockers": [
-    {
-      "id": "blocker-1",
-      "title": "JiggyBot hardware not ordered",
-      "project": "jiggybot",
-      "description": "Need to decide on servo motors and order from supplier",
-      "impact": "high",
-      "needsDecision": true,
-      "createdAt": "2025-02-05"
-    },
-    {
-      "id": "blocker-2",
-      "title": "Voice samples needed",
-      "project": "voice-clone",
-      "description": "Jeff needs to record 30 min of voice samples for training",
-      "impact": "medium",
-      "needsDecision": true,
-      "createdAt": "2025-02-04"
-    },
-    {
-      "id": "blocker-3",
-      "title": "Apple Developer cert expiring",
-      "project": "lessoncraft",
-      "description": "Provisioning profile expires Feb 15 - needs renewal",
-      "impact": "high",
-      "needsDecision": false,
-      "createdAt": "2025-02-06"
-    }
-  ],
-  "agents": [
-    {
-      "id": "jackbot",
-      "name": "Jackbot",
-      "status": "active",
-      "currentTask": "Building Command Center dashboard",
-      "avatar": "🤖",
-      "specialty": "Strategy & Architecture"
-    },
-    {
-      "id": "codex",
-      "name": "Codex",
-      "status": "idle",
-      "currentTask": null,
-      "avatar": "💪",
-      "specialty": "Heavy lifting & Execution"
-    },
-    {
-      "id": "kimi",
-      "name": "KIMI",
-      "status": "idle",
-      "currentTask": null,
-      "avatar": "👩‍💼",
-      "specialty": "Research & Communication"
-    }
-  ],
-  "timeline": [
-    {
-      "id": "event-1",
-      "title": "LessonCraft TestFlight",
-      "date": "2025-02-08",
-      "type": "deadline",
-      "project": "lessoncraft"
-    },
-    {
-      "id": "event-2",
-      "title": "TeamsActionLoop Demo",
-      "date": "2025-02-10",
-      "type": "milestone",
-      "project": "teams-action-loop"
-    },
-    {
-      "id": "event-3",
-      "title": "Daily Heartbeat",
-      "date": "recurring",
-      "type": "cron",
-      "schedule": "Every 30 min"
-    },
-    {
-      "id": "event-4",
-      "title": "Email Check",
-      "date": "recurring",
-      "type": "cron",
-      "schedule": "4x daily"
-    },
-    {
-      "id": "event-5",
-      "title": "AITuned MVP",
-      "date": "2025-03-01",
-      "type": "milestone",
-      "project": "gospel-tuned"
-    },
-    {
-      "id": "event-6",
-      "title": "Apple Cert Renewal",
-      "date": "2025-02-15",
-      "type": "deadline",
-      "project": "lessoncraft"
-    }
-  ]
+    "projects": [
+        {
+            "id": "lessoncraft",
+            "name": "LessonCraft",
+            "status": "active",
+            "progress": 90,
+            "nextAction": "Jeff rebuild in Xcode for all new features; set up lessoncraft.app domain routing; artwork similarity audit",
+            "owner": "Jackbot",
+            "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, and study tools",
+            "priority": "high",
+            "lastMilestone": "Intent-driven home screen, share cards, unique artwork per card, voice roster locked, web preview pages — all shipped Feb 10"
+        },
+        {
+            "id": "lessoncraft-content",
+            "name": "LessonCraft Content Pipeline",
+            "status": "active",
+            "progress": 98,
+            "nextAction": "Re-generate all audio with new voice roster (Jared/Cedar, Nathan/Ash, Sarah/Nova, Emily/Marin, Hannah/Sage, Kristi/Nova); artwork diversity improvements",
+            "owner": "Jackbot",
+            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), artwork library (113 pieces)",
+            "priority": "high",
+            "lastMilestone": "126/126 episodes with audio on R2. All 6 series complete. 52 CFM cover images uploaded. Catalog live at api.aituned.io/api/catalog."
+        },
+        {
+            "id": "gospel-tuned",
+            "name": "Gospel Tuned Empire",
+            "status": "planning",
+            "progress": 25,
+            "nextAction": "Extract shared Swift Package core from LessonCraft for multi-faith apps",
+            "owner": "Jackbot",
+            "description": "Multi-faith app empire: LDS (LessonCraft), Catholic, Baptist (Pulpit Prep), Methodist (Wesley's Way), Lutheran, Buddhist, Bahá'í. Research complete for all faiths.",
+            "priority": "high",
+            "needsDecision": false
+        },
+        {
+            "id": "scrollwork",
+            "name": "Scrollwork",
+            "status": "planning",
+            "progress": 10,
+            "nextAction": "Build backend - AI video ad generation engine",
+            "owner": "Jackbot",
+            "description": "AI Ad Creative Platform — marketing agency in your pocket. Upload product images → AI generates scroll-stopping video ads for TikTok/Instagram/Facebook. Website live at scrollwork.net (waitlist).",
+            "priority": "medium",
+            "needsDecision": true,
+            "decisionQuestion": "When to prioritize Scrollwork vs Gospel Tuned expansion?"
+        },
+        {
+            "id": "termlinkky",
+            "name": "TermLinkky",
+            "status": "paused",
+            "progress": 75,
+            "nextAction": "Polish UI and fix stability issues",
+            "owner": "Jackbot",
+            "description": "Remote terminal + AI assistant for iOS/Android. Flutter client + Python server over Tailscale.",
+            "priority": "low"
+        },
+        {
+            "id": "jiggybot",
+            "name": "JiggyBot",
+            "status": "blocked",
+            "progress": 40,
+            "nextAction": "Hardware assembly and testing",
+            "owner": "Jeff",
+            "description": "AI-powered KVM for locked-down corporate environments. Air-gapped AI assistant via HDMI capture + USB HID. Codebase complete, needs hardware assembly.",
+            "priority": "low",
+            "needsDecision": true,
+            "decisionQuestion": "Hardware assembly needs Jeff's hands — when to schedule?"
+        },
+        {
+            "id": "racestream",
+            "name": "RaceStream.net",
+            "status": "active",
+            "progress": 95,
+            "nextAction": "Benchmark Ollama Qwen2.5-32B + SDXL on RaceStream server for free content production",
+            "owner": "Jackbot",
+            "description": "Motorsports live streaming platform. Replace $100K broadcast trucks with sub-$500 edge solution. Server also being used for local AI inference (Ollama + SDXL).",
+            "priority": "medium"
+        },
+        {
+            "id": "teams-action-loop",
+            "name": "TeamsActionLoop",
+            "status": "active",
+            "progress": 90,
+            "nextAction": "Performance/accessibility testing for public launch",
+            "owner": "Jackbot",
+            "description": "Microsoft Teams meeting action item tracker. AI-powered extraction from meeting transcripts. Next.js + Stripe + Microsoft Graph API.",
+            "priority": "medium"
+        },
+        {
+            "id": "ai-tuned-art",
+            "name": "AI Tuned Art Library",
+            "status": "active",
+            "progress": 65,
+            "nextAction": "Artwork similarity audit — flag too-similar pieces, generate replacements with varied compositions. 20 new diverse pieces being generated.",
+            "owner": "Jackbot",
+            "description": "Original AI-generated LDS devotional artwork. 113 pieces: 54 cfm-covers, 17 lesson-topics, 17 bible-stories, 15 easter, 10 children. Style: v3 LDS devotional. Generator: Gemini.",
+            "priority": "medium",
+            "lastMilestone": "113 items in R2. 52 CFM period-correct covers + 8 new fireside artwork pieces uploaded Feb 10. Diversity sub-agent generating 20 more."
+        },
+        {
+            "id": "command-center",
+            "name": "Command Center",
+            "status": "active",
+            "progress": 80,
+            "nextAction": "Keep tracker data fresh via nightly audit. Add more dashboard views as needed.",
+            "owner": "Jackbot",
+            "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron.",
+            "priority": "medium",
+            "lastMilestone": "Media dashboard shipped, nightly tracker audit cron installed — Feb 10"
+        },
+        {
+            "id": "javabean",
+            "name": "Javabean (Voice System)",
+            "status": "active",
+            "progress": 85,
+            "nextAction": "Export remaining voices to local XTTS",
+            "owner": "Jackbot",
+            "description": "TTS infrastructure — ElevenLabs + local XTTS cloning. Voices: Jackbot (9T9v), Codex/Samuel (vDch), Tayler, KIMI/Amelie, SultrySara.",
+            "priority": "medium"
+        }
+    ],
+    "lastUpdated": "2026-02-11T05:07:00Z"
 }
