@@ -4,23 +4,34 @@
             "id": "lessoncraft",
             "name": "LessonCraft",
             "status": "active",
-            "progress": 90,
-            "nextAction": "Jeff rebuild in Xcode for all new features; set up lessoncraft.app domain routing; artwork similarity audit",
-            "owner": "Jackbot",
+            "progress": 93,
+            "nextAction": "Jeff: git pull → Xcode Archive → TestFlight upload. Update Privacy Policy URL in App Store Connect to https://aituned.io/privacy",
+            "owner": "Jeff (blocked on Xcode build)",
             "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, and study tools",
             "priority": "high",
-            "lastMilestone": "Intent-driven home screen, share cards, unique artwork per card, voice roster locked, web preview pages — all shipped Feb 10"
+            "lastMilestone": "RC1 Gold Copy v1.0.0 build 2 shipped (commit 12674f5). Subscription system (StoreKit 2), JD Art Gallery, Print Store UI, share cards, episode descriptions, discussion question fixes — all shipped Feb 11"
         },
         {
             "id": "lessoncraft-content",
             "name": "LessonCraft Content Pipeline",
             "status": "active",
-            "progress": 98,
-            "nextAction": "Re-generate all audio with new voice roster (Jared/Cedar, Nathan/Ash, Sarah/Nova, Emily/Marin, Hannah/Sage, Kristi/Nova); artwork diversity improvements",
+            "progress": 100,
+            "nextAction": "Build CFM Teaching Coach segments (Jeff approved Feb 11). Sample generated for Week 7 (commit d9c7a0b).",
             "owner": "Jackbot",
-            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), artwork library (113 pieces)",
+            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), artwork library (113+ pieces)",
             "priority": "high",
-            "lastMilestone": "126/126 episodes with audio on R2. All 6 series complete. 52 CFM cover images uploaded. Catalog live at api.aituned.io/api/catalog."
+            "lastMilestone": "Voice re-generation COMPLETE — 267 files, 0 failures. All 6 narrators on final roster (Cedar/Jared, Ash/Nathan, Nova/Sarah, Marin/Emily, Sage/Hannah, Nova/Kristi). 126/126 episodes with audio on R2."
+        },
+        {
+            "id": "jd-art-gallery",
+            "name": "JD Art Gallery & Print Store",
+            "status": "active",
+            "progress": 70,
+            "nextAction": "Print Store Phase 2: deploy Stripe webhook Worker (built, needs wrangler deploy + secret). Upload remaining 4K files to R2. Register jacquedubois.art domain (Jeff action).",
+            "owner": "Jackbot",
+            "description": "Jacque Dubois Fine Art Gallery — in-app gallery browser, Printful print-on-demand integration, Stripe checkout. 85 gallery pieces on R2. jacquedubois.art website built. Print purchase = 1 free month premium.",
+            "priority": "high",
+            "lastMilestone": "Gallery UI in app (commit 36c69f2), 14 Printful products created, Stripe webhook Worker built, jacquedubois.art website built — all Feb 11"
         },
         {
             "id": "gospel-tuned",
@@ -91,12 +102,12 @@
             "id": "ai-tuned-art",
             "name": "AI Tuned Art Library",
             "status": "active",
-            "progress": 65,
-            "nextAction": "Artwork similarity audit — flag too-similar pieces, generate replacements with varied compositions. 20 new diverse pieces being generated.",
+            "progress": 80,
+            "nextAction": "Continue artwork diversity improvements. Artwork similarity audit in progress. Social media content pipeline not yet built.",
             "owner": "Jackbot",
-            "description": "Original AI-generated LDS devotional artwork. 113 pieces: 54 cfm-covers, 17 lesson-topics, 17 bible-stories, 15 easter, 10 children. Style: v3 LDS devotional. Generator: Gemini.",
+            "description": "Original AI-generated LDS devotional artwork. 85 JD Gallery pieces + 113 content artwork pieces on R2. Multiple collections: Sacred, Patriotic, Folk Art, Watercolor, Art Nouveau, Parables, Landscapes, Devotional. Generator: Gemini.",
             "priority": "medium",
-            "lastMilestone": "113 items in R2. 52 CFM period-correct covers + 8 new fireside artwork pieces uploaded Feb 10. Diversity sub-agent generating 20 more."
+            "lastMilestone": "85 JD Gallery pieces on R2 catalog. 15 hand-curated + 70 generated. Collections: sacred(23), art-nouveau(28), devotional(10), parables(10), patriotic(6), folk-art(5), landscapes(3). Feb 11."
         },
         {
             "id": "command-center",
@@ -120,5 +131,5 @@
             "priority": "medium"
         }
     ],
-    "lastUpdated": "2026-02-11T05:07:00Z"
+    "lastUpdated": "2026-02-12T05:10:00Z"
 }

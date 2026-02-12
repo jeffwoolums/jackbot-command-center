@@ -3,15 +3,15 @@
         {
             "id": "directive-1",
             "title": "Finish LessonCraft TestFlight build",
-            "description": "Need to get Build 8 out to testers ASAP. Audio decode fix committed (8a3d7f5), home screen redesigned, share cards built. Jeff needs to rebuild in Xcode.",
+            "description": "RC1 Gold Copy v1.0.0 build 2 shipped (commit 12674f5). Live Session removed, 28 dead files cleaned, 92 debug prints stripped. Privacy Policy URL updated to aituned.io/privacy. Jeff needs to git pull → Xcode Archive → TestFlight upload.",
             "category": "Feature Request",
             "project": "lessoncraft",
-            "status": "In Progress",
+            "status": "Blocked",
             "priority": "P1",
             "createdAt": "2026-02-06T10:00:00Z",
-            "updatedAt": "2026-02-11T05:07:00Z",
+            "updatedAt": "2026-02-12T05:10:00Z",
             "createdBy": "Jeff",
-            "notes": "Blocked on Jeff rebuilding in Xcode. All code changes are on main branch."
+            "notes": "Code is 100% ready. Blocked on Jeff: git pull → Xcode Archive → TestFlight upload + update Privacy Policy URL in App Store Connect."
         },
         {
             "id": "directive-2",
@@ -44,11 +44,11 @@
             "category": "Priority Change",
             "project": "lessoncraft",
             "priority": "P1",
-            "status": "In Progress",
+            "status": "Complete",
             "createdBy": "Jeff",
             "createdAt": "2026-02-06T17:29:14.193Z",
-            "updatedAt": "2026-02-11T05:07:00Z",
-            "notes": "Major UI overhaul completed Feb 10: intent-driven home, unique artwork, share cards, Gospel Art Gallery. Ready for Jeff's review."
+            "updatedAt": "2026-02-12T05:10:00Z",
+            "notes": "RC1 Gold Copy shipped Feb 11. Full UI refinement: JD Gallery, subscription paywall, print store, episode descriptions, discussion question formatting, gallery card layout fixes. 15 commits on Feb 11 alone."
         },
         {
             "id": "directive-20260210-1",
@@ -177,5 +177,45 @@
             "updatedAt": "2026-02-11T05:07:00Z",
             "notes": "Commits 16806fc → a2bdbce. TTS proxy updated. Existing audio still uses old voices — re-gen is future job."
         }
+        {
+            "id": "directive-20260211-1",
+            "title": "Build JD Art Gallery in app TODAY",
+            "description": "Jeff directive: Build gallery browser, put jump-to-gallery on home screen, make art 4K for Printful print ordering. Register jacquedubois.art domain.",
+            "category": "Feature Request",
+            "project": "jd-art-gallery",
+            "priority": "P1",
+            "status": "Complete",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-11T12:30:00Z",
+            "updatedAt": "2026-02-12T05:10:00Z",
+            "notes": "Gallery UI in app (commit 36c69f2), 85 pieces on R2, Printful account live with 14 products, Stripe webhook Worker built, jacquedubois.art website built. Domain registration still pending (Jeff action)."
+        },
+        {
+            "id": "directive-20260211-2",
+            "title": "CFM Teaching Coach — inline term explanations + teaching segment",
+            "description": "Jeff approved Teaching Coach enhancement: inline technical term explanations during narration + dedicated Teaching Coach segment after deep dive closing. Warm close with varied encouragement.",
+            "category": "Feature Request",
+            "project": "lessoncraft-content",
+            "priority": "P1",
+            "status": "In Progress",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-11T10:23:00Z",
+            "updatedAt": "2026-02-12T05:10:00Z",
+            "notes": "Jeff said 'Yes! Love it.' Spec written. Sample generated for Week 7 (commit d9c7a0b). Full rollout to all 52 weeks pending."
+        },
+        {
+            "id": "directive-20260211-3",
+            "title": "Altus Fine Art inspiration — multiple art style collections",
+            "description": "Jeff wants JD Gallery to have MULTIPLE style collections (not just devotional realism). Sacrocubism, geometric temples, minimalist line art, American folk art, patriotic art.",
+            "category": "Clarification",
+            "project": "jd-art-gallery",
+            "priority": "P2",
+            "status": "In Progress",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-11T12:26:00Z",
+            "updatedAt": "2026-02-12T05:10:00Z",
+            "notes": "85 pieces now span 7 collections: sacred(23), art-nouveau(28), devotional(10), parables(10), patriotic(6), folk-art(5), landscapes(3). Continuing to expand."
+        }
     ]
 }
+

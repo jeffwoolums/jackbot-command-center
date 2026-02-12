@@ -6,7 +6,10 @@ import KanbanBoard from '@/components/dashboard/KanbanBoard'
 import CalendarTimeline from '@/components/dashboard/CalendarTimeline'
 import BlockersPanel from '@/components/dashboard/BlockersPanel'
 import AgentStatusPanel from '@/components/dashboard/AgentStatusPanel'
-import { JackbotIdeas } from '@/components/dashboard/JackbotIdeas'
+import ChairmanDirectives from '@/components/dashboard/ChairmanDirectives'
+import RecoveredTasksPanel from '@/components/dashboard/RecoveredTasksPanel'
+import ProjectDetailModal from '@/components/dashboard/ProjectDetailModal'
+import VoiceDashboard from '@/components/dashboard/VoiceDashboard'
 
 interface ProjectData {
   projects: Array<{
@@ -54,15 +57,17 @@ interface ProjectData {
   }>
 }
 
-type ViewMode = 'overview' | 'kanban' | 'timeline'
+type ViewMode = 'dashboard' | 'projects' | 'chairman' | 'timeline'
 
 export default function CommandCenter() {
   const [currentTime, setCurrentTime] = useState(new Date())
   const [data, setData] = useState<ProjectData | null>(null)
   const [loading, setLoading] = useState(true)
-  const [viewMode, setViewMode] = useState<ViewMode>('overview')
+  const [viewMode, setViewMode] = useState<ViewMode>('dashboard')
   const [spawnTask, setSpawnTask] = useState('')
   const [spawning, setSpawning] = useState(false)
+  const [selectedProject, setSelectedProject] = useState<ProjectData['projects'][0] | null>(null)
+  const [showProjectDetail, setShowProjectDetail] = useState(false)
 
   const fetchData = useCallback(async () => {
     try {
@@ -93,6 +98,7 @@ export default function CommandCenter() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ taskId, newStatus })
       })
+      fetchData() // Refresh data
     } catch (e) {
       console.error('Failed to update task:', e)
     }
@@ -112,6 +118,11 @@ export default function CommandCenter() {
       console.error('Spawn failed:', e)
     }
     setSpawning(false)
+  }
+
+  const handleProjectClick = (project: ProjectData['projects'][0]) => {
+    setSelectedProject(project)
+    setShowProjectDetail(true)
   }
 
   const formatTime = (date: Date) => date.toLocaleTimeString('en-US', { 
@@ -137,28 +148,38 @@ export default function CommandCenter() {
           <div className="flex items-center gap-6">
             <div>
               <h1 className="text-2xl font-bold bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent">
-                🤖 Jackbot Command Center
+                🤖 Jackbot Command Center v2.0
               </h1>
-              <p className="text-slate-500 text-sm">AITuned.io HQ</p>
+              <p className="text-slate-500 text-sm">Gospel Tuned Empire HQ • Enhanced Edition</p>
             </div>
             
-            {/* View Toggle */}
-            <div className="flex bg-slate-900 rounded-lg p-1">
-              {(['overview', 'kanban', 'timeline'] as ViewMode[]).map((mode) => (
-                <button
-                  key={mode}
-                  onClick={() => setViewMode(mode)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                    viewMode === mode
-                      ? 'bg-amber-500 text-black'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  {mode === 'overview' && '📊 Overview'}
-                  {mode === 'kanban' && '📋 Kanban'}
-                  {mode === 'timeline' && '📅 Timeline'}
-                </button>
-              ))}
+            {/* Enhanced Navigation */}
+            <div className="flex items-center gap-3">
+              <div className="flex bg-slate-900 rounded-lg p-1">
+                {(['dashboard', 'projects', 'chairman', 'timeline'] as ViewMode[]).map((mode) => (
+                  <button
+                    key={mode}
+                    onClick={() => setViewMode(mode)}
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                      viewMode === mode
+                        ? 'bg-amber-500 text-black'
+                        : 'text-slate-400 hover:text-white'
+                    }`}
+                  >
+                    {mode === 'dashboard' && '📊 Dashboard'}
+                    {mode === 'projects' && '📂 Projects'}
+                    {mode === 'chairman' && '👑 Chairman'}
+                    {mode === 'timeline' && '📅 Timeline'}
+                  </button>
+                ))}
+              </div>
+
+              <a
+                href="/lessoncraft"
+                className="px-3 py-2 rounded-md text-sm font-medium border border-purple-500/40 bg-purple-500/10 text-purple-200 hover:bg-purple-500/20 transition-all"
+              >
+                🎧 LessonCraft
+              </a>
             </div>
           </div>
 
@@ -200,32 +221,6 @@ export default function CommandCenter() {
           </div>
         </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-5 gap-4 mb-6">
-          <div className="p-4 bg-slate-900 rounded-lg border border-green-500/30">
-            <div className="text-slate-400 text-sm">Active</div>
-            <div className="text-2xl font-bold text-green-400">{activeProjects}</div>
-          </div>
-          <div className="p-4 bg-slate-900 rounded-lg border border-red-500/30">
-            <div className="text-slate-400 text-sm">Blocked</div>
-            <div className="text-2xl font-bold text-red-400">{blockedProjects}</div>
-          </div>
-          <div className="p-4 bg-slate-900 rounded-lg border border-amber-500/30">
-            <div className="text-slate-400 text-sm">Avg Progress</div>
-            <div className="text-2xl font-bold text-amber-400">{avgProgress}%</div>
-          </div>
-          <div className="p-4 bg-slate-900 rounded-lg border border-blue-500/30">
-            <div className="text-slate-400 text-sm">Tasks</div>
-            <div className="text-2xl font-bold text-blue-400">{data?.tasks.length || 0}</div>
-          </div>
-          <div className="p-4 bg-slate-900 rounded-lg border border-purple-500/30">
-            <div className="text-slate-400 text-sm">Agents</div>
-            <div className="text-2xl font-bold text-purple-400">
-              {data?.agents.filter(a => a.status !== 'offline').length || 0}
-            </div>
-          </div>
-        </div>
-
         {loading ? (
           <div className="flex items-center justify-center h-64">
             <div className="text-slate-500 text-lg">Loading dashboard...</div>
@@ -236,17 +231,119 @@ export default function CommandCenter() {
           </div>
         ) : (
           <>
-            {/* OVERVIEW MODE */}
-            {viewMode === 'overview' && (
+            {/* DASHBOARD VIEW */}
+            {viewMode === 'dashboard' && (
               <div className="space-y-6">
+                {/* Quick Stats */}
+                <div className="grid grid-cols-5 gap-4">
+                  <div className="p-4 bg-slate-900 rounded-lg border border-green-500/30">
+                    <div className="text-slate-400 text-sm">Active</div>
+                    <div className="text-2xl font-bold text-green-400">{activeProjects}</div>
+                  </div>
+                  <div className="p-4 bg-slate-900 rounded-lg border border-red-500/30">
+                    <div className="text-slate-400 text-sm">Blocked</div>
+                    <div className="text-2xl font-bold text-red-400">{blockedProjects}</div>
+                  </div>
+                  <div className="p-4 bg-slate-900 rounded-lg border border-amber-500/30">
+                    <div className="text-slate-400 text-sm">Avg Progress</div>
+                    <div className="text-2xl font-bold text-amber-400">{avgProgress}%</div>
+                  </div>
+                  <div className="p-4 bg-slate-900 rounded-lg border border-blue-500/30">
+                    <div className="text-slate-400 text-sm">Tasks</div>
+                    <div className="text-2xl font-bold text-blue-400">{data?.tasks.length || 0}</div>
+                  </div>
+                  <div className="p-4 bg-slate-900 rounded-lg border border-purple-500/30">
+                    <div className="text-slate-400 text-sm">Agents</div>
+                    <div className="text-2xl font-bold text-purple-400">
+                      {data?.agents.filter(a => a.status !== 'offline').length || 0}
+                    </div>
+                  </div>
+                </div>
+
                 {/* Project Cards */}
                 <section>
                   <h2 className="text-lg font-bold text-amber-400 mb-4">📂 Projects</h2>
-                  <ProjectCards projects={data.projects} />
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {data.projects.map((project) => (
+                      <div
+                        key={project.id}
+                        onClick={() => handleProjectClick(project)}
+                        className={`p-4 bg-slate-900 rounded-lg border transition-all hover:scale-[1.02] hover:shadow-lg cursor-pointer ${
+                          project.status === 'blocked' 
+                            ? 'border-red-500/50 hover:border-red-400' 
+                            : project.priority === 'high'
+                            ? 'border-amber-500/30 hover:border-amber-400'
+                            : 'border-slate-700 hover:border-slate-500'
+                        }`}
+                      >
+                        {/* Header */}
+                        <div className="flex justify-between items-start mb-3">
+                          <h3 className="font-bold text-white truncate">{project.name}</h3>
+                          <span className={`${
+                            project.status === 'active' ? 'bg-green-500' :
+                            project.status === 'blocked' ? 'bg-red-500' : 'bg-blue-500'
+                          } text-xs px-2 py-0.5 rounded-full text-black font-medium`}>
+                            {project.status === 'active' ? 'Active' : 
+                             project.status === 'blocked' ? 'Blocked' : 'Complete'}
+                          </span>
+                        </div>
+
+                        {/* Progress Bar */}
+                        <div className="mb-3">
+                          <div className="flex justify-between text-xs mb-1">
+                            <span className="text-slate-400">Progress</span>
+                            <span className={project.progress === 100 ? 'text-green-400' : 'text-amber-400'}>
+                              {project.progress}%
+                            </span>
+                          </div>
+                          <div className="h-2 bg-slate-800 rounded-full overflow-hidden">
+                            <div 
+                              className={`h-full transition-all duration-500 ${
+                                project.progress === 100 
+                                  ? 'bg-green-500' 
+                                  : project.progress >= 75 
+                                  ? 'bg-amber-500' 
+                                  : project.progress >= 50 
+                                  ? 'bg-yellow-500' 
+                                  : 'bg-orange-500'
+                              }`}
+                              style={{ width: `${project.progress}%` }}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Next Action */}
+                        <div className="mb-3">
+                          <div className="text-xs text-slate-500 mb-1">Next Action</div>
+                          <div className="text-sm text-slate-300 line-clamp-2">{project.nextAction}</div>
+                        </div>
+
+                        {/* Owner */}
+                        <div className="flex items-center justify-between">
+                          <span className={`text-sm font-medium ${
+                            project.owner === 'Jackbot' ? 'text-amber-400' :
+                            project.owner === 'Codex' ? 'text-purple-400' :
+                            project.owner === 'KIMI' ? 'text-pink-400' : 'text-slate-400'
+                          }`}>
+                            {project.owner === 'Jackbot' && '🤖 '}
+                            {project.owner === 'Codex' && '💪 '}
+                            {project.owner === 'KIMI' && '👩‍💼 '}
+                            {project.owner}
+                          </span>
+                          {project.priority === 'high' && (
+                            <span className="text-xs text-amber-500">⚡ HIGH</span>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </section>
 
-                {/* Bottom Grid: Blockers, Agents, Timeline */}
-                <div className="grid grid-cols-3 gap-6">
+                {/* Bottom Grid: Recovered Tasks, Blockers, Agents, Voice */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                  {/* Recovered Tasks */}
+                  <RecoveredTasksPanel />
+
                   {/* Blockers */}
                   <section className="p-4 bg-slate-900 rounded-lg border border-red-500/30">
                     <h2 className="text-lg font-bold text-red-400 mb-4">🚨 Blockers</h2>
@@ -259,29 +356,29 @@ export default function CommandCenter() {
                     <AgentStatusPanel agents={data.agents} />
                   </section>
 
-                  {/* Jackbot Ideas */}
-                  <section className="col-span-2 p-4 bg-slate-900 rounded-lg border border-cyan-500/30">
-                    <JackbotIdeas />
-                  </section>
-
-                  {/* Timeline */}
-                  <section className="p-4 bg-slate-900 rounded-lg border border-amber-500/30">
-                    <h2 className="text-lg font-bold text-amber-400 mb-4">📅 Upcoming</h2>
-                    <CalendarTimeline events={data.timeline} />
-                  </section>
+                  {/* Voice Dashboard */}
+                  <VoiceDashboard />
                 </div>
               </div>
             )}
 
-            {/* KANBAN MODE */}
-            {viewMode === 'kanban' && (
-              <section>
-                <h2 className="text-lg font-bold text-amber-400 mb-4">📋 Task Board</h2>
+            {/* PROJECTS VIEW */}
+            {viewMode === 'projects' && (
+              <div className="space-y-6">
+                <h2 className="text-2xl font-bold text-amber-400">📂 All Projects</h2>
                 <KanbanBoard initialTasks={data.tasks} onTaskMove={handleTaskMove} />
-              </section>
+              </div>
             )}
 
-            {/* TIMELINE MODE */}
+            {/* CHAIRMAN VIEW */}
+            {viewMode === 'chairman' && (
+              <div className="space-y-6">
+                <h2 className="text-2xl font-bold text-amber-400">👑 Chairman's Corner</h2>
+                <ChairmanDirectives projects={data.projects} />
+              </div>
+            )}
+
+            {/* TIMELINE VIEW */}
             {viewMode === 'timeline' && (
               <div className="grid grid-cols-2 gap-6">
                 <section className="p-6 bg-slate-900 rounded-lg border border-slate-700">
@@ -298,9 +395,17 @@ export default function CommandCenter() {
         )}
       </main>
 
+      {/* Project Detail Modal */}
+      <ProjectDetailModal
+        project={selectedProject}
+        isOpen={showProjectDetail}
+        onClose={() => setShowProjectDetail(false)}
+        onTaskMove={handleTaskMove}
+      />
+
       {/* Footer */}
       <footer className="mt-8 py-4 border-t border-slate-800 text-center text-slate-500 text-sm">
-        <p>Jackbot Command Center v2.0 • AITuned.io • Building to a Billion 🚀</p>
+        <p>Jackbot Command Center v2.0 • Enhanced Edition • Gospel Tuned Empire • Building to a Billion 🚀</p>
       </footer>
     </div>
   )

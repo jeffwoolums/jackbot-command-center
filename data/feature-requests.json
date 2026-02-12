@@ -179,13 +179,14 @@
         {
             "id": "feature-20260210-9",
             "title": "Voice re-generation with new roster",
-            "description": "Re-generate all existing audio with locked-in voice roster: Jared/Cedar, Nathan/Ash, Sarah/Nova, Emily/Marin, Hannah/Sage, Kristi/Nova. Existing audio uses old nova/onyx voices.",
+            "description": "Re-generate all existing audio with locked-in voice roster: Jared/Cedar, Nathan/Ash, Sarah/Nova, Emily/Marin, Hannah/Sage, Kristi/Nova.",
             "priority": "P2",
             "requester": "Jackbot",
             "project": "lessoncraft-content",
-            "status": "pending",
+            "status": "complete",
             "createdAt": "2026-02-10T23:00:00Z",
-            "notes": "Future overnight job. TTS proxy updated for new voices."
+            "completedAt": "2026-02-11T09:49:00Z",
+            "notes": "267 files re-generated, 0 failures. All voices now correct."
         },
         {
             "id": "feature-20260210-10",
@@ -210,5 +211,100 @@
             "completedAt": "2026-02-10T00:00:00Z",
             "notes": "Commit 85f0c00"
         }
+        {
+            "id": "feature-20260211-1",
+            "title": "CFM Teaching Coach Enhancement",
+            "description": "After Jared's closing, add CTA for 'How to Teach This Week's Lesson' — lesson framework, engagement strategies, key points, references back to documentary. Warm close with varied encouragement + Spirit as teaching partner. Also inline technical term explanations during narration.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "lessoncraft-content",
+            "status": "in-progress",
+            "createdAt": "2026-02-11T10:23:00Z",
+            "notes": "Jeff said 'Yes! Love it.' Spec: ~/developer/LessonCraft/specs/cfm-teaching-coach-feature.md. Sample generated for Week 7 (commit d9c7a0b)."
+        },
+        {
+            "id": "feature-20260211-2",
+            "title": "JD Art Gallery — in-app browser + print ordering",
+            "description": "Jacque Dubois Fine Art Gallery inside LessonCraft. Browse by collection, set wallpapers (free), order prints via Printful. Home screen jump card. Multiple collections: Sacred, Patriotic, Folk Art, Watercolor, Art Nouveau, Parables.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-11T12:30:00Z",
+            "completedAt": "2026-02-11T18:00:00Z",
+            "notes": "Commits 36c69f2 + bae4890. JDGalleryView, JDArtworkDetailView, JDGalleryService. 85 pieces on R2."
+        },
+        {
+            "id": "feature-20260211-3",
+            "title": "Printful print-on-demand integration",
+            "description": "White-label print store: users order canvas prints from JD Gallery via Printful. Zero inventory, zero shipping. 14 products created with 4 size variants each.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "jd-art-gallery",
+            "status": "in-progress",
+            "createdAt": "2026-02-11T14:05:00Z",
+            "notes": "Printful account live (Store ID 17699313). Print Store Phase 1 UI built (PrintOrderView). Phase 2: Stripe checkout webhook Worker built but needs deploy."
+        },
+        {
+            "id": "feature-20260211-4",
+            "title": "Subscription system (StoreKit 2)",
+            "description": "3 tiers: $4.99/mo, $39.99/yr, $1.99/mo student. PaywallView + SubscriptionManager + SubscriptionGate with demo bypass for beta.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-11T16:00:00Z",
+            "completedAt": "2026-02-11T18:00:00Z",
+            "notes": "SubscriptionManager.swift, PaywallView.swift, SubscriptionGate.swift. isDemoMode=true for beta."
+        },
+        {
+            "id": "feature-20260211-5",
+            "title": "Stripe webhook for Cloudflare Worker",
+            "description": "Stripe checkout.session.completed webhook handler in aituned-api Worker. Verifies signature, creates Printful order automatically.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "jd-art-gallery",
+            "status": "complete",
+            "createdAt": "2026-02-11T22:00:00Z",
+            "completedAt": "2026-02-11T22:45:00Z",
+            "notes": "Built by stripe-webhook-build sub-agent. Dry-run validated. Needs: wrangler secret put STRIPE_WEBHOOK_SECRET + wrangler deploy."
+        },
+        {
+            "id": "feature-20260211-6",
+            "title": "jacquedubois.art gallery website",
+            "description": "Single-file dark gallery website for J. Dubois art. Filterable by collection, lightbox modal with print details, App Store link. Pulls from R2 catalog.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "jd-art-gallery",
+            "status": "complete",
+            "createdAt": "2026-02-11T22:00:00Z",
+            "completedAt": "2026-02-11T22:45:00Z",
+            "notes": "Built by jd-gallery-website sub-agent. Located: ~/developer/aituned-api/sites/jacquedubois.art/index.html. Needs domain registration (Jeff action)."
+        },
+        {
+            "id": "feature-20260211-7",
+            "title": "Episode description expandable + shareable",
+            "description": "Episode descriptions now expandable and shareable in the app UI.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-11T20:00:00Z",
+            "completedAt": "2026-02-11T20:00:00Z",
+            "notes": "Commit 5ab25ff"
+        },
+        {
+            "id": "feature-20260211-8",
+            "title": "CFM episodes use dedicated R2 cover art",
+            "description": "CFM episodes now pull dedicated period-correct cover art from R2 instead of random hash-picked artwork.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-11T20:00:00Z",
+            "completedAt": "2026-02-11T20:00:00Z",
+            "notes": "Commit 310ddf4"
+        }
     ]
 }
+
