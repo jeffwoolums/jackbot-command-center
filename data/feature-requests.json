@@ -100,7 +100,7 @@
         {
             "id": "feature-20260210-4",
             "title": "Cover images for all content cards",
-            "description": "Generate beautiful LDS devotional art for each CFM week, Easter episode, Fireside, and Morning Light card. Image at top of card with title below. Use Gemini v3 style. Upload to R2, wire into catalog.",
+            "description": "Generate beautiful LDS devotional art for each CFM week, Easter episode, Fireside, and Morning Light card.",
             "priority": "P1",
             "requester": "Jeff",
             "project": "lessoncraft",
@@ -112,7 +112,7 @@
         {
             "id": "feature-20260210-2",
             "title": "Content standing approval — build freely via catalog API",
-            "description": "Jeff approved blanket content production as long as it goes through R2 + Cloudflare Workers catalog system. No hardcoding in app.",
+            "description": "Jeff approved blanket content production as long as it goes through R2 + Cloudflare Workers catalog system.",
             "priority": "P1",
             "requester": "Jeff",
             "project": "lessoncraft-content",
@@ -132,7 +132,7 @@
         {
             "id": "feature-20260210-5",
             "title": "Share Card feature",
-            "description": "ShareCardRenderer renders 1080x1350px share images. Share button in episode player toolbar. Shares image + lessoncraft.app/daily/{id} URL for growth loop.",
+            "description": "ShareCardRenderer renders 1080x1350px share images. Share button in episode player toolbar.",
             "priority": "P1",
             "requester": "Jackbot",
             "project": "lessoncraft",
@@ -144,19 +144,19 @@
         {
             "id": "feature-20260210-6",
             "title": "Web Preview /daily/{id} pages",
-            "description": "Cloudflare Worker serving /daily/{episodeId} pages with OG/Twitter meta tags, artwork hero, audio player, App Store button. Apple Universal Links (AASA) deployed.",
+            "description": "Cloudflare Worker serving /daily/{episodeId} pages with OG/Twitter meta tags, artwork hero, audio player, App Store button.",
             "priority": "P1",
             "requester": "Jackbot",
             "project": "lessoncraft",
             "status": "complete",
             "createdAt": "2026-02-10T00:00:00Z",
             "completedAt": "2026-02-10T23:00:00Z",
-            "notes": "Deployed to api.aituned.io. Still needs lessoncraft.app domain routing (Jeff action)."
+            "notes": "Deployed to api.aituned.io. Share URL now uses aituned.io/listen/{id}."
         },
         {
             "id": "feature-20260210-7",
             "title": "Intent-driven Home screen redesign",
-            "description": "New Home screen: time-of-day greeting, Morning Light banner, 3 intent cards (Prepare/Learn/Be Inspired), Continue Listening, This Week's Study. New tabs: Home/Prepare/Study/Profile. Killed Fireside tab.",
+            "description": "New Home screen: time-of-day greeting, Morning Light banner, intent cards, Continue Listening, This Week's Study.",
             "priority": "P1",
             "requester": "Jeff",
             "project": "lessoncraft",
@@ -168,18 +168,18 @@
         {
             "id": "feature-20260210-8",
             "title": "Artwork similarity audit",
-            "description": "Pull all 113 R2 images, compare pairs visually. Flag duplicates/too-similar, categorize: keep/rework/replace/invert. Generate replacements with varied compositions.",
+            "description": "Pull all R2 images, compare pairs visually. Flag duplicates/too-similar.",
             "priority": "P2",
             "requester": "Jeff",
             "project": "ai-tuned-art",
             "status": "in-progress",
             "createdAt": "2026-02-10T23:00:00Z",
-            "notes": "20 new diverse pieces being generated. Full visual audit pending."
+            "notes": "Gallery at 120 pieces with improved diversity across 9 collections."
         },
         {
             "id": "feature-20260210-9",
             "title": "Voice re-generation with new roster",
-            "description": "Re-generate all existing audio with locked-in voice roster: Jared/Cedar, Nathan/Ash, Sarah/Nova, Emily/Marin, Hannah/Sage, Kristi/Nova.",
+            "description": "Re-generate all existing audio with locked-in voice roster.",
             "priority": "P2",
             "requester": "Jackbot",
             "project": "lessoncraft-content",
@@ -191,13 +191,13 @@
         {
             "id": "feature-20260210-10",
             "title": "lessoncraft.app domain routing for deep links",
-            "description": "Set up lessoncraft.app DNS to route to Cloudflare Worker for /daily/{id} deep links and Apple Universal Links.",
+            "description": "Set up lessoncraft.app DNS for deep links and Apple Universal Links.",
             "priority": "P1",
             "requester": "Jackbot",
             "project": "lessoncraft",
-            "status": "pending",
+            "status": "cancelled",
             "createdAt": "2026-02-10T23:00:00Z",
-            "notes": "Needs Jeff to configure domain. AASA file ready."
+            "notes": "lessoncraft.app belongs to EcomTrackify — NOT our domain! Share URLs now use aituned.io/listen/{id} instead."
         },
         {
             "id": "feature-20260210-11",
@@ -210,76 +210,76 @@
             "createdAt": "2026-02-10T00:00:00Z",
             "completedAt": "2026-02-10T00:00:00Z",
             "notes": "Commit 85f0c00"
-        }
+        },
         {
             "id": "feature-20260211-1",
             "title": "CFM Teaching Coach Enhancement",
-            "description": "After Jared's closing, add CTA for 'How to Teach This Week's Lesson' — lesson framework, engagement strategies, key points, references back to documentary. Warm close with varied encouragement + Spirit as teaching partner. Also inline technical term explanations during narration.",
+            "description": "After Jared's closing, add CTA for 'How to Teach This Week's Lesson'. Warm close with varied encouragement.",
             "priority": "P1",
             "requester": "Jeff",
             "project": "lessoncraft-content",
             "status": "in-progress",
             "createdAt": "2026-02-11T10:23:00Z",
-            "notes": "Jeff said 'Yes! Love it.' Spec: ~/developer/LessonCraft/specs/cfm-teaching-coach-feature.md. Sample generated for Week 7 (commit d9c7a0b)."
+            "notes": "Jeff approved. Sample generated for Week 7 (commit d9c7a0b). Full 52-week rollout pending."
         },
         {
             "id": "feature-20260211-2",
             "title": "JD Art Gallery — in-app browser + print ordering",
-            "description": "Jacque Dubois Fine Art Gallery inside LessonCraft. Browse by collection, set wallpapers (free), order prints via Printful. Home screen jump card. Multiple collections: Sacred, Patriotic, Folk Art, Watercolor, Art Nouveau, Parables.",
+            "description": "Jacque Dubois Fine Art Gallery inside LessonCraft. Browse by collection, set wallpapers, order prints via Printful.",
             "priority": "P1",
             "requester": "Jeff",
             "project": "lessoncraft",
             "status": "complete",
             "createdAt": "2026-02-11T12:30:00Z",
             "completedAt": "2026-02-11T18:00:00Z",
-            "notes": "Commits 36c69f2 + bae4890. JDGalleryView, JDArtworkDetailView, JDGalleryService. 85 pieces on R2."
+            "notes": "Commits 36c69f2 + bae4890. 120 pieces on R2."
         },
         {
             "id": "feature-20260211-3",
             "title": "Printful print-on-demand integration",
-            "description": "White-label print store: users order canvas prints from JD Gallery via Printful. Zero inventory, zero shipping. 14 products created with 4 size variants each.",
+            "description": "White-label print store via Printful. 14 products created with 4 size variants each.",
             "priority": "P1",
             "requester": "Jeff",
             "project": "jd-art-gallery",
             "status": "in-progress",
             "createdAt": "2026-02-11T14:05:00Z",
-            "notes": "Printful account live (Store ID 17699313). Print Store Phase 1 UI built (PrintOrderView). Phase 2: Stripe checkout webhook Worker built but needs deploy."
+            "notes": "Printful account live. Print Store UI fully built with 7 product types. Stripe webhook Worker deployed (89f7890c). Still needs: wrangler secret put STRIPE_WEBHOOK_SECRET."
         },
         {
             "id": "feature-20260211-4",
             "title": "Subscription system (StoreKit 2)",
-            "description": "3 tiers: $4.99/mo, $39.99/yr, $1.99/mo student. PaywallView + SubscriptionManager + SubscriptionGate with demo bypass for beta.",
+            "description": "3 tiers: $4.99/mo, $39.99/yr, $1.99/mo student. PaywallView + SubscriptionManager.",
             "priority": "P1",
             "requester": "Jackbot",
             "project": "lessoncraft",
             "status": "complete",
             "createdAt": "2026-02-11T16:00:00Z",
             "completedAt": "2026-02-11T18:00:00Z",
-            "notes": "SubscriptionManager.swift, PaywallView.swift, SubscriptionGate.swift. isDemoMode=true for beta."
+            "notes": "isDemoMode=true for beta."
         },
         {
             "id": "feature-20260211-5",
             "title": "Stripe webhook for Cloudflare Worker",
-            "description": "Stripe checkout.session.completed webhook handler in aituned-api Worker. Verifies signature, creates Printful order automatically.",
+            "description": "Stripe checkout.session.completed webhook handler in aituned-api Worker.",
             "priority": "P1",
             "requester": "Jackbot",
             "project": "jd-art-gallery",
             "status": "complete",
             "createdAt": "2026-02-11T22:00:00Z",
-            "completedAt": "2026-02-11T22:45:00Z",
-            "notes": "Built by stripe-webhook-build sub-agent. Dry-run validated. Needs: wrangler secret put STRIPE_WEBHOOK_SECRET + wrangler deploy."
+            "completedAt": "2026-02-12T23:15:00Z",
+            "notes": "Deployed as worker version 89f7890c. Printful token bug fixed (standardized to PRINTFUL_API_TOKEN)."
         },
         {
             "id": "feature-20260211-6",
             "title": "jacquedubois.art gallery website",
-            "description": "Single-file dark gallery website for J. Dubois art. Filterable by collection, lightbox modal with print details, App Store link. Pulls from R2 catalog.",
+            "description": "Dark gallery website for J. Dubois art. Filterable by collection, lightbox modal, print ordering.",
             "priority": "P2",
             "requester": "Jackbot",
             "project": "jd-art-gallery",
             "status": "complete",
             "createdAt": "2026-02-11T22:00:00Z",
-            "completedAt": "2026-02-11T22:45:00Z",
-            "notes": "Built by jd-gallery-website sub-agent. Located: ~/developer/aituned-api/sites/jacquedubois.art/index.html. Needs domain registration (Jeff action)."
+            "completedAt": "2026-02-12T20:15:00Z",
+            "notes": "Rebuilt Feb 12 with all 133 real artworks. LDS art separated to /lds path. CDN cache battle resolved."
         },
         {
             "id": "feature-20260211-7",
@@ -296,7 +296,7 @@
         {
             "id": "feature-20260211-8",
             "title": "CFM episodes use dedicated R2 cover art",
-            "description": "CFM episodes now pull dedicated period-correct cover art from R2 instead of random hash-picked artwork.",
+            "description": "CFM episodes pull dedicated period-correct cover art from R2.",
             "priority": "P1",
             "requester": "Jackbot",
             "project": "lessoncraft",
@@ -304,7 +304,160 @@
             "createdAt": "2026-02-11T20:00:00Z",
             "completedAt": "2026-02-11T20:00:00Z",
             "notes": "Commit 310ddf4"
+        },
+        {
+            "id": "feature-20260212-1",
+            "title": "Morning Light calendar strip",
+            "description": "Horizontal week view (Sun-Sat) with artwork thumbnails per day, today auto-scrolled with gold ring, tap to play.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T23:00:00Z",
+            "notes": "MorningLightCalendarStrip.swift — commit bc8b2d9"
+        },
+        {
+            "id": "feature-20260212-2",
+            "title": "Easter calendar strip with notifications",
+            "description": "Maps 15 episodes to real dates (Mar 24–Apr 8). Auto-scroll to today, artwork thumbnails. Local notifications at 7:30 AM each day.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T23:00:00Z",
+            "notes": "EasterCalendarStrip.swift — commit 6987a85"
+        },
+        {
+            "id": "feature-20260212-3",
+            "title": "Image-backed intent cards on HomeView",
+            "description": "New ImageIntentCard component replaces flat gradient SquareIntentCard. All 4 HomeView cards now image-backed.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T23:00:00Z",
+            "notes": "Commits 86d4539, 4e34b47"
+        },
+        {
+            "id": "feature-20260212-4",
+            "title": "Study tab redesign",
+            "description": "Morning Light at top, compact CFM horizontal scroll, Easter timeline, Firesides list. Less image-heavy.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T23:00:00Z",
+            "notes": "Commit 88d4061"
+        },
+        {
+            "id": "feature-20260212-5",
+            "title": "Multi-product print store upgrade",
+            "description": "7 product types (canvas wrap, framed canvas, framed poster, framed poster w/ mat, metal print, poster w/ hanger, rolled poster). Frame color picker with visual swatches. Product-aware size/price matrix.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T23:15:00Z",
+            "notes": "Commit f6b711d. iOS build verified."
+        },
+        {
+            "id": "feature-20260212-6",
+            "title": "Gallery category browser with filter chips",
+            "description": "JDGalleryView with 9 category filter chips (All, Jesus Christ, Art Nouveau, Sacred, etc.). Each chip has icon + title + count badge.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T19:00:00Z",
+            "completedAt": "2026-02-12T19:30:00Z",
+            "notes": "Commit 227275d. 133-artwork catalog uploaded to R2 REMOTE."
+        },
+        {
+            "id": "feature-20260212-7",
+            "title": "Universal share for all episode types",
+            "description": "Full text + smart link sharing for ALL episode types, not just Morning Light.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T23:00:00Z",
+            "notes": "Commit 1cf445e. Share URL: aituned.io/listen/{id}"
+        },
+        {
+            "id": "feature-20260212-8",
+            "title": "In-app Privacy Policy + Terms of Service",
+            "description": "Native in-app Privacy Policy and Terms of Service screens. Required for App Store submission.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T23:30:00Z",
+            "notes": "Commit f88eea6"
+        },
+        {
+            "id": "feature-20260212-9",
+            "title": "HVAC Research skill for FieldLearner content",
+            "description": "Content scraping toolkit: blog scraper, topic classifier, YouTube indexer, search aggregator. 77 articles + 30 videos + 245 sources.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "fieldlearner",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T18:00:00Z",
+            "notes": "Skill at ~/Jackbot/skills/hvac-research/. Content shared with JCI bot."
+        },
+        {
+            "id": "feature-20260212-10",
+            "title": "aituned.io B2B enterprise rewrite",
+            "description": "Rewrote aituned.io as B2B enterprise AI platform. 6 industries. Removed all faith-based content.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "aituned-io",
+            "status": "complete",
+            "createdAt": "2026-02-12T00:00:00Z",
+            "completedAt": "2026-02-12T18:00:00Z",
+            "notes": "Deployed to Cloudflare Pages."
+        },
+        {
+            "id": "feature-20260212-11",
+            "title": "TikTok account + content strategy",
+            "description": "TikTok account created for Gospel Tuned brand. Strategy: 2-3x/day art reveals, scripture cards, Morning Light clips.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "tiktok-pipeline",
+            "status": "in-progress",
+            "createdAt": "2026-02-12T19:50:00Z",
+            "notes": "Account created. Need TikTok handle from Jeff. Video pipeline build pending."
+        },
+        {
+            "id": "feature-20260212-12",
+            "title": "Print store orientation-aware previews + frame mockups",
+            "description": "Jeff wants: orientation-aware previews, frame mockup around image, size selector showing actual image, frame color picker, product type selector.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "lessoncraft",
+            "status": "in-progress",
+            "createdAt": "2026-02-12T22:00:00Z",
+            "notes": "Wall preview now renders frame borders with selected frame color. Further polish needed."
+        },
+        {
+            "id": "feature-20260212-13",
+            "title": "LDS art separated from public gallery website",
+            "description": "gallery.html: 79 public artworks. lds.html: 35 LDS-specific pieces at /lds path.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "jd-art-gallery",
+            "status": "complete",
+            "createdAt": "2026-02-12T22:30:00Z",
+            "completedAt": "2026-02-12T22:30:00Z",
+            "notes": "Keeps gallery appropriate for all-faith audience."
         }
     ]
 }
-

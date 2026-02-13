@@ -3,15 +3,15 @@
         {
             "id": "directive-1",
             "title": "Finish LessonCraft TestFlight build",
-            "description": "RC1 Gold Copy v1.0.0 build 2 shipped (commit 12674f5). Live Session removed, 28 dead files cleaned, 92 debug prints stripped. Privacy Policy URL updated to aituned.io/privacy. Jeff needs to git pull → Xcode Archive → TestFlight upload.",
+            "description": "RC1 Gold Copy v1.0.0 build 2 shipped (commit 12674f5). Live Session removed, dead files cleaned, debug prints stripped. Jeff needs to git pull → Xcode Archive → TestFlight upload.",
             "category": "Feature Request",
             "project": "lessoncraft",
             "status": "Blocked",
             "priority": "P1",
             "createdAt": "2026-02-06T10:00:00Z",
-            "updatedAt": "2026-02-12T05:10:00Z",
+            "updatedAt": "2026-02-13T05:21:00Z",
             "createdBy": "Jeff",
-            "notes": "Code is 100% ready. Blocked on Jeff: git pull → Xcode Archive → TestFlight upload + update Privacy Policy URL in App Store Connect."
+            "notes": "Code is ready. Still blocked on Jeff actions: git pull, archive, upload, and App Store Connect Privacy Policy URL update."
         },
         {
             "id": "directive-2",
@@ -47,8 +47,8 @@
             "status": "Complete",
             "createdBy": "Jeff",
             "createdAt": "2026-02-06T17:29:14.193Z",
-            "updatedAt": "2026-02-12T05:10:00Z",
-            "notes": "RC1 Gold Copy shipped Feb 11. Full UI refinement: JD Gallery, subscription paywall, print store, episode descriptions, discussion question formatting, gallery card layout fixes. 15 commits on Feb 11 alone."
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Further refined Feb 12: Morning Light calendar strip, Easter calendar strip, image-backed cards, Study tab redesign, print store expansion."
         },
         {
             "id": "directive-20260210-1",
@@ -60,8 +60,8 @@
             "status": "Complete",
             "createdBy": "Jeff",
             "createdAt": "2026-02-10T11:58:00Z",
-            "updatedAt": "2026-02-11T05:07:00Z",
-            "notes": "126/126 episodes with audio verified streaming. R2 pagination bug fixed. All MP3s pass HTTP 200. Accept-Ranges header added for scrubbing."
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Catalog reports 126/126 episodes with audioAvailable=true. Segment-level audio URLs populated across all 6 series."
         },
         {
             "id": "directive-20260210-2",
@@ -85,8 +85,8 @@
             "status": "In Progress",
             "createdBy": "Jeff",
             "createdAt": "2026-02-10T12:06:00Z",
-            "updatedAt": "2026-02-11T05:07:00Z",
-            "notes": "Nightly cron running. This is the first automated audit."
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Nightly audit executed again Feb 12/13 with full tracker refresh."
         },
         {
             "id": "directive-20260210-4",
@@ -98,13 +98,13 @@
             "status": "In Progress",
             "createdBy": "Jeff",
             "createdAt": "2026-02-10T00:00:00Z",
-            "updatedAt": "2026-02-11T05:07:00Z",
-            "notes": "113 pieces in R2. 20 more diverse pieces being generated. Social pipeline not yet built."
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Gallery now at 120 artworks. TikTok account created. Posting pipeline still being built."
         },
         {
             "id": "directive-20260204-1",
             "title": "NO TABLES in Telegram",
-            "description": "Jeff can't read tables on mobile. Bullet points ONLY. Stop ignoring this.",
+            "description": "Jeff can't read tables on mobile. Bullet points ONLY.",
             "category": "Clarification",
             "project": "command-center",
             "priority": "P1",
@@ -116,7 +116,7 @@
         {
             "id": "directive-20260204-2",
             "title": "A+ quality or don't ship",
-            "description": "No halfass work. Every feature fully functional, thoroughly planned. Games must be real study tools. No placeholders in production.",
+            "description": "No halfass work. Every feature fully functional, thoroughly planned. No placeholders in production.",
             "category": "Clarification",
             "project": "lessoncraft",
             "priority": "P1",
@@ -128,7 +128,7 @@
         {
             "id": "directive-20260210-5",
             "title": "Gospel Tuned AI branding — no generic 'AI' in user-facing text",
-            "description": "All user-facing references must say 'Gospel Tuned AI' or 'AITuned', never just 'AI'. ~20 references updated across app. Standing rule.",
+            "description": "All user-facing references must say 'Gospel Tuned AI' or 'AITuned', never just 'AI'.",
             "category": "Clarification",
             "project": "lessoncraft",
             "priority": "P1",
@@ -141,7 +141,7 @@
         {
             "id": "directive-20260210-6",
             "title": "Question-driven class engagement, not lecture-with-questions",
-            "description": "Class Engagement must be facilitated discussion — 70% sharing / 30% teaching. Big opening question, sections driven by engagement questions. Must fill FULL selected time.",
+            "description": "Class Engagement must be facilitated discussion — 70% sharing / 30% teaching.",
             "category": "Priority Change",
             "project": "lessoncraft",
             "priority": "P1",
@@ -149,12 +149,12 @@
             "createdBy": "Jeff",
             "createdAt": "2026-02-10T00:00:00Z",
             "updatedAt": "2026-02-11T05:07:00Z",
-            "notes": "Commits b896566 + c61bec5. Duration scaling up to 8 sections."
+            "notes": "Commits b896566 + c61bec5."
         },
         {
             "id": "directive-20260210-7",
             "title": "Each card needs unique artwork — no repeats",
-            "description": "Jeff: 'each card has an appropriate related image and don't repeat images'. Curated 1:1 mapping + assignUniqueArtwork() for deduplication.",
+            "description": "Each card has an appropriate related image and don't repeat images.",
             "category": "Feature Request",
             "project": "lessoncraft",
             "priority": "P1",
@@ -162,12 +162,12 @@
             "createdBy": "Jeff",
             "createdAt": "2026-02-10T00:00:00Z",
             "updatedAt": "2026-02-11T05:07:00Z",
-            "notes": "Commit 94c9a17. Fireside-to-artwork 1:1 mapping + hash-based fallback."
+            "notes": "Commit 94c9a17."
         },
         {
             "id": "directive-20260210-8",
             "title": "Voice roster locked — 6 narrators, 5 voices",
-            "description": "Jeff auditioned 9 voices and locked in final roster: Jared/Cedar (CFM male), Nathan/Ash (Firesides male), Sarah/Nova (CFM female), Emily/Marin (Morning Light), Hannah/Sage (Easter), Kristi/Nova (Firesides female).",
+            "description": "Final roster: Jared/Cedar, Nathan/Ash, Sarah/Nova, Emily/Marin, Hannah/Sage, Kristi/Nova.",
             "category": "Clarification",
             "project": "lessoncraft-content",
             "priority": "P1",
@@ -175,47 +175,111 @@
             "createdBy": "Jeff",
             "createdAt": "2026-02-10T00:00:00Z",
             "updatedAt": "2026-02-11T05:07:00Z",
-            "notes": "Commits 16806fc → a2bdbce. TTS proxy updated. Existing audio still uses old voices — re-gen is future job."
-        }
+            "notes": "Regeneration complete (267 files)."
+        },
         {
             "id": "directive-20260211-1",
             "title": "Build JD Art Gallery in app TODAY",
-            "description": "Jeff directive: Build gallery browser, put jump-to-gallery on home screen, make art 4K for Printful print ordering. Register jacquedubois.art domain.",
+            "description": "Build gallery browser, add home jump-to-gallery, make art 4K for Printful, register jacquedubois.art domain.",
             "category": "Feature Request",
             "project": "jd-art-gallery",
             "priority": "P1",
-            "status": "Complete",
+            "status": "In Progress",
             "createdBy": "Jeff",
             "createdAt": "2026-02-11T12:30:00Z",
-            "updatedAt": "2026-02-12T05:10:00Z",
-            "notes": "Gallery UI in app (commit 36c69f2), 85 pieces on R2, Printful account live with 14 products, Stripe webhook Worker built, jacquedubois.art website built. Domain registration still pending (Jeff action)."
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Gallery + print ordering shipped. Website live with real images. Remaining Jeff action: domain registration/admin completion."
         },
         {
             "id": "directive-20260211-2",
             "title": "CFM Teaching Coach — inline term explanations + teaching segment",
-            "description": "Jeff approved Teaching Coach enhancement: inline technical term explanations during narration + dedicated Teaching Coach segment after deep dive closing. Warm close with varied encouragement.",
+            "description": "Add inline technical term explanations during narration + dedicated Teaching Coach segment after deep dive closing.",
             "category": "Feature Request",
             "project": "lessoncraft-content",
             "priority": "P1",
             "status": "In Progress",
             "createdBy": "Jeff",
             "createdAt": "2026-02-11T10:23:00Z",
-            "updatedAt": "2026-02-12T05:10:00Z",
-            "notes": "Jeff said 'Yes! Love it.' Spec written. Sample generated for Week 7 (commit d9c7a0b). Full rollout to all 52 weeks pending."
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Week 7 sample generated and approved directionally. Full 52-week rollout pending."
         },
         {
             "id": "directive-20260211-3",
             "title": "Altus Fine Art inspiration — multiple art style collections",
-            "description": "Jeff wants JD Gallery to have MULTIPLE style collections (not just devotional realism). Sacrocubism, geometric temples, minimalist line art, American folk art, patriotic art.",
+            "description": "JD Gallery should include multiple style collections (sacrocubism, geometric temples, minimalist line art, folk art, patriotic, etc.).",
             "category": "Clarification",
             "project": "jd-art-gallery",
             "priority": "P2",
             "status": "In Progress",
             "createdBy": "Jeff",
             "createdAt": "2026-02-11T12:26:00Z",
-            "updatedAt": "2026-02-12T05:10:00Z",
-            "notes": "85 pieces now span 7 collections: sacred(23), art-nouveau(28), devotional(10), parables(10), patriotic(6), folk-art(5), landscapes(3). Continuing to expand."
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Catalog expanded to 120 artworks across 9+ collections."
+        },
+        {
+            "id": "directive-20260212-1",
+            "title": "Move heartbeat processing off main chat",
+            "description": "Do not show heartbeat processing in Jeff's main Telegram chat. Run heartbeat on ops agent only.",
+            "category": "Bug Fix",
+            "project": "command-center",
+            "priority": "P1",
+            "status": "Complete",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-12T12:00:00Z",
+            "updatedAt": "2026-02-12T18:30:00Z",
+            "notes": "Heartbeat removed from agents.defaults and moved to ops agent only. Ops model set to Haiku."
+        },
+        {
+            "id": "directive-20260212-2",
+            "title": "Use Codex/Kimi for research and scraping work",
+            "description": "Use cheaper models (Codex or Kimi2.5) for research/scraping/build tasks instead of Opus when possible.",
+            "category": "Priority Change",
+            "project": "command-center",
+            "priority": "P1",
+            "status": "In Progress",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-12T18:45:00Z",
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Applied to HVAC research sub-agent. Continue applying across ops/research flows."
+        },
+        {
+            "id": "directive-20260212-3",
+            "title": "Fix jacquedubois.art to show real artwork",
+            "description": "Site was showing placeholder color blocks. Must show real gallery images and verify live URL before claiming done.",
+            "category": "Bug Fix",
+            "project": "jd-art-gallery",
+            "priority": "P1",
+            "status": "Complete",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-12T20:00:00Z",
+            "updatedAt": "2026-02-12T20:30:00Z",
+            "notes": "Rebuilt site from live catalog, resolved cache issues, confirmed deploy URL and custom domain."
+        },
+        {
+            "id": "directive-20260212-4",
+            "title": "HomeView square cards layout approved",
+            "description": "Row 1: Prepare + Learn squares. Row 2: This Week's Study + JD Gallery squares. Be Inspired bar below.",
+            "category": "Clarification",
+            "project": "lessoncraft",
+            "priority": "P1",
+            "status": "Complete",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-12T20:10:00Z",
+            "updatedAt": "2026-02-12T20:10:00Z",
+            "notes": "Implemented and pushed in commit 4544852."
+        },
+        {
+            "id": "directive-20260212-5",
+            "title": "Print store expansion with realistic previews",
+            "description": "Add orientation-aware previews, frame mockup around image, size selector with actual image fit, frame color picker, and product type selector.",
+            "category": "Feature Request",
+            "project": "lessoncraft",
+            "priority": "P1",
+            "status": "In Progress",
+            "createdBy": "Jeff",
+            "createdAt": "2026-02-12T22:00:00Z",
+            "updatedAt": "2026-02-13T05:21:00Z",
+            "notes": "Major portion shipped (7 product types + frame colors + checkout flow). Additional preview polish still pending."
         }
     ]
 }
-

@@ -4,34 +4,34 @@
             "id": "lessoncraft",
             "name": "LessonCraft",
             "status": "active",
-            "progress": 93,
+            "progress": 95,
             "nextAction": "Jeff: git pull → Xcode Archive → TestFlight upload. Update Privacy Policy URL in App Store Connect to https://aituned.io/privacy",
             "owner": "Jeff (blocked on Xcode build)",
             "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, and study tools",
             "priority": "high",
-            "lastMilestone": "RC1 Gold Copy v1.0.0 build 2 shipped (commit 12674f5). Subscription system (StoreKit 2), JD Art Gallery, Print Store UI, share cards, episode descriptions, discussion question fixes — all shipped Feb 11"
+            "lastMilestone": "Feb 12: Major UI overhaul — Morning Light calendar strip, Easter calendar strip with notifications (Mar 24–Apr 8), image-backed intent cards, Study tab redesign, multi-product print store (7 product types + frame colors), share URL fix (aituned.io/listen), gallery category browser with 9 filter chips, square HomeView cards, in-app Privacy Policy & Terms of Service. All pushed to origin/main."
         },
         {
             "id": "lessoncraft-content",
             "name": "LessonCraft Content Pipeline",
             "status": "active",
             "progress": 100,
-            "nextAction": "Build CFM Teaching Coach segments (Jeff approved Feb 11). Sample generated for Week 7 (commit d9c7a0b).",
+            "nextAction": "Complete CFM Teaching Coach rollout to all 52 weeks (sample approved for Week 7). Generate TikTok video content for art reveals.",
             "owner": "Jackbot",
-            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), artwork library (113+ pieces)",
+            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), artwork library (120+ pieces)",
             "priority": "high",
-            "lastMilestone": "Voice re-generation COMPLETE — 267 files, 0 failures. All 6 narrators on final roster (Cedar/Jared, Ash/Nathan, Nova/Sarah, Marin/Emily, Sage/Hannah, Nova/Kristi). 126/126 episodes with audio on R2."
+            "lastMilestone": "126/126 episodes with audio on R2 (verified Feb 12). Voice re-generation complete — 267 files, 0 failures. All 6 narrators on final roster. Catalog v1 live at api.aituned.io/api/catalog."
         },
         {
             "id": "jd-art-gallery",
             "name": "JD Art Gallery & Print Store",
             "status": "active",
-            "progress": 70,
-            "nextAction": "Print Store Phase 2: deploy Stripe webhook Worker (built, needs wrangler deploy + secret). Upload remaining 4K files to R2. Register jacquedubois.art domain (Jeff action).",
+            "progress": 85,
+            "nextAction": "Deploy Stripe webhook secret (wrangler secret put). Jeff: register jacquedubois.art domain. Expand gallery to 150+ pieces. Build orientation-aware print previews with frame mockups.",
             "owner": "Jackbot",
-            "description": "Jacque Dubois Fine Art Gallery — in-app gallery browser, Printful print-on-demand integration, Stripe checkout. 85 gallery pieces on R2. jacquedubois.art website built. Print purchase = 1 free month premium.",
+            "description": "Jacque Dubois Fine Art Gallery — in-app gallery browser, Printful print-on-demand integration, Stripe checkout. 120 gallery pieces on R2 across 9 collections. jacquedubois.art website live. Print purchase = 1 free month premium.",
             "priority": "high",
-            "lastMilestone": "Gallery UI in app (commit 36c69f2), 14 Printful products created, Stripe webhook Worker built, jacquedubois.art website built — all Feb 11"
+            "lastMilestone": "Feb 12: Print store upgraded to 7 product types (canvas wrap, framed canvas, framed poster, framed poster w/ mat, metal print, poster w/ hanger, rolled poster) + frame color picker. Gallery catalog at 120 artworks. Gallery website rebuilt with all real images. Printful token bug fixed in worker. 6 new artworks generated (jd-133 to jd-138). Worker deployed: 89f7890c."
         },
         {
             "id": "gospel-tuned",
@@ -43,6 +43,28 @@
             "description": "Multi-faith app empire: LDS (LessonCraft), Catholic, Baptist (Pulpit Prep), Methodist (Wesley's Way), Lutheran, Buddhist, Bahá'í. Research complete for all faiths.",
             "priority": "high",
             "needsDecision": false
+        },
+        {
+            "id": "aituned-io",
+            "name": "AITuned.io Website",
+            "status": "active",
+            "progress": 90,
+            "nextAction": "Monitor site. Add case studies and testimonials as they come in.",
+            "owner": "Jackbot",
+            "description": "B2B enterprise AI platform website. Rewritten Feb 12 — removed all faith-based content. 6 industries: Healthcare, Legal, Financial Services, Manufacturing, Energy & Utilities, Construction. Deployed on Cloudflare Pages.",
+            "priority": "medium",
+            "lastMilestone": "Feb 12: Complete B2B enterprise rewrite deployed. Contact email updated to support@tredtechnologies.com."
+        },
+        {
+            "id": "fieldlearner",
+            "name": "FieldLearner (JCI Training App)",
+            "status": "active",
+            "progress": 90,
+            "nextAction": "JCI Bot handles this — feed content when available. Domain: fieldlearner.com. Crons DISABLED.",
+            "owner": "JCI Bot (partner: Sharie Ellis)",
+            "description": "Commercial HVAC field training app for JCI. 6 modules, 36 lessons, 150 quiz questions. Built by separate JCI bot agent. Jackbot provides HVAC content scraping support.",
+            "priority": "low",
+            "lastMilestone": "Feb 12: HVAC Research skill built (77 blog articles, 30 YouTube videos, 245 search sources). Content shared with JCI bot. fieldlearner.com DNS configured."
         },
         {
             "id": "scrollwork",
@@ -102,23 +124,23 @@
             "id": "ai-tuned-art",
             "name": "AI Tuned Art Library",
             "status": "active",
-            "progress": 80,
-            "nextAction": "Continue artwork diversity improvements. Artwork similarity audit in progress. Social media content pipeline not yet built.",
+            "progress": 85,
+            "nextAction": "Expand gallery to 150+ pieces. Build TikTok video pipeline (art reveals + scripture overlays). Continue artwork diversity improvements.",
             "owner": "Jackbot",
-            "description": "Original AI-generated LDS devotional artwork. 85 JD Gallery pieces + 113 content artwork pieces on R2. Multiple collections: Sacred, Patriotic, Folk Art, Watercolor, Art Nouveau, Parables, Landscapes, Devotional. Generator: Gemini.",
+            "description": "Original AI-generated LDS devotional artwork. 120 JD Gallery pieces + 113 content artwork pieces on R2. 9 collections: sacred, art-nouveau, devotional, parables, patriotic, folk-art, landscapes, restoration-nouveau, book-of-mormon, life-of-christ, geometric. Generator: Gemini.",
             "priority": "medium",
-            "lastMilestone": "85 JD Gallery pieces on R2 catalog. 15 hand-curated + 70 generated. Collections: sacred(23), art-nouveau(28), devotional(10), parables(10), patriotic(6), folk-art(5), landscapes(3). Feb 11."
+            "lastMilestone": "Feb 12: Gallery expanded to 120 pieces (was 85). 3 new collections added. Gallery category browser with 9 filter chips shipped in app. LDS art separated from public gallery on website."
         },
         {
             "id": "command-center",
             "name": "Command Center",
             "status": "active",
-            "progress": 80,
+            "progress": 85,
             "nextAction": "Keep tracker data fresh via nightly audit. Add more dashboard views as needed.",
             "owner": "Jackbot",
             "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron.",
             "priority": "medium",
-            "lastMilestone": "Media dashboard shipped, nightly tracker audit cron installed — Feb 10"
+            "lastMilestone": "Feb 12: Second nightly tracker audit running successfully."
         },
         {
             "id": "javabean",
@@ -129,7 +151,18 @@
             "owner": "Jackbot",
             "description": "TTS infrastructure — ElevenLabs + local XTTS cloning. Voices: Jackbot (9T9v), Codex/Samuel (vDch), Tayler, KIMI/Amelie, SultrySara.",
             "priority": "medium"
+        },
+        {
+            "id": "tiktok-pipeline",
+            "name": "TikTok Content Pipeline",
+            "status": "active",
+            "progress": 15,
+            "nextAction": "Get TikTok handle from Jeff. Build ffmpeg video pipeline (JD Gallery art + scripture overlays). First batch of art reveal videos.",
+            "owner": "Jackbot",
+            "description": "TikTok + YouTube Shorts content pipeline. Brand: Gospel Tuned — Christ-centered, non-denominational, uplifting. 2-3 posts/day: art reveals, scripture cards, Morning Light clips. Account created via jackbotwoolums@gmail.com.",
+            "priority": "medium",
+            "lastMilestone": "Feb 12: TikTok account created. Strategy defined. Need handle from Jeff before posting."
         }
     ],
-    "lastUpdated": "2026-02-12T05:10:00Z"
+    "lastUpdated": "2026-02-13T05:21:00Z"
 }
