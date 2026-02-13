@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import ProjectCards from '@/components/dashboard/ProjectCards'
-import KanbanBoard from '@/components/dashboard/KanbanBoard'
+import EnhancedKanbanBoard from '@/components/dashboard/EnhancedKanbanBoard'
 import CalendarTimeline from '@/components/dashboard/CalendarTimeline'
 import BlockersPanel from '@/components/dashboard/BlockersPanel'
 import AgentStatusPanel from '@/components/dashboard/AgentStatusPanel'
@@ -174,6 +174,20 @@ export default function CommandCenter() {
                 ))}
               </div>
 
+              <a
+                href="/memory"
+                className="px-3 py-2 rounded-md text-sm font-medium border border-blue-500/40 bg-blue-500/10 text-blue-200 hover:bg-blue-500/20 transition-all"
+              >
+                🧠 Memory
+              </a>
+
+              <a
+                href="/kanban"
+                className="px-3 py-2 rounded-md text-sm font-medium border border-amber-500/40 bg-amber-500/10 text-amber-200 hover:bg-amber-500/20 transition-all"
+              >
+                📋 Kanban
+              </a>
+              
               <a
                 href="/lessoncraft"
                 className="px-3 py-2 rounded-md text-sm font-medium border border-purple-500/40 bg-purple-500/10 text-purple-200 hover:bg-purple-500/20 transition-all"
@@ -366,7 +380,7 @@ export default function CommandCenter() {
             {viewMode === 'projects' && (
               <div className="space-y-6">
                 <h2 className="text-2xl font-bold text-amber-400">📂 All Projects</h2>
-                <KanbanBoard initialTasks={data.tasks} onTaskMove={handleTaskMove} />
+                <EnhancedKanbanBoard />
               </div>
             )}
 
