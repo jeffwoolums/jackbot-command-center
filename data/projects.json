@@ -4,56 +4,57 @@
             "id": "lessoncraft",
             "name": "LessonCraft",
             "status": "active",
-            "progress": 95,
-            "nextAction": "Jeff: git pull → Xcode Archive → TestFlight upload. Update Privacy Policy URL in App Store Connect to https://aituned.io/privacy",
-            "owner": "Jeff (blocked on Xcode build)",
+            "progress": 96,
+            "nextAction": "Jeff: Fix App Store Connect API key (401 error). Then git pull → Xcode Archive → TestFlight upload. Build 6 archive exists at ~/LessonCraft.xcarchive but cannot upload without credentials on Mac mini.",
+            "owner": "Jeff (blocked on Xcode build + API key)",
             "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, and study tools",
             "priority": "high",
-            "lastMilestone": "Feb 12: Major UI overhaul — Morning Light calendar strip, Easter calendar strip with notifications (Mar 24–Apr 8), image-backed intent cards, Study tab redesign, multi-product print store (7 product types + frame colors), share URL fix (aituned.io/listen), gallery category browser with 9 filter chips, square HomeView cards, in-app Privacy Policy & Terms of Service. All pushed to origin/main."
+            "lastMilestone": "Feb 13: Print store polish (orientation-aware sizing + real artwork thumbnails), SCREENSHOT_MODE env gating, Launch Day Playbook written, repo cleanup (.gitignore + stray files). Commits: 6c2eea7, 49f1b96. Jeff still testing on old build 5 — build 6 archive ready but upload blocked."
         },
         {
             "id": "lessoncraft-content",
             "name": "LessonCraft Content Pipeline",
             "status": "active",
             "progress": 100,
-            "nextAction": "Complete CFM Teaching Coach rollout to all 52 weeks (sample approved for Week 7). Generate TikTok video content for art reveals.",
+            "nextAction": "Complete CFM Teaching Coach rollout to all 52 weeks (Week 7 sample approved). Generate TikTok video content for art reveals.",
             "owner": "Jackbot",
-            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), artwork library (120+ pieces)",
+            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), artwork library (222+ pieces)",
             "priority": "high",
-            "lastMilestone": "126/126 episodes with audio on R2 (verified Feb 12). Voice re-generation complete — 267 files, 0 failures. All 6 narrators on final roster. Catalog v1 live at api.aituned.io/api/catalog."
+            "lastMilestone": "Feb 14 audit: R2 catalog verified — 126/126 episodes with audio. Breakdown: CFM 52/52, Easter Final Week 7/7, Easter Shadows & Types 5/5, Easter Empty Tomb 3/3, Morning Light 49/49, Firesides 10/10. All 6 narrators on final roster."
         },
         {
             "id": "jd-art-gallery",
             "name": "JD Art Gallery & Print Store",
             "status": "active",
-            "progress": 85,
-            "nextAction": "Deploy Stripe webhook secret (wrangler secret put). Jeff: register jacquedubois.art domain. Expand gallery to 150+ pieces. Build orientation-aware print previews with frame mockups.",
+            "progress": 89,
+            "nextAction": "Deploy Stripe webhook secret (wrangler secret put). Expand gallery toward 250+ pieces. Build orientation-aware print previews with frame mockups. Continue nightly art generation.",
             "owner": "Jackbot",
-            "description": "Jacque Dubois Fine Art Gallery — in-app gallery browser, Printful print-on-demand integration, Stripe checkout. 120 gallery pieces on R2 across 9 collections. jacquedubois.art website live. Print purchase = 1 free month premium.",
+            "description": "Jacque Dubois Fine Art Gallery — in-app gallery browser, Printful print-on-demand integration, Stripe checkout. 222 gallery pieces locally (120+ on R2) across 9+ collections. jacquedubois.art website live with About the Artist page. Print purchase = 1 free month premium.",
             "priority": "high",
-            "lastMilestone": "Feb 12: Print store upgraded to 7 product types (canvas wrap, framed canvas, framed poster, framed poster w/ mat, metal print, poster w/ hanger, rolled poster) + frame color picker. Gallery catalog at 120 artworks. Gallery website rebuilt with all real images. Printful token bug fixed in worker. 6 new artworks generated (jd-133 to jd-138). Worker deployed: 89f7890c."
+            "lastMilestone": "Feb 13 night: About the Artist page added to jacquedubois.art (commit 9a9d61f). 400px thumbnails deployed. Image protection (right-click + hotlink blocking). Nightly art gen active (jd-169+). 222 local PNGs total."
         },
         {
             "id": "gospel-tuned",
             "name": "Gospel Tuned Empire",
-            "status": "planning",
-            "progress": 25,
-            "nextAction": "Extract shared Swift Package core from LessonCraft for multi-faith apps",
+            "status": "active",
+            "progress": 28,
+            "nextAction": "GospelTunedCore Swift Package extraction sub-agent still running. Review output when complete and merge.",
             "owner": "Jackbot",
             "description": "Multi-faith app empire: LDS (LessonCraft), Catholic, Baptist (Pulpit Prep), Methodist (Wesley's Way), Lutheran, Buddhist, Bahá'í. Research complete for all faiths.",
             "priority": "high",
-            "needsDecision": false
+            "needsDecision": false,
+            "lastMilestone": "Feb 13: GospelTunedCore Swift Package extraction sub-agent spawned (Sonnet). Still running as of Feb 14 audit."
         },
         {
             "id": "aituned-io",
             "name": "AITuned.io Website",
             "status": "active",
-            "progress": 90,
-            "nextAction": "Monitor site. Add case studies and testimonials as they come in.",
+            "progress": 93,
+            "nextAction": "Verify aituned-privacy-landing sub-agent output. Add LessonCraft marketing page link to main nav.",
             "owner": "Jackbot",
-            "description": "B2B enterprise AI platform website. Rewritten Feb 12 — removed all faith-based content. 6 industries: Healthcare, Legal, Financial Services, Manufacturing, Energy & Utilities, Construction. Deployed on Cloudflare Pages.",
+            "description": "B2B enterprise AI platform website + LessonCraft marketing/privacy pages. Rewritten Feb 12 — removed all faith-based content. 6 industries. Deployed on Cloudflare Pages.",
             "priority": "medium",
-            "lastMilestone": "Feb 12: Complete B2B enterprise rewrite deployed. Contact email updated to support@tredtechnologies.com."
+            "lastMilestone": "Feb 13: LessonCraft marketing + privacy policy pages deployed (commit 76cd1dc). Sub-agent aituned-privacy-landing spawned to enhance pages further."
         },
         {
             "id": "fieldlearner",
@@ -124,12 +125,12 @@
             "id": "ai-tuned-art",
             "name": "AI Tuned Art Library",
             "status": "active",
-            "progress": 85,
-            "nextAction": "Expand gallery to 150+ pieces. Build TikTok video pipeline (art reveals + scripture overlays). Continue artwork diversity improvements.",
+            "progress": 89,
+            "nextAction": "Continue nightly generation toward 250+ pieces. Upload new artworks to R2 + update catalog. Build TikTok video pipeline (art reveals + scripture overlays).",
             "owner": "Jackbot",
-            "description": "Original AI-generated LDS devotional artwork. 120 JD Gallery pieces + 113 content artwork pieces on R2. 9 collections: sacred, art-nouveau, devotional, parables, patriotic, folk-art, landscapes, restoration-nouveau, book-of-mormon, life-of-christ, geometric. Generator: Gemini.",
+            "description": "Original AI-generated LDS devotional artwork. 222 JD Gallery PNGs locally + 120 on R2. 9+ collections: sacred, art-nouveau, devotional, parables, patriotic, folk-art, landscapes, restoration-nouveau, book-of-mormon, life-of-christ, geometric, watercolor, contemporary-sacred. Generator: Gemini.",
             "priority": "medium",
-            "lastMilestone": "Feb 12: Gallery expanded to 120 pieces (was 85). 3 new collections added. Gallery category browser with 9 filter chips shipped in app. LDS art separated from public gallery on website."
+            "lastMilestone": "Feb 14 audit: 222 local PNGs confirmed. Nightly art gen sub-agent active (jd-169+ being produced via Gemini). Art agent hit context overflow (316K > 200K limit) — needs session reset."
         },
         {
             "id": "command-center",
@@ -140,7 +141,7 @@
             "owner": "Jackbot",
             "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron.",
             "priority": "medium",
-            "lastMilestone": "Feb 12: Second nightly tracker audit running successfully."
+            "lastMilestone": "Feb 14: Fourth nightly tracker audit executed successfully. R2 content verified 126/126. Sub-agent status checked."
         },
         {
             "id": "javabean",
@@ -156,13 +157,24 @@
             "id": "tiktok-pipeline",
             "name": "TikTok Content Pipeline",
             "status": "active",
-            "progress": 15,
-            "nextAction": "Get TikTok handle from Jeff. Build ffmpeg video pipeline (JD Gallery art + scripture overlays). First batch of art reveal videos.",
+            "progress": 45,
+            "nextAction": "Get TikTok handle from Jeff. Post first batch of art reveal videos. Execute strategy from tiktok-strategy-research.md.",
             "owner": "Jackbot",
             "description": "TikTok + YouTube Shorts content pipeline. Brand: Gospel Tuned — Christ-centered, non-denominational, uplifting. 2-3 posts/day: art reveals, scripture cards, Morning Light clips. Account created via jackbotwoolums@gmail.com.",
             "priority": "medium",
-            "lastMilestone": "Feb 12: TikTok account created. Strategy defined. Need handle from Jeff before posting."
+            "lastMilestone": "Feb 13: TikTok video generation pipeline built (tiktok-art-reveal-final.sh + batch-generate-tiktok.sh). 3 sample videos generated. Strategy research complete. Still need TikTok handle from Jeff."
+        },
+        {
+            "id": "appstore-submission",
+            "name": "App Store Submission (LessonCraft)",
+            "status": "blocked",
+            "progress": 80,
+            "nextAction": "Jeff: Fix App Store Connect API key (401 Unauthorized) or use Xcode Organizer to distribute. Build 6 archive at ~/LessonCraft.xcarchive. Screenshot sub-agent still running.",
+            "owner": "Jeff + Jackbot",
+            "description": "LessonCraft v1.0.3 App Store submission pipeline. Includes metadata, screenshots, API key setup, TestFlight automation, and Launch Day Playbook.",
+            "priority": "high",
+            "lastMilestone": "Feb 13 night: Launch Day Playbook written (marketing/LAUNCH-DAY-PLAYBOOK.md). App Store metadata package complete (commits 2d1624b + b8d825d). Build 6 archive created. IPA exported. Upload blocked — no API key/credentials on Mac mini. Screenshots sub-agent still running. Privacy policy sub-agent building enhanced pages."
         }
     ],
-    "lastUpdated": "2026-02-13T05:21:00Z"
+    "lastUpdated": "2026-02-14T05:50:00Z"
 }

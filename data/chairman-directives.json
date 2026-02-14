@@ -3,15 +3,15 @@
         {
             "id": "directive-1",
             "title": "Finish LessonCraft TestFlight build",
-            "description": "RC1 Gold Copy v1.0.0 build 2 shipped (commit 12674f5). Live Session removed, dead files cleaned, debug prints stripped. Jeff needs to git pull → Xcode Archive → TestFlight upload.",
+            "description": "v1.0.3 build 6 archive created at ~/LessonCraft.xcarchive. IPA exported to ~/LessonCraft-export/LessonCraft.ipa. Upload to TestFlight blocked — no App Store Connect API key/credentials on Mac mini (401 Unauthorized).",
             "category": "Feature Request",
             "project": "lessoncraft",
             "status": "Blocked",
             "priority": "P1",
             "createdAt": "2026-02-06T10:00:00Z",
-            "updatedAt": "2026-02-13T05:21:00Z",
+            "updatedAt": "2026-02-14T05:50:00Z",
             "createdBy": "Jeff",
-            "notes": "Code is ready. Still blocked on Jeff actions: git pull, archive, upload, and App Store Connect Privacy Policy URL update."
+            "notes": "Build 6 ready. Jeff was testing build 5 (old code). Options: (1) Jeff opens Xcode Organizer → Distribute, or (2) provide working App Store Connect API key. Also need Privacy Policy URL update in App Store Connect to https://aituned.io/lessoncraft/privacypolicy."
         },
         {
             "id": "directive-2",
@@ -98,8 +98,8 @@
             "status": "In Progress",
             "createdBy": "Jeff",
             "createdAt": "2026-02-10T00:00:00Z",
-            "updatedAt": "2026-02-13T05:21:00Z",
-            "notes": "Gallery now at 120 artworks. TikTok account created. Posting pipeline still being built."
+            "updatedAt": "2026-02-14T05:50:00Z",
+            "notes": "Gallery now at 222 local PNGs (120+ on R2). TikTok account created. Video pipeline built (ffmpeg art reveals). Nightly art gen sub-agent actively producing jd-169+. Still need TikTok handle from Jeff to start posting."
         },
         {
             "id": "directive-20260204-1",
@@ -275,11 +275,11 @@
             "category": "Feature Request",
             "project": "lessoncraft",
             "priority": "P1",
-            "status": "In Progress",
+            "status": "Complete",
             "createdBy": "Jeff",
             "createdAt": "2026-02-12T22:00:00Z",
-            "updatedAt": "2026-02-13T05:21:00Z",
-            "notes": "Major portion shipped (7 product types + frame colors + checkout flow). Additional preview polish still pending."
+            "updatedAt": "2026-02-14T05:50:00Z",
+            "notes": "Fully shipped: 7 product types, frame colors, orientation-aware sizing, real artwork thumbnails in size cards, improved wall preview aspect handling. Sub-agent print-store-polish completed (commit 6c2eea7)."
         }
     ]
 }

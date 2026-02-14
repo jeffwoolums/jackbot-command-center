@@ -174,7 +174,7 @@
             "project": "ai-tuned-art",
             "status": "in-progress",
             "createdAt": "2026-02-10T23:00:00Z",
-            "notes": "Gallery at 120 pieces with improved diversity across 9 collections."
+            "notes": "Gallery at 222 local files with improved diversity across 9+ collections."
         },
         {
             "id": "feature-20260210-9",
@@ -434,7 +434,7 @@
             "project": "tiktok-pipeline",
             "status": "in-progress",
             "createdAt": "2026-02-12T19:50:00Z",
-            "notes": "Account created. Need TikTok handle from Jeff. Video pipeline build pending."
+            "notes": "Account created. Need TikTok handle from Jeff. Video pipeline built. Strategy research complete."
         },
         {
             "id": "feature-20260212-12",
@@ -458,6 +458,228 @@
             "createdAt": "2026-02-12T22:30:00Z",
             "completedAt": "2026-02-12T22:30:00Z",
             "notes": "Keeps gallery appropriate for all-faith audience."
+        },
+        {
+            "id": "feature-20260213-1",
+            "title": "Instructor-led lesson prompt rewrite (Grok-quality)",
+            "description": "Rewrote generateTopicSection and createTopicOutline for parallel generation with Points structure: Description → Scripture WITH TEXT → Question → Discussion Guidance. 2-3 Points per section.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T20:00:00Z",
+            "notes": "Commit 3ceed00. 126 insertions, 89 deletions. Sub-agent lesson-prompt-rewrite. End-to-end tested: GPT-4o-mini produces 4000+ word lessons with 3 Points per section."
+        },
+        {
+            "id": "feature-20260213-2",
+            "title": "CFM duration scaling + enhanced assembly",
+            "description": "cfmDurationScaling() returns section/point counts and word budgets by duration. Enhanced assembly: separate opening/closing hymns, testimony invitation, weekly challenge.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T21:00:00Z",
+            "notes": "Commit cdb5a24. Sub-agent cfm-lesson-polish."
+        },
+        {
+            "id": "feature-20260213-3",
+            "title": "CFM Week date range display",
+            "description": "shortDateRange computed property on CFMWeekCard shows 'Feb 9–15' or 'Jan 27 – Feb 2'. Current week bold + gold.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T18:00:00Z",
+            "notes": "Commit 40124c5."
+        },
+        {
+            "id": "feature-20260213-4",
+            "title": "ProfileView cleanup (support email + Privacy Policy)",
+            "description": "Fixed support email to support@tredtechnologies.com. Privacy Policy now uses in-app view instead of external URL.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T22:00:00Z",
+            "notes": "Commit cf8074b. Sub-agent profileview-fix."
+        },
+        {
+            "id": "feature-20260213-5",
+            "title": "TikTok art reveal video pipeline",
+            "description": "ffmpeg-based video generation: blur reveal + Ken Burns pan/zoom, 1080x1920 vertical, 20s. Batch processing by collection.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "tiktok-pipeline",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T22:15:00Z",
+            "notes": "Scripts: tiktok-art-reveal-final.sh + batch-generate-tiktok.sh. 3 sample videos generated. Sub-agent tiktok-pipeline."
+        },
+        {
+            "id": "feature-20260213-6",
+            "title": "Gallery thumbnail generation + lazy loading",
+            "description": "400px JPEG thumbnails for all artworks, uploaded to R2 at artwork/gallery/thumbs/{id}.jpg. Gallery HTML updated for lazy-loading.",
+            "priority": "P1",
+            "requester": "Jeff",
+            "project": "jd-art-gallery",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T22:15:00Z",
+            "notes": "400px chosen over 800px for bandwidth savings. Sub-agent gallery-thumbnails."
+        },
+        {
+            "id": "feature-20260213-7",
+            "title": "jacquedubois.art image protection",
+            "description": "Right-click disabled, CSS pointer-events:none on images, Cloudflare hotlink protection, firewall rule blocking direct /artwork/ access.",
+            "priority": "P2",
+            "requester": "Jeff",
+            "project": "jd-art-gallery",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T20:00:00Z",
+            "notes": "Gallery pages remain accessible — only direct image URLs blocked."
+        },
+        {
+            "id": "feature-20260213-8",
+            "title": "App Store Connect submission metadata",
+            "description": "Full App Store Connect metadata package: name, subtitle, description, keywords, What's New, privacy labels, reviewer notes.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "appstore-submission",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T23:00:00Z",
+            "notes": "Commits 2d1624b + b8d825d. Saved at ~/developer/LessonCraft/Marketing/AppStoreSubmission.md"
+        },
+        {
+            "id": "feature-20260213-9",
+            "title": "Delete lessoncraft-proxy worker permanently",
+            "description": "Ghost worker kept hijacking api.aituned.io route (3 times). Deleted permanently to prevent recurrence.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "complete",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "completedAt": "2026-02-13T23:00:00Z",
+            "notes": "Root cause: wrangler deploy of old worker was overwriting routes. Worker deleted entirely."
+        },
+        {
+            "id": "feature-20260213-10",
+            "title": "GospelTunedCore Swift Package extraction",
+            "description": "Extract shared Swift Package core from LessonCraft for multi-faith apps. Foundation for Catholic, Baptist, Methodist, Lutheran, Buddhist, Bahá'í apps.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "gospel-tuned",
+            "status": "in-progress",
+            "createdAt": "2026-02-13T23:16:00Z",
+            "notes": "Sub-agent gospel-tuned-package spawned (Sonnet). Still running."
+        },
+        {
+            "id": "feature-20260213-11",
+            "title": "Automated App Store screenshots via simulator",
+            "description": "Automated screenshot capture for all key screens at 1290x2796 (iPhone 16 Pro Max). Suppressing notification dialog.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "appstore-submission",
+            "status": "in-progress",
+            "createdAt": "2026-02-13T23:16:00Z",
+            "notes": "Sub-agent appstore-screenshots spawned (Sonnet). Still running."
+        },
+        {
+            "id": "feature-20260213-12",
+            "title": "Switch email checking from himalaya to gog",
+            "description": "himalaya broken for jeff.woolums@gmail.com — app password expired/revoked. gog CLI works via OAuth.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "command-center",
+            "status": "pending",
+            "createdAt": "2026-02-13T00:00:00Z",
+            "notes": "himalaya still works for jackbotwoolums@gmail.com. Only jeff.woolums@gmail.com needs migration to gog."
+        },
+        {
+            "id": "feature-20260214-1",
+            "title": "About the Artist page on jacquedubois.art",
+            "description": "Dedicated About page for Jacque Dubois persona with nav update (Gallery / Sacred Art / About). Anti-theft script included.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "jd-art-gallery",
+            "status": "complete",
+            "createdAt": "2026-02-14T00:00:00Z",
+            "completedAt": "2026-02-14T04:00:00Z",
+            "notes": "Commit 9a9d61f. Deployed to jacquedubois.art. Uses /about/index.html to avoid Cloudflare Pages clean-url redirect loop."
+        },
+        {
+            "id": "feature-20260214-2",
+            "title": "Launch Day Playbook for App Store submission",
+            "description": "Step-by-step checklist for TestFlight → App Store Connect submission including pre-launch, day-of, and post-launch tasks.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "appstore-submission",
+            "status": "complete",
+            "createdAt": "2026-02-14T00:00:00Z",
+            "completedAt": "2026-02-14T04:00:00Z",
+            "notes": "File: ~/developer/LessonCraft/marketing/LAUNCH-DAY-PLAYBOOK.md. Committed in 6c2eea7."
+        },
+        {
+            "id": "feature-20260214-3",
+            "title": "SCREENSHOT_MODE env gating for App Store screenshots",
+            "description": "Added SCREENSHOT_MODE environment variable to suppress notification permission prompts during automated screenshot capture.",
+            "priority": "P1",
+            "requester": "Jackbot",
+            "project": "appstore-submission",
+            "status": "complete",
+            "createdAt": "2026-02-14T00:00:00Z",
+            "completedAt": "2026-02-14T04:00:00Z",
+            "notes": "Included in commit 6c2eea7."
+        },
+        {
+            "id": "feature-20260214-4",
+            "title": "Tools/AI news video analysis pipeline",
+            "description": "Extracted and ranked 11 tools from 'AI News: This Video Model Has Everyone Freaked Out!' video. Analysis saved for Jeff's morning review.",
+            "priority": "P3",
+            "requester": "Jackbot",
+            "project": "command-center",
+            "status": "complete",
+            "createdAt": "2026-02-14T00:00:00Z",
+            "completedAt": "2026-02-14T04:00:00Z",
+            "notes": "Sub-agent tools-review complete. Saved to ~/Jackbot/memory/tools-review-2026-02-14.md. Top finding: GPT 5.3 Codeex Spark builds games in 50 seconds."
+        },
+        {
+            "id": "feature-20260214-5",
+            "title": "ProfileView remaining fixes (support email + privacy link)",
+            "description": "Line 1074: Privacy Policy link still points to api.aituned.io/privacy (should use in-app view). Lines 1062-1068: Contact emails still support@aituned.io (should be support@tredtechnologies.com).",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "lessoncraft",
+            "status": "pending",
+            "createdAt": "2026-02-14T00:00:00Z",
+            "notes": "Discovered during Feb 13 session review. feature-20260213-4 marked complete but these specific lines still need updating."
+        },
+        {
+            "id": "feature-20260214-6",
+            "title": "Fix nightly build cron (completes in 16ms without work)",
+            "description": "Nightly build cron jobs complete in 16ms without doing any actual work. Needs debugging to ensure sub-agents are actually spawned.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "command-center",
+            "status": "pending",
+            "createdAt": "2026-02-14T00:00:00Z",
+            "notes": "Noted in Feb 13 memory. The nightly-build-session cron DOES work (spawned 10+ sub-agents tonight), but the original nightly-build cron may be redundant or misconfigured."
+        },
+        {
+            "id": "feature-20260214-7",
+            "title": "Art agent context overflow fix",
+            "description": "Art agent (agent:art:main) hit 316K tokens > 200K limit. Session needs reset or context management.",
+            "priority": "P2",
+            "requester": "Jackbot",
+            "project": "ai-tuned-art",
+            "status": "pending",
+            "createdAt": "2026-02-14T05:47:00Z",
+            "notes": "Error: 400 invalid_request_error - prompt is too long: 316435 tokens > 200000 maximum. Discovered during nightly audit."
         }
     ]
 }
