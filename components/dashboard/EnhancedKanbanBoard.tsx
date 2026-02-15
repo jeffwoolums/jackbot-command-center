@@ -215,7 +215,7 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
             const columnTasks = getTasksByStatus(column.id)
             
             return (
-              <div key={column.id} className={`p-4 bg-slate-900 rounded-lg border-t-4 ${column.color}`}>
+              <div key={column.id} className={`p-4 bg-slate-900 rounded-lg border-t-4 flex flex-col ${column.color}`}>
                 <h3 className="font-bold text-slate-300 mb-4 flex justify-between">
                   {column.title}
                   <span className="text-slate-500 font-normal bg-slate-800 px-2 py-1 rounded-full text-xs">
@@ -228,7 +228,7 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
                     <div
                       ref={provided.innerRef}
                       {...provided.droppableProps}
-                      className={`min-h-[400px] space-y-3 transition-colors rounded-lg p-2 ${
+                      className={`flex-1 min-h-[400px] space-y-3 transition-colors rounded-lg p-2 ${
                         snapshot.isDraggingOver ? 'bg-slate-800/50 border border-slate-600 border-dashed' : ''
                       }`}
                     >
