@@ -82,10 +82,16 @@ export default function ProjectDetailModal({ project, isOpen, onClose, onTaskMov
     if (!project) return
     
     try {
-      // Fetch tasks for this project
-      const tasksRes = await fetch('/api/projects')
+      // Fetch tasks for this project from kanban API
+      const tasksRes = await fetch('/api/kanban', { cache: 'no-store' })
       const tasksData = await tasksRes.json()
-      const projectTasks = tasksData.tasks.filter((task: Task) => task.project === project.id)
+      const allTasks = tasksData.tasks || []
+      // Match tasks by project name (kanban uses project name, not id)
+      const projectTasks = allTasks.filter((task: Task) => 
+        task.project === project.name || 
+        task.project === project.id ||
+        project.name.toLowerCase().includes(task.project?.toLowerCase() || '')
+      )
       setTasks(projectTasks)
 
       // Fetch feature requests for this project
