@@ -3,3 +3,6 @@ node_modules/
 *.log
 .env*
 !.env.example
+
+# Local task cache (contains personal ops items; do not commit)
+data/kanban-tasks.json
