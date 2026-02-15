@@ -68,6 +68,7 @@ export default function CommandCenter() {
   const [spawning, setSpawning] = useState(false)
   const [selectedProject, setSelectedProject] = useState<ProjectData['projects'][0] | null>(null)
   const [showProjectDetail, setShowProjectDetail] = useState(false)
+  const [approvalsCount, setApprovalsCount] = useState(0)
 
   const fetchData = useCallback(async () => {
     try {
@@ -80,11 +81,30 @@ export default function CommandCenter() {
     setLoading(false)
   }, [])
 
+  const fetchApprovalsCount = useCallback(async () => {
+    try {
+      const res = await fetch('/api/approvals', { cache: 'no-store' })
+      const approvalsData = await res.json()
+      const count = typeof approvalsData?.count === 'number'
+        ? approvalsData.count
+        : Array.isArray(approvalsData?.items)
+          ? approvalsData.items.length
+          : 0
+      setApprovalsCount(count)
+    } catch (e) {
+      console.error('Failed to fetch approvals count:', e)
+    }
+  }, [])
+
   useEffect(() => {
     fetchData()
-    const interval = setInterval(fetchData, 10000) // Poll every 10s
+    fetchApprovalsCount()
+    const interval = setInterval(() => {
+      fetchData()
+      fetchApprovalsCount()
+    }, 10000) // Poll every 10s
     return () => clearInterval(interval)
-  }, [fetchData])
+  }, [fetchData, fetchApprovalsCount])
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
@@ -186,6 +206,18 @@ export default function CommandCenter() {
                 className="px-3 py-2 rounded-md text-sm font-medium border border-amber-500/40 bg-amber-500/10 text-amber-200 hover:bg-amber-500/20 transition-all"
               >
                 📋 Kanban
+              </a>
+
+              <a
+                href="/approvals"
+                className="px-3 py-2 rounded-md text-sm font-medium border border-green-500/40 bg-green-500/10 text-green-200 hover:bg-green-500/20 transition-all flex items-center gap-2"
+              >
+                ✅ Approvals
+                {approvalsCount > 0 && (
+                  <span className="inline-flex items-center justify-center text-xs font-bold bg-green-500 text-black rounded-full min-w-[20px] h-5 px-1">
+                    {approvalsCount}
+                  </span>
+                )}
               </a>
               
               <a
