@@ -74,7 +74,13 @@ export default function CommandCenter() {
     try {
       const res = await fetch('/api/projects', { cache: 'no-store' })
       const projectData = await res.json()
-      setData(projectData)
+      setData({
+        projects: projectData.projects || [],
+        tasks: projectData.tasks || [],
+        blockers: projectData.blockers || [],
+        agents: projectData.agents || [],
+        timeline: projectData.timeline || [],
+      })
     } catch (e) {
       console.error('Failed to fetch:', e)
     }
