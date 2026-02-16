@@ -4,57 +4,68 @@
             "id": "lessoncraft",
             "name": "LessonCraft (iOS Native)",
             "status": "active",
-            "progress": 97,
-            "nextAction": "Jeff: Upload build via Xcode Organizer → Distribute to TestFlight. API key still 401. Build 6 archive at ~/LessonCraft.xcarchive.",
-            "owner": "Jeff (blocked on TestFlight upload)",
+            "progress": 99,
+            "nextAction": "Monitor App Store review status. TestFlight public link live. Waiting for App Store approval (submitted Feb 15).",
+            "owner": "Jeff + Jackbot",
             "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, study tools, 60-language translation, community stories, and onboarding carousel.",
             "priority": "high",
-            "lastMilestone": "Feb 14: Community Stories shipped (submission form + iOS UI), 60-language lesson translation, onboarding carousel, fireside text display fix, faded hero colors fix, stories API fix, PDF export fix, image variant system (226 JPEGs), Morning Light narration text injected, 'Export to 60+ languages' badge, multiple bug fixes. Commits: 25088be, e5ec381, 03d9b96, 4899341, d61271c, de1248e, 5d7a370. Still blocked on TestFlight."
+            "lastMilestone": "Feb 15: APP STORE SUBMITTED (v1.0, Build 1.0.4). Jeff uploaded build 9 via Xcode. TestFlight public link live: https://testflight.apple.com/join/SraBWFTj. Font change Cinzel → system font (0fd9ba5). Icon-only action bar (5f152da). Persistent translations (07f619b). String interpolation fix (36f74e9)."
         },
         {
             "id": "lessoncraft-flutter",
             "name": "LessonCraft Universal (Flutter)",
             "status": "active",
-            "progress": 75,
-            "nextAction": "Continue porting remaining iOS features (translation, stories, onboarding). Jeff said 'possibly my last few updates before I say it is live worthy' — THIS IS THE CRITICAL PATH.",
+            "progress": 78,
+            "nextAction": "Sub-agent flutter-architecture running (monorepo design for Gospel Tuned empire). Continue porting remaining iOS features to achieve full parity.",
             "owner": "Jackbot + sub-agents",
-            "description": "Cross-platform Flutter port of LessonCraft for iOS + Android. P1 advanced lessons, P2 audio catalog, P3 study features all shipped. Android debug APK built successfully.",
+            "description": "Cross-platform Flutter port of LessonCraft for iOS + Android. P1 advanced lessons, P2 audio catalog, P3 study features all shipped. Android debug APK built. Now evolving into Gospel Tuned monorepo architecture.",
             "priority": "high",
-            "lastMilestone": "Feb 14: P2 audio (Morning Light + sleep timer, c055f59), P3 study (CFM cards + Easter calendar + scripture reading + search, 3fa7bd5), port-batch2 merged, lint cleanup (522eacc + f460c16), Android debug APK built with Java 17, release APK archived to G-DRIVE. 2 sub-agents spawned for overnight port (swift-canyon + delta-summit)."
+            "lastMilestone": "Feb 15: Flutter architecture sub-agent spawned for monorepo design (shared packages: core, UI, audio, games, study, live sessions) + ParishPrep app shell scaffolding. Android APK hosted on Cloudflare R2."
         },
         {
             "id": "lessoncraft-content",
             "name": "LessonCraft Content Pipeline",
             "status": "active",
             "progress": 100,
-            "nextAction": "Complete CFM Teaching Coach rollout to all 52 weeks (Week 7 sample approved). Generate TikTok video content for art reveals.",
+            "nextAction": "Complete CFM Teaching Coach rollout to all 52 weeks. Generate TikTok video content. Consider CFM archives (past year manuals) for future content.",
             "owner": "Jackbot",
             "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), 30 community story testimonies live.",
             "priority": "high",
-            "lastMilestone": "Feb 14 audit: R2 catalog verified — 126/126 episodes with audio. Breakdown: CFM 52/52, Easter Final Week 7/7, Easter Shadows & Types 5/5, Easter Empty Tomb 3/3, Morning Light 49/49, Firesides 10/10. 30 sample testimonies uploaded to stories API. All 6 narrators on final roster."
+            "lastMilestone": "Feb 15 R2 audit: 1,817 total objects in R2 bucket. 545 MP3 audio files — documentary: 429, easter: 57, devotionals: 49, firesides: 10. 811 JPGs, 337 PNGs, 115 JSONs. All content complete."
         },
         {
             "id": "jd-art-gallery",
             "name": "JD Art Gallery & Print Store",
             "status": "active",
             "progress": 78,
-            "nextAction": "Rebuild gallery after art audit (98 vetted pieces remain from 150). Deploy Stripe webhook secret. Continue generating NEW original artwork via Artist Engine with SOP. Expand toward 250+ pieces.",
+            "nextAction": "Generate new ORIGINAL artwork via Artist Engine with SOP. Expand toward 250+ pieces. Deploy Stripe webhook secret.",
             "owner": "Jackbot",
             "description": "Jacque Dubois Fine Art Gallery — in-app gallery browser, Printful print-on-demand integration, Stripe checkout. jacquedubois.art website live with About the Artist page and JD self-portrait.",
             "priority": "high",
-            "lastMilestone": "Feb 14: CRITICAL art audit — removed 52 pieces (46 Jeff quality review + 6 copyright risk). Gallery reduced from 150 to 98 vetted pieces. Built art-vetting-tool.py. Artist Engine created (8-part prompt framework + SOP-ART-CREATION.md). JD bio polished (born 1969 Arles). Image variant system deployed (113×2 = 226 JPEGs). About page live at jacquedubois.art/about."
+            "lastMilestone": "Feb 15: No new changes. Gallery at 98 vetted pieces. About page live at jacquedubois.art/about. Artist Engine + SOP in place."
         },
         {
             "id": "gospel-tuned",
             "name": "Gospel Tuned Empire",
             "status": "active",
-            "progress": 28,
-            "nextAction": "Check GospelTunedCore Swift Package sub-agent status. Review output when complete and merge.",
-            "owner": "Jackbot",
-            "description": "Multi-faith app empire: LDS (LessonCraft), Catholic, Baptist (Pulpit Prep), Methodist (Wesley's Way), Lutheran, Buddhist, Bahá'í. Research complete for all faiths.",
+            "progress": 35,
+            "nextAction": "Review sub-agent outputs: faith-matrix-strategy (updated master plan), parishprep-spec (Catholic app spec), flutter-architecture (monorepo scaffolding). All 3 running overnight.",
+            "owner": "Jackbot + sub-agents",
+            "description": "Multi-faith app empire. STEALTH MODE: each app feels like its own team. Priority: Catholic (1.3B) → Hindu (1.2B) → Pentecostal (300M) → Buddhist (500M). Liturgical cluster concept (Catholic+Orthodox+Anglican=1.7B). Sikh added. Islam OFF the table.",
             "priority": "high",
             "needsDecision": false,
-            "lastMilestone": "Feb 13: GospelTunedCore Swift Package extraction sub-agent spawned (Sonnet). Status TBD."
+            "lastMilestone": "Feb 15: MAJOR STRATEGY SESSION with Jeff. 20 domains purchased on GoDaddy. Stealth mode directive. Islam removed from roadmap. New priority order. Liturgical cluster concept. Merch per faith app. 3 overnight sub-agents spawned: faith-matrix-strategy, parishprep-spec, flutter-architecture."
+        },
+        {
+            "id": "parishprep",
+            "name": "ParishPrep (Catholic App)",
+            "status": "planning",
+            "progress": 10,
+            "nextAction": "Review parishprep-spec sub-agent output. Build feature spec, competitive analysis (Hallow, Laudate, iBreviary), branding, go-to-market strategy.",
+            "owner": "Jackbot",
+            "description": "Catholic lesson/homily preparation app. Part of Gospel Tuned empire. Domain: parishprep.faith (purchased). Largest addressable market (1.3B Catholics). Lectionary integration planned.",
+            "priority": "high",
+            "lastMilestone": "Feb 15: Domain parishprep.faith purchased. Sub-agent parishprep-spec spawned for complete product specification. Also secured homilyprep.faith as backup domain."
         },
         {
             "id": "aituned-io",
@@ -65,50 +76,50 @@
             "owner": "Jackbot",
             "description": "B2B enterprise AI platform website + LessonCraft marketing/privacy/terms pages + Stories admin dashboard. Deployed on Cloudflare Pages.",
             "priority": "medium",
-            "lastMilestone": "Feb 14: LessonCraft landing page LIVE (aituned.io/lessoncraft/), Terms of Service LIVE (aituned.io/terms), Stories Admin Dashboard LIVE (aituned.io/admin/stories/) with auth, filtering, moderation buttons. Commits: 987e3e8, 2c9c578, 737383b."
+            "lastMilestone": "Feb 14: LessonCraft landing page LIVE, Terms of Service LIVE, Stories Admin Dashboard LIVE."
         },
         {
             "id": "appstore-submission",
             "name": "App Store Submission (LessonCraft)",
-            "status": "blocked",
-            "progress": 85,
-            "nextAction": "Jeff: Fix App Store Connect API key (401 Unauthorized) or use Xcode Organizer to distribute. Build 6 archive at ~/LessonCraft.xcarchive. Screenshot sub-agent status unknown.",
-            "owner": "Jeff + Jackbot",
-            "description": "LessonCraft v1.0.3 App Store submission pipeline. Includes metadata, screenshots, API key setup, TestFlight automation, Launch Day Playbook, SCREENSHOT_MODE env gating.",
+            "status": "active",
+            "progress": 98,
+            "nextAction": "Monitor App Store review (24-48 hrs typical). Auto-release enabled after approval. TestFlight public link: https://testflight.apple.com/join/SraBWFTj",
+            "owner": "Apple Review Team",
+            "description": "LessonCraft v1.0 App Store submission. Submitted Feb 15 at 2:29 PM CST. Build 1.0.4 (#8). Auto-release after approval.",
             "priority": "high",
-            "lastMilestone": "Feb 14: Launch Day Playbook written. SCREENSHOT_MODE env gating added. App Store metadata refreshed (tabs count, translation/stories features, privacy URL). LessonCraft landing + Terms pages deployed. Still blocked on TestFlight upload."
+            "lastMilestone": "Feb 15: SUBMITTED TO APP STORE. Jeff uploaded build 9 via Xcode. TestFlight public link created. All metadata, screenshots (iPhone + iPad), pricing (Free), privacy complete. Distribution cert on Mac Mini enables autonomous builds."
         },
         {
             "id": "ai-tuned-art",
             "name": "AI Tuned Art Library",
             "status": "active",
             "progress": 72,
-            "nextAction": "Generate new ORIGINAL artwork via Artist Engine (mandatory SOP). Rebuild from 98 vetted pieces toward 250+. Fix art agent context overflow (316K > 200K limit). Resume nightly generation with new safety checks.",
+            "nextAction": "Generate new ORIGINAL artwork via Artist Engine (mandatory SOP). Rebuild from 98 vetted pieces toward 250+. Fix art agent context overflow. Seraphina generating Christ painting styles for Jeff.",
             "owner": "Jackbot + Seraphina",
-            "description": "Original AI-generated LDS devotional artwork. Post-audit: 98 vetted gallery pieces (down from 222 after removing 52 copyright/quality risks). Artist Engine with 8-part prompt framework + mandatory SOP. Generator: Gemini. Seraphina Luminara agent active.",
+            "description": "Original AI-generated LDS devotional artwork. Post-audit: 98 vetted gallery pieces. Artist Engine with 8-part prompt framework + mandatory SOP. Generator: Gemini. Seraphina Luminara agent active.",
             "priority": "medium",
-            "lastMilestone": "Feb 14: Art audit completed — removed 52 pieces (46 quality + 6 copyright). Built art-vetting-tool.py (checks against 50+ famous paintings database). Artist Engine created with SOP-ART-CREATION.md. Seraphina Luminara agent configured on Telegram. Art agent hit context overflow (needs session reset)."
+            "lastMilestone": "Feb 15: Seraphina generating multiple Christ painting style variants per Jeff's request (soul-penetrating eyes). R2 has 337 PNGs + 811 JPGs across all artwork collections."
         },
         {
             "id": "fieldlearner",
             "name": "FieldLearner (JCI Training App)",
-            "status": "active",
+            "status": "paused",
             "progress": 90,
-            "nextAction": "JCI Bot handles this — feed content when available. Domain: fieldlearner.com. Crons DISABLED.",
+            "nextAction": "Paused at RC1. JCI Bot handles this. Crons DISABLED.",
             "owner": "JCI Bot (partner: Sharie Ellis)",
             "description": "Commercial HVAC field training app for JCI. 6 modules, 36 lessons, 150 quiz questions. Built by separate JCI bot agent.",
             "priority": "low",
-            "lastMilestone": "Feb 12: HVAC Research skill built (77 blog articles, 30 YouTube videos, 245 search sources). Content shared with JCI bot. fieldlearner.com DNS configured."
+            "lastMilestone": "Feb 12: HVAC Research skill built. Content shared with JCI bot. fieldlearner.com DNS configured."
         },
         {
             "id": "scrollwork",
             "name": "Scrollwork",
             "status": "planning",
             "progress": 10,
-            "nextAction": "Build backend - AI video ad generation engine",
+            "nextAction": "Build backend - AI video ad generation engine. Deprioritized behind Gospel Tuned empire.",
             "owner": "Jackbot",
             "description": "AI Ad Creative Platform — marketing agency in your pocket. Upload product images → AI generates scroll-stopping video ads for TikTok/Instagram/Facebook. Website live at scrollwork.net (waitlist).",
-            "priority": "medium",
+            "priority": "low",
             "needsDecision": true,
             "decisionQuestion": "When to prioritize Scrollwork vs Gospel Tuned expansion?"
         },
@@ -117,7 +128,7 @@
             "name": "TermLinkky",
             "status": "paused",
             "progress": 75,
-            "nextAction": "Polish UI and fix stability issues. Archived to GitHub + deleted locally during G-DRIVE migration.",
+            "nextAction": "Archived to GitHub + deleted locally during G-DRIVE migration.",
             "owner": "Jackbot",
             "description": "Remote terminal + AI assistant for iOS/Android. Flutter client + Python server over Tailscale.",
             "priority": "low"
@@ -127,7 +138,7 @@
             "name": "JiggyBot",
             "status": "blocked",
             "progress": 40,
-            "nextAction": "Hardware assembly and testing",
+            "nextAction": "Hardware assembly and testing. Validated by TWiST smart glasses demos (Alex Finn monitor).",
             "owner": "Jeff",
             "description": "AI-powered KVM for locked-down corporate environments. Air-gapped AI assistant via HDMI capture + USB HID. Codebase complete, needs hardware assembly.",
             "priority": "low",
@@ -139,9 +150,9 @@
             "name": "RaceStream.net",
             "status": "active",
             "progress": 95,
-            "nextAction": "Benchmark Ollama Qwen2.5-32B + SDXL on RaceStream server for free content production",
+            "nextAction": "Benchmark Ollama Qwen2.5-32B + SDXL on RaceStream server. Pi AI HAT+ 2 ordered (40 TOPS, $130) for edge vision.",
             "owner": "Jackbot",
-            "description": "Motorsports live streaming platform. Replace $100K broadcast trucks with sub-$500 edge solution. Server also being used for local AI inference (Ollama + SDXL).",
+            "description": "Motorsports live streaming platform. Replace $100K broadcast trucks with sub-$500 edge solution. Pi AI HAT+ 2 ordered for local computer vision.",
             "priority": "medium"
         },
         {
@@ -158,19 +169,19 @@
             "id": "command-center",
             "name": "Command Center",
             "status": "active",
-            "progress": 88,
-            "nextAction": "Keep tracker data fresh via nightly audit. Fix nightly-build cron (completes in 16ms without work). Migrate email checking from himalaya to gog for jeff.woolums@gmail.com.",
+            "progress": 90,
+            "nextAction": "Keep tracker data fresh via nightly audit. Migrate email checking from himalaya to gog for jeff.woolums@gmail.com.",
             "owner": "Jackbot",
             "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron, stories admin dashboard.",
             "priority": "medium",
-            "lastMilestone": "Feb 14: Fifth nightly tracker audit executing. Stories admin dashboard shipped at aituned.io/admin/stories/. R2 content verified 126/126."
+            "lastMilestone": "Feb 15: Sixth nightly tracker audit. R2 verified: 1,817 objects, 545 MP3s. 3 overnight sub-agents spawned and monitored."
         },
         {
             "id": "javabean",
             "name": "Javabean (Voice System)",
             "status": "active",
             "progress": 85,
-            "nextAction": "Export remaining voices to local XTTS",
+            "nextAction": "Export remaining voices to local XTTS. Research softer/sweeter TTS for Morning Light (Jeff directive).",
             "owner": "Jackbot",
             "description": "TTS infrastructure — ElevenLabs + local XTTS cloning. Voices: Jackbot (9T9v), Codex/Samuel (vDch), Tayler, KIMI/Amelie, SultrySara.",
             "priority": "medium"
@@ -180,34 +191,45 @@
             "name": "TikTok Content Pipeline",
             "status": "active",
             "progress": 45,
-            "nextAction": "Get TikTok handle from Jeff. Post first batch of art reveal videos. Execute strategy from tiktok-strategy-research.md.",
+            "nextAction": "Get TikTok handle from Jeff. Post first batch of art reveal videos.",
             "owner": "Jackbot",
             "description": "TikTok + YouTube Shorts content pipeline. Brand: Gospel Tuned — Christ-centered, non-denominational, uplifting. 2-3 posts/day: art reveals, scripture cards, Morning Light clips. Account created via jackbotwoolums@gmail.com.",
             "priority": "medium",
-            "lastMilestone": "Feb 13: TikTok video generation pipeline built (tiktok-art-reveal-final.sh + batch-generate-tiktok.sh). 3 sample videos generated. Strategy research complete. Still need TikTok handle from Jeff."
+            "lastMilestone": "Feb 13: Video pipeline built. Strategy research complete. Still need TikTok handle from Jeff."
         },
         {
             "id": "seraphina-agent",
             "name": "Seraphina Luminara (Art Agent)",
             "status": "active",
-            "progress": 60,
-            "nextAction": "Generate new art via Artist Engine SOP. Save completed pieces to G-DRIVE. Fix context overflow (needs session reset).",
+            "progress": 62,
+            "nextAction": "Complete Christ painting style variants for Jeff. Fix context overflow (needs session reset). Generate more art via Artist Engine SOP.",
             "owner": "Seraphina + Jackbot",
-            "description": "AI art creation agent (Telegram bot). Persona: classically trained French artist. Uses Artist Engine 8-part prompt framework with mandatory SOP. Generates original LDS devotional artwork for JD Gallery.",
+            "description": "AI art creation agent (Telegram bot). Persona: classically trained French artist. Uses Artist Engine 8-part prompt framework with mandatory SOP.",
             "priority": "medium",
-            "lastMilestone": "Feb 14: Agent configured on Telegram. Studio portrait generated. Bio saved to G-DRIVE. Jeff approved Christ painting with 'soul-penetrating eyes'. Acknowledged SOP. Hit context overflow (316K tokens) — needs session reset."
+            "lastMilestone": "Feb 15: Generating multiple Christ painting style variants at Jeff's request (translucent layers, chiaroscuro, Mediterranean glow, somber reflection). S. Luminara signature on all pieces."
         },
         {
             "id": "community-stories",
             "name": "Community Stories System",
             "status": "active",
             "progress": 90,
-            "nextAction": "Jeff wants stories more prominent on Home screen. Build moderation workflow (daily check by sub-agents). Jeff said he wants admin dashboard for oversight.",
+            "nextAction": "Make stories more prominent on Home screen. Build moderation workflow.",
             "owner": "Jackbot",
-            "description": "User-submitted faith testimonies for LessonCraft. Web submission form (lessoncraft.net/share), REST API, iOS UI (StoriesListView + StoryDetailView), admin dashboard (aituned.io/admin/stories/), 30 sample testimonies seeded.",
+            "description": "User-submitted faith testimonies for LessonCraft. Web submission form, REST API, iOS UI, admin dashboard, 30 sample testimonies seeded.",
             "priority": "medium",
-            "lastMilestone": "Feb 14: Full system shipped — web form, API (submit/list/get/moderate), iOS integration (Home card + Be Inspired section), admin dashboard with auth/filtering/moderation. 30 sample testimonies uploaded across 5 categories. Commits: 977bcdf, 2cff46a, 2c9c578."
+            "lastMilestone": "Feb 14: Full system shipped. Admin dashboard live at aituned.io/admin/stories."
+        },
+        {
+            "id": "domain-portfolio",
+            "name": "Domain Portfolio (Gospel Tuned Empire)",
+            "status": "active",
+            "progress": 90,
+            "nextAction": "Secure remaining faith domains as apps get built.",
+            "owner": "Jeff + Jackbot",
+            "description": "20 domains purchased on GoDaddy for Gospel Tuned empire land grab.",
+            "priority": "medium",
+            "lastMilestone": "Feb 15: 20 domains purchased — lessoncraft.faith, pulpit.faith, wesleysway.faith, parishprep.faith, homilyprep.faith, revivalprep.faith, pentecostalguide.com, vedaguide.app, sanghastudy.com, divineoffice.io. catholic.faith and divineoffice.faith were taken."
         }
     ],
-    "lastUpdated": "2026-02-15T05:30:00Z"
+    "lastUpdated": "2026-02-16T05:05:00Z"
 }

@@ -773,7 +773,7 @@
       "project": "lessoncraft-flutter",
       "status": "in-progress",
       "createdAt": "2026-02-15T05:00:00Z",
-      "notes": "Overnight sub-agents swift-canyon + delta-summit spawned. Flutter P2/P3 features already shipped; remaining: onboarding/stories/translation parity."
+      "notes": "Overnight sub-agents swift-canyon + delta-summit spawned. Flutter P2/P3 features already shipped; remaining: onboarding/stories/translation parity. Feb 15 evening directive: run Flutter parity build tonight and compare native iOS vs Flutter feature completeness before declaring live-worthy."
     },
     {
       "id": "feature-20260214-16",
@@ -786,6 +786,90 @@
       "createdAt": "2026-02-14T00:00:00Z",
       "completedAt": "2026-02-14T00:00:00Z",
       "notes": "27GB freed. Artwork (4.6GB), voice models (9GB), Android SDK (5.9GB), Gradle cache (4.8GB) moved. TermLinkky archived then removed locally."
+    },
+    {
+      "id": "feature-20260215-17",
+      "title": "Faith Matrix \u2014 19-faith reference blueprint",
+      "description": "Build comprehensive doctrine/ritual/content matrix for all planned faith apps to guide denominationally accurate product framing.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "gospel-tuned",
+      "status": "in-progress",
+      "createdAt": "2026-02-16T04:05:00Z",
+      "notes": "Evening directive Feb 15. Sub-agent faith-matrix-strategy spawned in nightly build session."
+    },
+    {
+      "id": "feature-20260215-18",
+      "title": "CFM archives ingestion (past-year manuals)",
+      "description": "Ingest prior year Come, Follow Me manuals (Book of Mormon, Doctrine & Covenants) for future lesson/content generation.",
+      "priority": "P2",
+      "requester": "Jeff",
+      "project": "lessoncraft-content",
+      "status": "pending",
+      "createdAt": "2026-02-16T04:06:00Z"
+    },
+    {
+      "id": "feature-20260215-19",
+      "title": "Morning Light voice softness/prosody tuning",
+      "description": "Research and implement softer/sweeter Morning Light narration style (prosody, pacing, warmth) while maintaining clarity.",
+      "priority": "P2",
+      "requester": "Jeff",
+      "project": "javabean",
+      "status": "pending",
+      "createdAt": "2026-02-16T04:07:00Z"
+    },
+    {
+      "id": "feature-20260215-20",
+      "title": "Faith-app merch pipeline (classy per-app collections)",
+      "description": "Design and launch per-faith merchandise lines (devotional apparel, journals, tote bags, scripture art prints) using Printful/AllPrint fulfillment.",
+      "priority": "P2",
+      "requester": "Jeff",
+      "project": "gospel-tuned",
+      "status": "pending",
+      "createdAt": "2026-02-16T04:08:00Z",
+      "notes": "Must avoid tacky/tourist aesthetics; each line matched to app brand identity."
+    },
+    {
+      "id": "feature-20260215-21",
+      "title": "Music library + AI sheet music generation",
+      "description": "Add LessonCraft music library and AI-assisted sheet music generation workflow for lesson prep and worship support.",
+      "priority": "P2",
+      "requester": "Jeff",
+      "project": "lessoncraft",
+      "status": "pending",
+      "createdAt": "2026-02-16T04:09:00Z"
+    },
+    {
+      "id": "feature-20260215-22",
+      "title": "Artist team expansion \u2014 musician agents",
+      "description": "Expand artist collective beyond visual artists to include musician agents for hymn/instrumental composition and audio assets.",
+      "priority": "P3",
+      "requester": "Jeff",
+      "project": "gospel-tuned",
+      "status": "pending",
+      "createdAt": "2026-02-16T04:10:00Z"
+    },
+    {
+      "id": "feature-20260215-23",
+      "title": "ParishPrep Catholic app full spec + scaffold",
+      "description": "Produce complete Catholic app product spec and Flutter scaffold based on LessonCraft blueprint, including lectionary alignment and branding.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "parishprep",
+      "status": "in-progress",
+      "createdAt": "2026-02-16T04:11:00Z",
+      "notes": "Sub-agent parishprep-spec running; flutter-architecture sub-agent creating monorepo scaffold."
+    },
+    {
+      "id": "feature-20260215-24",
+      "title": "UI design quality check (Weavy AI/Figma plugin exploration)",
+      "description": "Evaluate Weavy AI and Figma plugin workflow for higher-quality UI design audits; low-priority research task.",
+      "priority": "P3",
+      "requester": "Jeff",
+      "project": "lessoncraft-flutter",
+      "status": "pending",
+      "createdAt": "2026-02-16T04:12:00Z",
+      "notes": "Marked low priority in Feb 15 evening directives."
     }
   ]
 }

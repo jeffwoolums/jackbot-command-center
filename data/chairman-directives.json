@@ -6,12 +6,12 @@
       "description": "v1.0.3 build 6 archive created at ~/LessonCraft.xcarchive. IPA exported to ~/LessonCraft-export/LessonCraft.ipa. Upload to TestFlight blocked \u2014 no App Store Connect API key/credentials on Mac mini (401 Unauthorized).",
       "category": "Feature Request",
       "project": "lessoncraft",
-      "status": "Blocked",
+      "status": "Complete",
       "priority": "P1",
       "createdAt": "2026-02-06T10:00:00Z",
-      "updatedAt": "2026-02-14T05:50:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z",
       "createdBy": "Jeff",
-      "notes": "Build 6 ready. Jeff was testing build 5 (old code). Options: (1) Jeff opens Xcode Organizer \u2192 Distribute, or (2) provide working App Store Connect API key. Also need Privacy Policy URL update in App Store Connect to https://aituned.io/lessoncraft/privacypolicy."
+      "notes": "Completed: Jeff uploaded build 9 via Xcode; TestFlight public link live (https://testflight.apple.com/join/SraBWFTj). App submitted to App Store Feb 15 (Waiting for Review)."
     },
     {
       "id": "directive-2",
@@ -184,11 +184,11 @@
       "category": "Feature Request",
       "project": "jd-art-gallery",
       "priority": "P1",
-      "status": "In Progress",
+      "status": "Complete",
       "createdBy": "Jeff",
       "createdAt": "2026-02-11T12:30:00Z",
-      "updatedAt": "2026-02-13T05:21:00Z",
-      "notes": "Gallery + print ordering shipped. Website live with real images. Remaining Jeff action: domain registration/admin completion."
+      "updatedAt": "2026-02-16T05:10:00Z",
+      "notes": "Gallery + print ordering shipped. jacquedubois.art domain live with About page and self-portrait. In-app gallery operational."
     },
     {
       "id": "directive-20260211-2",
@@ -358,6 +358,106 @@
       "createdAt": "2026-02-14T00:00:00Z",
       "updatedAt": "2026-02-14T23:50:00Z",
       "notes": "Shipped: https://aituned.io/admin/stories/ with X-Admin-Key auth and moderation actions."
+    },
+    {
+      "id": "directive-20260215-1",
+      "title": "Stealth mode across Gospel Tuned apps",
+      "description": "All faith apps should appear as standalone products with dedicated teams; keep founder identity/background operations non-public.",
+      "category": "Priority Change",
+      "project": "gospel-tuned",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T03:36:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z",
+      "notes": "Explicit Feb 15 evening chairman directive."
+    },
+    {
+      "id": "directive-20260215-2",
+      "title": "Islam removed from roadmap",
+      "description": "Do not build an Islam app in current expansion cycle due risk profile; redirect effort to other faith opportunities.",
+      "category": "Priority Change",
+      "project": "gospel-tuned",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T03:38:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z"
+    },
+    {
+      "id": "directive-20260215-3",
+      "title": "New expansion order: Catholic \u2192 Hindu \u2192 Pentecostal \u2192 Buddhist",
+      "description": "Execute Gospel Tuned expansion in this specific order after LessonCraft, with Catholic as immediate next build.",
+      "category": "Priority Change",
+      "project": "gospel-tuned",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T03:40:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z"
+    },
+    {
+      "id": "directive-20260215-4",
+      "title": "Frame all new apps from LessonCraft blueprint now",
+      "description": "Pull together religion experts and immediately frame app architecture/specs from the proven LessonCraft blueprint.",
+      "category": "Feature Request",
+      "project": "gospel-tuned",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T03:42:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z",
+      "notes": "Nightly build launched 3 sub-agents: faith-matrix-strategy, parishprep-spec, flutter-architecture."
+    },
+    {
+      "id": "directive-20260215-5",
+      "title": "Per-faith classy merch lines",
+      "description": "Each faith app gets a high-quality merch line (devotional apparel, journals, prints, tote bags) tied to app identity.",
+      "category": "Feature Request",
+      "project": "gospel-tuned",
+      "priority": "P2",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T03:59:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z",
+      "notes": "Use existing Printful pipeline; evaluate AllPrint alternative."
+    },
+    {
+      "id": "directive-20260215-6",
+      "title": "Track and operationalize newly secured faith domains",
+      "description": "Integrate the newly purchased faith domains into app rollout planning, branding, and launch sequencing.",
+      "category": "Clarification",
+      "project": "domain-portfolio",
+      "priority": "P2",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T04:01:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z",
+      "notes": "20 domains secured Feb 15 including parishprep.faith, vedaguide.app, revivalprep.faith, sanghastudy.com."
+    },
+    {
+      "id": "directive-20260215-7",
+      "title": "Liturgical Christians clustering strategy",
+      "description": "Treat Catholic + Orthodox + Anglican as a strategic liturgical cluster in one product line where practical (up to ~1.7B audience).",
+      "category": "Priority Change",
+      "project": "gospel-tuned",
+      "priority": "P2",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T03:45:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z"
+    },
+    {
+      "id": "directive-20260215-8",
+      "title": "Add Sikh app to roadmap",
+      "description": "Add Sikh faith app opportunity to roadmap (approx. 30M audience, low direct competition) after primary expansion wave.",
+      "category": "Priority Change",
+      "project": "gospel-tuned",
+      "priority": "P3",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-16T03:47:00Z",
+      "updatedAt": "2026-02-16T05:10:00Z"
     }
   ]
 }
