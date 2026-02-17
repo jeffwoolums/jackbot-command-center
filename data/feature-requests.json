@@ -870,6 +870,88 @@
       "status": "pending",
       "createdAt": "2026-02-16T04:12:00Z",
       "notes": "Marked low priority in Feb 15 evening directives."
+    },
+    {
+      "id": "feature-20260216-1",
+      "title": "VoiceForge API deployment on RaceStream server",
+      "description": "Chatterbox voice cloning API deployed on RaceStream server (100.93.38.46). 15s reference clips, exaggeration/cfg_weight tuning, supports English + Spanish from same reference.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "completedAt": "2026-02-17T05:00:00Z",
+      "notes": "Web review app at http://100.93.38.46:8780. 8GB VRAM, 15s clip sweet spot."
+    },
+    {
+      "id": "feature-20260216-2",
+      "title": "Jeff Woolums voice clone (locked)",
+      "description": "Jeff's personal voice clone via Chatterbox. Settings: exaggeration=0.3, cfg_weight=0.5 (lighter/less deep). Reference: jeff_woolums_15s.wav.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "completedAt": "2026-02-17T05:00:00Z",
+      "notes": "Jeff said 'Lock it in as me.' Also tested exag 0.6 for deeper variant. Cat story with [laugh]/[sigh] emotional cues worked. Spanish clone with exag 0.4 also generated."
+    },
+    {
+      "id": "feature-20260216-3",
+      "title": "Brian Mourino voice clone (locked)",
+      "description": "Brian's voice clone via Chatterbox. Settings: exaggeration=0.5, cfg_weight=0.5. Reference: friend_part1_15s.wav. Jeff: 'sounds Texan and it is perfect. nice depth and has a drawl.'",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "completedAt": "2026-02-17T05:00:00Z",
+      "notes": "Brian reading Alma 32:21 + personal reflection approved. Spanish version also generated and approved."
+    },
+    {
+      "id": "feature-20260216-4",
+      "title": "14-voice overnight matrix for LessonCraft narrators",
+      "description": "Generated 14 distinct voice profiles: 4 blended women (Sarah Mitchell, Rachel Kimball, Emma Thornton, Claire Whitfield), 6 individual men (David Callister, James Whitmore, Thomas Harlan, Robert Ellison, William Pratt, Michael Jensen), 2 blended youth boys (Ethan Parker, Marcus Rivera), 2 blended youth girls (Olivia Jensen, Hannah Brooks).",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "completedAt": "2026-02-17T05:00:00Z",
+      "notes": "All read Alma 32:21 + personal testimony. Web review: http://100.93.38.46:8780. Database: ~/voiceforge/voice-matrix/voice_database.json. Awaiting Jeff's picks for women's + youth voices."
+    },
+    {
+      "id": "feature-20260216-5",
+      "title": "Revival Hub (Evangelical) app scaffold",
+      "description": "Full evangelical app scaffold in Gospel Tuned monorepo: main.dart with ProviderScope + GoRouter + 4-tab shell, evangelical_config.dart with fire orange/gold dark theme, home/prepare/study/settings screens.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "gospel-tuned",
+      "status": "complete",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "completedAt": "2026-02-17T05:00:00Z",
+      "notes": "7 new Dart files committed to ~/developer/gospel-tuned/apps/revivalhub/. Uses shared gospel_tuned_core + gospel_tuned_ui packages."
+    },
+    {
+      "id": "feature-20260216-6",
+      "title": "ParishPrep vertical slice (GatewayAI + Drift DB + lesson flow)",
+      "description": "Build first functional vertical slice: concrete GatewayAIService, Drift local storage, new lesson creation screen, result display, saved lessons, updated home, routes, and providers.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "parishprep",
+      "status": "in-progress",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "notes": "Sub-agent parishprep-vertical-slice (gpt-5.3-codex) actively building. App scaffold already in place at ~/developer/gospel-tuned/apps/parishprep/."
+    },
+    {
+      "id": "feature-20260216-7",
+      "title": "GitLab → GitHub repository mirroring",
+      "description": "Configured TRED Router repo mirroring from GitLab (droid-technologies/jeffwoolums-router) to GitHub (jeffwoolums/TredRouterBuild).",
+      "priority": "P3",
+      "requester": "Jeff",
+      "project": "racestream",
+      "status": "complete",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "completedAt": "2026-02-17T05:00:00Z"
     }
   ]
 }
