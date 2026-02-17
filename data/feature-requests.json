@@ -952,6 +952,17 @@
       "status": "complete",
       "createdAt": "2026-02-17T05:00:00Z",
       "completedAt": "2026-02-17T05:00:00Z"
+    },
+    {
+      "id": "feature-20260216-8",
+      "title": "Fix Telegram message thread not found send failures",
+      "description": "OpenClaw message tool intermittently fails with 'message thread not found' on Telegram sends. Add resilient fallback and investigate root cause in channel routing/thread context.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "command-center",
+      "status": "pending",
+      "createdAt": "2026-02-17T05:16:00Z",
+      "notes": "Observed repeatedly Feb 16 during voice sample sends; workaround was direct Telegram Bot API calls."
     }
   ]
 }

@@ -31,7 +31,7 @@
             "owner": "Jackbot",
             "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), 30 community story testimonies live.",
             "priority": "high",
-            "lastMilestone": "Feb 16 R2 audit: 1,817 total objects. 545 MP3s (CFM: 315, Easter: 171, Devotionals: 49, Firesides: 10). 811 JPGs, 337 PNGs, 115 JSONs. VoiceForge 14-voice matrix ready for narrator expansion. All existing content complete."
+            "lastMilestone": "Feb 16 R2 audit: 1,817 total objects. 545 MP3s (Documentary: 429, Easter: 57, Devotionals: 49, Firesides: 10). 811 JPGs, 337 PNGs, 115 JSONs. VoiceForge 14-voice matrix ready for narrator expansion. All existing content complete."
         },
         {
             "id": "jd-art-gallery",
@@ -171,7 +171,7 @@
             "name": "Command Center",
             "status": "active",
             "progress": 90,
-            "nextAction": "Keep tracker data fresh via nightly audit. Migrate email checking from himalaya to gog for jeff.woolums@gmail.com.",
+            "nextAction": "Keep tracker data fresh via nightly audit. Migrate email checking from himalaya to gog for jeff.woolums@gmail.com. Fix Telegram 'message thread not found' send failures.",
             "owner": "Jackbot",
             "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron, stories admin dashboard.",
             "priority": "medium",
@@ -233,5 +233,5 @@
             "lastMilestone": "Feb 15: 20 domains purchased — lessoncraft.faith, pulpit.faith, wesleysway.faith, parishprep.faith, homilyprep.faith, revivalprep.faith, pentecostalguide.com, vedaguide.app, sanghastudy.com, divineoffice.io. catholic.faith and divineoffice.faith were taken."
         }
     ],
-    "lastUpdated": "2026-02-17T05:12:00Z"
+    "lastUpdated": "2026-02-17T05:16:00Z"
 }

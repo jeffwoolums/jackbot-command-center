@@ -458,6 +458,32 @@
       "createdBy": "Jeff",
       "createdAt": "2026-02-16T03:47:00Z",
       "updatedAt": "2026-02-16T05:10:00Z"
+    },
+    {
+      "id": "directive-20260216-1",
+      "title": "Lock Jeff voice clone profile",
+      "description": "Use Jeff's approved personal voice profile as canonical: exaggeration=0.3, cfg_weight=0.5 (lighter, less deep).",
+      "category": "Clarification",
+      "project": "javabean",
+      "priority": "P1",
+      "status": "Complete",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-17T05:00:00Z",
+      "updatedAt": "2026-02-17T05:16:00Z",
+      "notes": "Jeff confirmed: 'Lock it in as me.' Deeper variant (exag 0.6) kept as optional style, not default."
+    },
+    {
+      "id": "directive-20260216-2",
+      "title": "Approve Brian voice profile for production use",
+      "description": "Brian Mourino clone approved with exaggeration=0.5 (natural depth + Texan drawl) for conference and content demos.",
+      "category": "Clarification",
+      "project": "javabean",
+      "priority": "P2",
+      "status": "Complete",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-17T05:01:00Z",
+      "updatedAt": "2026-02-17T05:16:00Z",
+      "notes": "Jeff feedback: 'sounds Texan and it is perfect. nice depth and has a drawl.' Spanish output also approved."
     }
   ]
 }
