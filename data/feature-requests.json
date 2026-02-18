@@ -944,7 +944,7 @@
     },
     {
       "id": "feature-20260216-7",
-      "title": "GitLab → GitHub repository mirroring",
+      "title": "GitLab \u2192 GitHub repository mirroring",
       "description": "Configured TRED Router repo mirroring from GitLab (droid-technologies/jeffwoolums-router) to GitHub (jeffwoolums/TredRouterBuild).",
       "priority": "P3",
       "requester": "Jeff",
@@ -963,6 +963,99 @@
       "status": "pending",
       "createdAt": "2026-02-17T05:16:00Z",
       "notes": "Observed repeatedly Feb 16 during voice sample sends; workaround was direct Telegram Bot API calls."
+    },
+    {
+      "id": "feature-20260217-1",
+      "title": "StoreKit subscription enforcement + paywall disclosure fixes",
+      "description": "Enforce StoreKit gating for paid features and add App Store-compliant paywall disclosures.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "lessoncraft",
+      "status": "complete",
+      "createdAt": "2026-02-18T04:50:00Z",
+      "completedAt": "2026-02-18T04:52:00Z",
+      "notes": "Shipped in commit 96273ee on Feb 17 local time."
+    },
+    {
+      "id": "feature-20260217-2",
+      "title": "CFM Week 8 husband/wife podcast demo",
+      "description": "Build conversational CFM Week 8 demo with Margaret + Whitney handoff format and deploy public demo page.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-18T02:30:00Z",
+      "completedAt": "2026-02-18T04:30:00Z",
+      "notes": "Demo deployed at https://cfm-demo.pages.dev with interactive player and section jumps."
+    },
+    {
+      "id": "feature-20260217-3",
+      "title": "Resemble Enhance denoiser in VoiceForge production pipeline",
+      "description": "Integrate Resemble Enhance as standard post-generation cleanup step (Chatterbox \u2192 Resemble Enhance \u2192 mastering).",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-18T01:50:00Z",
+      "completedAt": "2026-02-18T02:20:00Z",
+      "notes": "Jeff approved quality improvement; now mandatory in pipeline."
+    },
+    {
+      "id": "feature-20260217-4",
+      "title": "Voice Studio web mixing board",
+      "description": "Build web-based voice mixing UI with per-voice EQ, compression, de-esser, presets, preview, and FFmpeg chain export.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-18T04:20:00Z",
+      "completedAt": "2026-02-18T04:26:00Z",
+      "notes": "Live at https://voice-studio.pages.dev. Jeff: 'perfect. that needs to be part of the suite of UI tools for voiceforge'."
+    },
+    {
+      "id": "feature-20260217-5",
+      "title": "Integrate Voice Studio permanently into VoiceForge suite",
+      "description": "Move Voice Studio from standalone prototype into permanent VoiceForge tooling with shared nav/workflows.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "voiceforge",
+      "status": "in-progress",
+      "createdAt": "2026-02-18T04:27:00Z",
+      "notes": "Directive captured from Jeff approval message during demo review."
+    },
+    {
+      "id": "feature-20260217-6",
+      "title": "Recruit 3 additional husband/wife DVA narrator pairs",
+      "description": "Complete 4-couple monthly CFM rotation by recruiting and cloning 3 additional husband/wife narrator pairs.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "lessoncraft-content",
+      "status": "pending",
+      "createdAt": "2026-02-18T04:35:00Z",
+      "notes": "Couple 1 locked: Margaret + Whitney Hammond. Couples 2-4 still needed."
+    },
+    {
+      "id": "feature-20260217-7",
+      "title": "Morning Light podcast co-host style",
+      "description": "Shift Morning Light to conversational co-host format (Hannah + Olivia) with natural spoken wording and reaction/filler language.",
+      "priority": "P2",
+      "requester": "Jeff",
+      "project": "lessoncraft-content",
+      "status": "in-progress",
+      "createdAt": "2026-02-18T04:40:00Z",
+      "notes": "Jeff requested more natural phrasing: wanna/gonna/kinda + interactive exchanges."
+    },
+    {
+      "id": "feature-20260217-8",
+      "title": "Fix wrong Whitney reference in CFM generation script",
+      "description": "Correct CFM script voice reference from Jeff ref to Whitney ref2 and regenerate affected output.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-18T04:14:00Z",
+      "completedAt": "2026-02-18T04:19:00Z",
+      "notes": "Bug caught by Jeff ('wrong voice'). Fixed to whitney_new_ref2.wav with regeneration launched."
     }
   ]
 }

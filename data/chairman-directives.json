@@ -484,6 +484,84 @@
       "createdAt": "2026-02-17T05:01:00Z",
       "updatedAt": "2026-02-17T05:16:00Z",
       "notes": "Jeff feedback: 'sounds Texan and it is perfect. nice depth and has a drawl.' Spanish output also approved."
+    },
+    {
+      "id": "directive-20260217-1",
+      "title": "CFM must use interactive husband/wife podcast dialog",
+      "description": "Replace alternating monologues with true conversational handoff format (name-to-name transitions, reactions, and shared discussion).",
+      "category": "Priority Change",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-18T03:44:00Z",
+      "updatedAt": "2026-02-18T05:03:00Z",
+      "notes": "Jeff: 'Make it very interactive almost like it's a podcast.' Week 8 demo done; full 52-week rollout pending."
+    },
+    {
+      "id": "directive-20260217-2",
+      "title": "Never use conference blended voices for production",
+      "description": "Conference blended voice experiments are rejected for production quality. Use approved individual/DVA references only.",
+      "category": "Clarification",
+      "project": "javabean",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-18T03:55:00Z",
+      "updatedAt": "2026-02-18T05:03:00Z",
+      "notes": "Jeff explicitly rejected blended conference voices."
+    },
+    {
+      "id": "directive-20260217-3",
+      "title": "Use Whitney reference only for husband narrator track (not Jeff)",
+      "description": "CFM husband track must use Whitney-approved reference (whitney_new_ref2.wav) and never fallback to Jeff's reference.",
+      "category": "Bug Fix",
+      "project": "javabean",
+      "priority": "P1",
+      "status": "Complete",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-18T04:14:00Z",
+      "updatedAt": "2026-02-18T04:19:00Z",
+      "notes": "Critical wrong-reference bug fixed and regeneration launched."
+    },
+    {
+      "id": "directive-20260217-4",
+      "title": "Uniform mastering per episode + natural spoken scripts",
+      "description": "In same-episode conversations, all speakers must share cohesive mastering chain and scripts should use natural spoken language (wanna/gonna/kinda) where appropriate.",
+      "category": "Priority Change",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-18T04:09:00Z",
+      "updatedAt": "2026-02-18T05:03:00Z",
+      "notes": "Applied to CFM remaster + Morning Light v2 generation flows."
+    },
+    {
+      "id": "directive-20260217-5",
+      "title": "Voice Studio is now a permanent VoiceForge tool",
+      "description": "Voice Studio mixing board must be integrated as an official permanent UI tool inside the VoiceForge suite.",
+      "category": "Feature Request",
+      "project": "voiceforge",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-18T04:26:00Z",
+      "updatedAt": "2026-02-18T05:03:00Z",
+      "notes": "Jeff: 'perfect. that needs to be part of the suite of UI tools for voiceforge'."
+    },
+    {
+      "id": "directive-20260217-6",
+      "title": "Run CFM with four rotating couples monthly + Hannah/Olivia Morning Light",
+      "description": "CFM should rotate across four husband/wife narrator couples monthly. Morning Light should run as Hannah + Olivia co-host format.",
+      "category": "Priority Change",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-18T04:44:00Z",
+      "updatedAt": "2026-02-18T05:03:00Z",
+      "notes": "Couple 1 locked: Margaret + Whitney Hammond. Three additional couples still required."
     }
   ]
 }
