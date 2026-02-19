@@ -12,6 +12,7 @@ interface KanbanTask {
   source: 'manual' | 'todo' | 'active_context' | 'subagent'
   createdAt: string
   updatedAt: string
+  order?: number
   description?: string
   tags?: string[]
 }
@@ -50,6 +51,7 @@ async function loadExistingTasks(): Promise<KanbanTask[]> {
         source: (String(task.source || 'manual') as KanbanTask['source']),
         createdAt: String(task.createdAt || new Date().toISOString()),
         updatedAt: String(task.updatedAt || new Date().toISOString()),
+        order: typeof task.order === 'number' ? task.order : undefined,
         description: typeof task.description === 'string' ? task.description : undefined,
         tags: Array.isArray(task.tags) ? task.tags.map(String) : []
       }
@@ -275,11 +277,29 @@ export async function POST(request: NextRequest) {
     const tasks = await loadExistingTasks()
     
     if (body.action === 'move') {
-      // Move task between columns
+      // Move/reorder task within priority columns
       const taskIndex = tasks.findIndex(t => t.id === body.taskId)
       if (taskIndex !== -1) {
-        tasks[taskIndex].status = body.newStatus
-        tasks[taskIndex].updatedAt = new Date().toISOString()
+        const moving = tasks[taskIndex]
+        const newStatus = body.newStatus as KanbanTask['status']
+        const destinationIndex = Number.isInteger(body.destinationIndex) ? body.destinationIndex : 0
+
+        const remaining = tasks.filter(t => t.id !== body.taskId)
+        const targetColumn = remaining.filter(t => t.status === newStatus)
+        const targetOthers = remaining.filter(t => t.status !== newStatus)
+
+        const movedTask: KanbanTask = {
+          ...moving,
+          status: newStatus,
+          updatedAt: new Date().toISOString()
+        }
+
+        const insertAt = Math.max(0, Math.min(destinationIndex, targetColumn.length))
+        targetColumn.splice(insertAt, 0, movedTask)
+        const orderedTarget = targetColumn.map((t, idx) => ({ ...t, order: idx }))
+
+        tasks.length = 0
+        tasks.push(...targetOthers, ...orderedTarget)
       }
     } else if (body.action === 'create') {
       // Create new manual task

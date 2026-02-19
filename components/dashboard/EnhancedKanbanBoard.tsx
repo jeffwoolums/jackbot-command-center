@@ -13,6 +13,7 @@ interface KanbanTask {
   source: 'manual' | 'todo' | 'active_context' | 'subagent'
   createdAt: string
   updatedAt: string
+  order?: number
   description?: string
   tags?: string[]
 }
@@ -87,11 +88,29 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
 
     const { draggableId, destination } = result
     const newStatus = destination.droppableId as KanbanTask['status']
+    const destinationIndex = destination.index
 
-    // Optimistic update
-    setTasks(prev => prev.map(task => 
-      task.id === draggableId ? { ...task, status: newStatus, updatedAt: new Date().toISOString() } : task
-    ))
+    // Optimistic update with in-column ordering
+    setTasks(prev => {
+      const moving = prev.find(t => t.id === draggableId)
+      if (!moving) return prev
+
+      const remaining = prev.filter(t => t.id !== draggableId)
+      const targetColumn = remaining.filter(t => t.status === newStatus)
+      const targetOthers = remaining.filter(t => t.status !== newStatus)
+
+      const movedTask: KanbanTask = {
+        ...moving,
+        status: newStatus,
+        updatedAt: new Date().toISOString()
+      }
+
+      const insertAt = Math.max(0, Math.min(destinationIndex, targetColumn.length))
+      targetColumn.splice(insertAt, 0, movedTask)
+      const orderedTarget = targetColumn.map((t, idx) => ({ ...t, order: idx }))
+
+      return [...targetOthers, ...orderedTarget]
+    })
 
     // Save to server
     try {
@@ -100,8 +119,9 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           action: 'move',
-          taskId: draggableId, 
-          newStatus 
+          taskId: draggableId,
+          newStatus,
+          destinationIndex
         })
       })
     } catch (e) {
@@ -160,7 +180,9 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
   }
 
   const getTasksByStatus = (status: string) => 
-    tasks.filter(t => t.status === status)
+    tasks
+      .filter(t => t.status === status)
+      .sort((a, b) => (a.order ?? 9999) - (b.order ?? 9999) || new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime())
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr)
