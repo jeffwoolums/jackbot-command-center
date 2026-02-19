@@ -1056,6 +1056,49 @@
       "createdAt": "2026-02-18T04:14:00Z",
       "completedAt": "2026-02-18T04:19:00Z",
       "notes": "Bug caught by Jeff ('wrong voice'). Fixed to whitney_new_ref2.wav with regeneration launched."
+    },
+    {
+      "id": "feature-20260218-1",
+      "title": "De-robotization pass for non-Hannah/Olivia voices",
+      "description": "Run targeted QA/remastering to remove robotic cadence from non-Hannah/Olivia narrator outputs across active content pipelines.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "javabean",
+      "status": "pending",
+      "createdAt": "2026-02-19T05:25:54Z",
+      "notes": "Captured from Feb 18 daily priorities after voice QA session."
+    },
+    {
+      "id": "feature-20260218-2",
+      "title": "DVA legal and revenue-sharing package",
+      "description": "Prepare legal terms and revenue-sharing structure for recruited husband/wife DVA narrator couples before scaling monthly rotation.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "lessoncraft-content",
+      "status": "pending",
+      "createdAt": "2026-02-19T05:25:54Z"
+    },
+    {
+      "id": "feature-20260218-3",
+      "title": "First Light News content pipeline",
+      "description": "Stand up repeatable workflow for First Light News scripting, voice generation, QA, and catalog publishing.",
+      "priority": "P2",
+      "requester": "Jeff",
+      "project": "lessoncraft-content",
+      "status": "pending",
+      "createdAt": "2026-02-19T05:25:54Z"
+    },
+    {
+      "id": "feature-20260218-4",
+      "title": "Crew Dashboard + DVA Casting portal launch",
+      "description": "Launch and track production operations dashboard + narrator casting intake portal for voice production scaling.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "voiceforge",
+      "status": "complete",
+      "createdAt": "2026-02-19T05:25:54Z",
+      "completedAt": "2026-02-19T05:25:54Z",
+      "notes": "Shipped URLs: https://command.aituned.io and https://dva-casting.pages.dev."
     }
   ]
 }

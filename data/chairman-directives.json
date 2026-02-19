@@ -562,6 +562,45 @@
       "createdAt": "2026-02-18T04:44:00Z",
       "updatedAt": "2026-02-18T05:03:00Z",
       "notes": "Couple 1 locked: Margaret + Whitney Hammond. Three additional couples still required."
+    },
+    {
+      "id": "directive-20260218-1",
+      "title": "Universal parity is primary; native iOS stays bug-fix only",
+      "description": "Prioritize LessonCraft Universal (Flutter) parity work as mainline delivery. Keep native iOS in bug-fix mode unless critical issues appear.",
+      "category": "Priority Change",
+      "project": "lessoncraft-flutter",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-19T05:25:54Z",
+      "updatedAt": "2026-02-19T05:25:54Z",
+      "notes": "Captured from Feb 18 locked overnight decisions in daily memory."
+    },
+    {
+      "id": "directive-20260218-2",
+      "title": "Use canonical CFM source of truth for all new content",
+      "description": "All new CFM scripts/episodes must use the canonical LessonCraft CFM source to avoid doctrinal/content drift.",
+      "category": "Clarification",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-19T05:25:54Z",
+      "updatedAt": "2026-02-19T05:25:54Z",
+      "notes": "Prompted by Feb 18 discovery of canonical CFM source."
+    },
+    {
+      "id": "directive-20260218-3",
+      "title": "Show naming and content rules are locked",
+      "description": "Apply locked naming conventions and content rules across Morning Light, CFM, Firesides, and future series. No ad-hoc renames.",
+      "category": "Clarification",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-19T05:25:54Z",
+      "updatedAt": "2026-02-19T05:25:54Z",
+      "notes": "References content-rules lock noted in Feb 18 daily memory."
     }
   ]
 }
