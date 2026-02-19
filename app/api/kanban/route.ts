@@ -254,9 +254,9 @@ export async function GET() {
     return NextResponse.json({
       tasks,
       columns: [
-        { id: 'backlog', title: 'Backlog', color: 'border-slate-600' },
-        { id: 'inprogress', title: 'In Progress', color: 'border-amber-500' },
-        { id: 'done', title: 'Done', color: 'border-green-500' }
+        { id: 'backlog', title: 'Immediate Priority', color: 'border-red-500' },
+        { id: 'inprogress', title: 'Secondary Priority', color: 'border-amber-500' },
+        { id: 'done', title: 'Downtime Priority', color: 'border-blue-500' }
       ],
       projectColors: PROJECT_COLORS
     })
