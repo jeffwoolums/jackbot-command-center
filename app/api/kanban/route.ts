@@ -314,6 +314,19 @@ export async function POST(request: NextRequest) {
           })
         }
       }
+    } else if (body.action === 'reorder') {
+      const status = body.status as KanbanTask['status']
+      const orderedIds: string[] = Array.isArray(body.orderedIds) ? body.orderedIds : []
+      if (status && orderedIds.length) {
+        const orderMap = new Map<string, number>()
+        orderedIds.forEach((id, idx) => orderMap.set(id, idx))
+        tasks.forEach(t => {
+          if (t.status === status && orderMap.has(t.id)) {
+            t.order = orderMap.get(t.id)
+            t.updatedAt = new Date().toISOString()
+          }
+        })
+      }
     } else if (body.action === 'create') {
       // Create new manual task
       const newTask: KanbanTask = {

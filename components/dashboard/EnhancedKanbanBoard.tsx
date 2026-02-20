@@ -192,6 +192,45 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
     }
   }
 
+  const moveTaskRank = async (taskId: string, status: KanbanTask['status'], direction: 'up' | 'down') => {
+    const column = getTasksByStatus(status)
+    const idx = column.findIndex(t => t.id === taskId)
+    if (idx === -1) return
+
+    const targetIdx = direction === 'up' ? idx - 1 : idx + 1
+    if (targetIdx < 0 || targetIdx >= column.length) return
+
+    const reordered = [...column]
+    const [item] = reordered.splice(idx, 1)
+    reordered.splice(targetIdx, 0, item)
+
+    const orderedIds = reordered.map(t => t.id)
+
+    // optimistic
+    setTasks(prev => prev.map(t => {
+      if (t.status !== status) return t
+      const newOrder = orderedIds.indexOf(t.id)
+      return newOrder >= 0 ? { ...t, order: newOrder, updatedAt: new Date().toISOString() } : t
+    }))
+
+    try {
+      const res = await fetch('/api/kanban', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action: 'reorder',
+          status,
+          orderedIds
+        })
+      })
+      const data = await res.json()
+      if (data?.tasks) setTasks(data.tasks)
+    } catch (e) {
+      console.error('Failed to reorder task:', e)
+      fetchKanbanData()
+    }
+  }
+
   const getTasksByStatus = (status: string) => 
     tasks
       .filter(t => t.status === status)
@@ -318,10 +357,22 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
                               </div>
 
                               {/* Footer */}
-                              <div className="flex items-center justify-between text-xs text-slate-500">
+                              <div className="flex items-center justify-between text-xs text-slate-500 gap-2">
                                 <div className="flex items-center gap-1">
                                   <span>👤</span>
                                   {task.owner}
+                                </div>
+                                <div className="flex items-center gap-1">
+                                  <button
+                                    onClick={() => moveTaskRank(task.id, task.status, 'up')}
+                                    className="px-2 py-0.5 rounded bg-slate-900 hover:bg-slate-700 text-slate-300"
+                                    title="Move up"
+                                  >↑</button>
+                                  <button
+                                    onClick={() => moveTaskRank(task.id, task.status, 'down')}
+                                    className="px-2 py-0.5 rounded bg-slate-900 hover:bg-slate-700 text-slate-300"
+                                    title="Move down"
+                                  >↓</button>
                                 </div>
                                 <div className="flex items-center gap-1">
                                   <span>🕒</span>
