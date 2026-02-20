@@ -91,20 +91,33 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
     const moving = tasks.find(t => t.id === draggableId)
     if (!moving) return
 
-    const remaining = tasks.filter(t => t.id !== draggableId)
-    const targetColumn = remaining.filter(t => t.status === newStatus)
-    const targetOthers = remaining.filter(t => t.status !== newStatus)
-
     const movedTask: KanbanTask = {
       ...moving,
       status: newStatus,
       updatedAt: new Date().toISOString()
     }
 
+    // Build from currently displayed order (not raw array order)
+    const orderedBacklog = getTasksByStatus('backlog').filter(t => t.id !== draggableId)
+    const orderedInprogress = getTasksByStatus('inprogress').filter(t => t.id !== draggableId)
+    const orderedDone = getTasksByStatus('done').filter(t => t.id !== draggableId)
+
+    const targetColumn = newStatus === 'backlog'
+      ? orderedBacklog
+      : newStatus === 'inprogress'
+        ? orderedInprogress
+        : orderedDone
+
     const insertAt = Math.max(0, Math.min(destinationIndex, targetColumn.length))
     targetColumn.splice(insertAt, 0, movedTask)
-    const orderedTarget = targetColumn.map((t, idx) => ({ ...t, order: idx }))
-    const nextTasks = [...targetOthers, ...orderedTarget]
+
+    const renumber = (arr: KanbanTask[]) => arr.map((t, idx) => ({ ...t, order: idx }))
+    const finalBacklog = renumber(newStatus === 'backlog' ? targetColumn : orderedBacklog)
+    const finalInprogress = renumber(newStatus === 'inprogress' ? targetColumn : orderedInprogress)
+    const finalDone = renumber(newStatus === 'done' ? targetColumn : orderedDone)
+
+    const orderedTarget = newStatus === 'backlog' ? finalBacklog : newStatus === 'inprogress' ? finalInprogress : finalDone
+    const nextTasks = [...finalBacklog, ...finalInprogress, ...finalDone]
 
     // Optimistic update
     setTasks(nextTasks)
