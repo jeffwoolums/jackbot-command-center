@@ -66,9 +66,6 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
 
   useEffect(() => {
     fetchKanbanData()
-    // Refresh every 30 seconds to pick up new TODO/ACTIVE_CONTEXT changes
-    const interval = setInterval(fetchKanbanData, 30000)
-    return () => clearInterval(interval)
   }, [])
 
   const fetchKanbanData = async () => {

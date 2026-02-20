@@ -251,8 +251,10 @@ async function syncTasksFromFiles(): Promise<KanbanTask[]> {
 
 export async function GET() {
   try {
-    const tasks = await syncTasksFromFiles()
-    
+    // Return persisted board state so manual priority ordering is stable.
+    // File/context sync should run explicitly, not on every page fetch.
+    const tasks = await loadExistingTasks()
+
     return NextResponse.json({
       tasks,
       columns: [
