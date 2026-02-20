@@ -1,0 +1,1210 @@
+[
+  {
+    "id": "priority-downtime-voice-rd",
+    "title": "Voice R&D backlog (Ali/Jarvis tuning not blocking ship)",
+    "status": "done",
+    "priority": "medium",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-19T23:02:40.179934Z",
+    "updatedAt": "2026-02-19T23:02:40.179934Z",
+    "description": "Priority dashboard anchor card",
+    "tags": [
+      "priority-board",
+      "manual"
+    ]
+  },
+  {
+    "id": "rs-hat-plus",
+    "title": "Raspberry Pi AI HAT+ 2 arriving",
+    "status": "backlog",
+    "priority": "low",
+    "project": "Other",
+    "owner": "Jeff",
+    "source": "manual",
+    "createdAt": "2026-02-14T12:00:00Z",
+    "updatedAt": "2026-02-19T23:54:12.436Z",
+    "description": "$130 Hailo-10H 40 TOPS. For RaceStream car detection + JiggyBot screen reading. Jeff ordered Feb 14.",
+    "tags": [
+      "hardware",
+      "racestream"
+    ]
+  },
+  {
+    "id": "lc-subscriptions",
+    "title": "Create subscription products in App Store Connect",
+    "status": "done",
+    "priority": "medium",
+    "project": "LessonCraft",
+    "owner": "Jackbot",
+    "source": "todo",
+    "createdAt": "2026-02-15T12:00:00Z",
+    "updatedAt": "2026-02-19T23:57:22.469Z",
+    "description": "4 product IDs: monthly ($4.99), annual ($39.99), student ($1.99), lifetime. Needed before public launch.",
+    "tags": [
+      "monetization"
+    ]
+  },
+  {
+    "id": "lc-asc-admin-key",
+    "title": "Create new App Store Connect API key with Admin role",
+    "status": "done",
+    "priority": "medium",
+    "project": "LessonCraft",
+    "owner": "Jeff",
+    "source": "active_context",
+    "createdAt": "2026-02-15T12:00:00Z",
+    "updatedAt": "2026-02-19T23:57:28.835Z",
+    "description": "Current key (NL3C9HT8LT) only works for uploads, not management. Need Admin key for full API access.",
+    "tags": [
+      "infrastructure"
+    ]
+  },
+  {
+    "id": "jd-stripe-webhook",
+    "title": "Deploy Stripe webhook secret for print store",
+    "status": "done",
+    "priority": "medium",
+    "project": "JD Gallery",
+    "owner": "Jackbot",
+    "source": "todo",
+    "createdAt": "2026-02-13T12:00:00Z",
+    "updatedAt": "2026-02-20T00:02:29.669Z",
+    "description": "Stripe is wired but webhook secret needs deploying to production worker.",
+    "tags": [
+      "payments"
+    ]
+  },
+  {
+    "id": "content-x-account",
+    "title": "Set up X/Twitter account for content pipeline",
+    "status": "done",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Jeff",
+    "source": "todo",
+    "createdAt": "2026-02-04T12:00:00Z",
+    "updatedAt": "2026-02-20T00:02:32.868Z",
+    "description": "Jeff setting up Twitter/Facebook. Needed for build-in-public content strategy.",
+    "tags": [
+      "social",
+      "marketing"
+    ]
+  },
+  {
+    "id": "content-tiktok-handle",
+    "title": "Get TikTok handle from Jeff",
+    "status": "done",
+    "priority": "low",
+    "project": "Content",
+    "owner": "Jeff",
+    "source": "todo",
+    "createdAt": "2026-02-13T12:00:00Z",
+    "updatedAt": "2026-02-20T00:02:35.698Z",
+    "description": "3 sample TikTok videos generated. Strategy complete. Need handle to start posting.",
+    "tags": [
+      "social",
+      "tiktok"
+    ]
+  },
+  {
+    "id": "infra-morning-brief",
+    "title": "Upgraded morning brief — weather, calendar, email, tasks, recs",
+    "status": "done",
+    "priority": "high",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T22:05:00Z",
+    "updatedAt": "2026-02-15T22:05:00Z",
+    "description": "Comprehensive daily brief fires at 7am CST. Pulls weather, gog calendar, himalaya emails, active tasks, recommendations.",
+    "tags": [
+      "cron",
+      "automation"
+    ]
+  },
+  {
+    "id": "infra-weekly-ideas",
+    "title": "Weekly ideas pitch cron — Sunday 8pm",
+    "status": "done",
+    "priority": "medium",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T22:05:00Z",
+    "updatedAt": "2026-02-15T22:05:00Z",
+    "description": "Reverse prompting session. Research trends, propose 3 ideas with revenue estimates.",
+    "tags": [
+      "cron",
+      "automation"
+    ]
+  },
+  {
+    "id": "infra-eod-review",
+    "title": "End of day self-audit cron — 9pm daily",
+    "status": "done",
+    "priority": "medium",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T22:05:00Z",
+    "updatedAt": "2026-02-15T22:05:00Z",
+    "description": "Internal housekeeping. Reviews what shipped, updates memory files, sets tomorrow's priorities.",
+    "tags": [
+      "cron",
+      "automation"
+    ]
+  },
+  {
+    "id": "infra-approvals-queue",
+    "title": "Approvals queue in Mission Control",
+    "status": "done",
+    "priority": "high",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T22:05:00Z",
+    "updatedAt": "2026-02-15T22:14:00Z",
+    "description": "Content approval system at localhost:3333/approvals. Pending/history tabs, approve/reject buttons, API endpoints.",
+    "tags": [
+      "command-center"
+    ]
+  },
+  {
+    "id": "infra-self-improvement",
+    "title": "Self-improvement system (.learnings/)",
+    "status": "done",
+    "priority": "medium",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T22:05:00Z",
+    "updatedAt": "2026-02-15T22:05:00Z",
+    "description": "LEARNINGS.md, ERRORS.md, FEATURE_REQUESTS.md all active. Instant capture protocol in AGENTS.md.",
+    "tags": [
+      "memory",
+      "automation"
+    ]
+  },
+  {
+    "id": "lc-android-apk",
+    "title": "Android APK built, signed, and hosted",
+    "status": "done",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T09:07:00Z",
+    "updatedAt": "2026-02-15T15:40:00Z",
+    "description": "Release APK (59.7MB) hosted on R2 + GitHub releases + download button on lessoncraft.net.",
+    "tags": [
+      "android",
+      "shipped"
+    ]
+  },
+  {
+    "id": "lc-ios-submitted",
+    "title": "LessonCraft iOS submitted to App Store",
+    "status": "done",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jeff + Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T20:29:00Z",
+    "updatedAt": "2026-02-15T20:29:00Z",
+    "description": "Build 8 (1.0.4) attached, pricing set Free, privacy published, contact info filled. Auto-release after approval.",
+    "tags": [
+      "app-store",
+      "milestone"
+    ]
+  },
+  {
+    "id": "lc-font-change",
+    "title": "Replace Cinzel with system font across all UI",
+    "status": "done",
+    "priority": "medium",
+    "project": "LessonCraft",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-15T14:00:00Z",
+    "updatedAt": "2026-02-15T14:00:00Z",
+    "description": "Commit 0fd9ba5. System font for titles/headlines/tabs/buttons. Cinzel only for splash + share card.",
+    "tags": [
+      "ui",
+      "shipped"
+    ]
+  },
+  {
+    "id": "lc-flutter-batches",
+    "title": "All 6 Flutter port sub-agent batches merged",
+    "status": "done",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-14T23:00:00Z",
+    "updatedAt": "2026-02-15T08:00:00Z",
+    "description": "P1 advanced lessons, P2 audio, P3 study features, lint cleanup. Main branch clean.",
+    "tags": [
+      "flutter",
+      "milestone"
+    ]
+  },
+  {
+    "id": "jd-art-bot",
+    "title": "Create JD Art Studio Telegram bot via BotFather",
+    "status": "done",
+    "priority": "low",
+    "project": "JD Gallery",
+    "owner": "Jeff",
+    "source": "todo",
+    "createdAt": "2026-02-11T12:00:00Z",
+    "updatedAt": "2026-02-20T00:02:39.230Z",
+    "description": "Separate Telegram bot for art generation workflow. Jeff will create it.",
+    "tags": [
+      "art",
+      "agents"
+    ]
+  },
+  {
+    "id": "todo-1771545232522-b2nppymeu",
+    "title": "Persisted lesson storage for review-only durability",
+    "status": "done",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-20T00:00:48.567Z",
+    "description": "- Full Team Lesson generation/nav parity",
+    "tags": []
+  },
+  {
+    "id": "todo-1771545232522-xcygtg2eu",
+    "title": "Full Team Lesson generation/nav parity",
+    "status": "done",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-20T00:00:54.101Z",
+    "description": "- Explicit locale-driven generation selector in Prepare flow",
+    "tags": []
+  },
+  {
+    "id": "todo-1771545232522-3e4dusopx",
+    "title": "Explicit locale-driven generation selector in Prepare f",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-19T23:53:52.522Z",
+    "tags": []
+  },
+  {
+    "id": "todo-1771545232522-4ykzlv5dm",
+    "title": "Bug fixes only unless critical gap",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-19T23:53:52.522Z",
+    "tags": []
+  },
+  {
+    "id": "todo-1771545232522-yo7ki6qn1",
+    "title": "Monitor App Store review status and respond quickly if Apple asks for changes",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-19T23:53:52.522Z",
+    "tags": []
+  },
+  {
+    "id": "todo-1771545232522-gi0l7s1jz",
+    "title": "Keep “Come Fol Me” phrasing consistent",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-19T23:53:52.522Z",
+    "tags": []
+  },
+  {
+    "id": "todo-1771545232522-aq4jknpgx",
+    "title": "Maintain Margaret/Whitney dialog quality standard (no awkward pacing)",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-19T23:53:52.522Z",
+    "tags": []
+  },
+  {
+    "id": "todo-1771545232522-guxu1jklp",
+    "title": "Keep secrets env-based (no hardcoded tokens/keys)",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "System",
+    "source": "todo",
+    "createdAt": "2026-02-19T23:53:52.522Z",
+    "updatedAt": "2026-02-19T23:53:52.522Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-55b7hz18z",
+    "title": "App Store submission (iOS 1.0 build + subs) is done; monitor review only.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.523Z",
+    "updatedAt": "2026-02-19T23:53:52.523Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-xe9b4gnah",
+    "title": "Native iOS now enters **bug-fix mode** unless critical miss.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.523Z",
+    "updatedAt": "2026-02-19T23:53:52.523Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-dyefpgo0l",
+    "title": "Primary product push is now **Universal app parity** (Flutter) toward v2.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.523Z",
+    "updatedAt": "2026-02-19T23:53:52.523Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-syuet42xl",
+    "title": "Content sprint tonight:",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.523Z",
+    "updatedAt": "2026-02-19T23:53:52.523Z",
+    "description": "- Write next 2–3 CFM episodes",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-rjw15pr2v",
+    "title": "Write next 2–3 CFM episodes",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.523Z",
+    "updatedAt": "2026-02-19T23:53:52.523Z",
+    "description": "- Write next 10 Morning Light episodes",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-cbxeddwg5",
+    "title": "Write next 10 Morning Light episodes",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.523Z",
+    "updatedAt": "2026-02-19T23:53:52.523Z",
+    "description": "- Audio generation scheduled tomorrow",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-tj16bhzbl",
+    "title": "Audio generation scheduled tomorrow",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.523Z",
+    "updatedAt": "2026-02-19T23:53:52.523Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232523-w7hexei4u",
+    "title": "App Review feedback from Apple (if any)",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-jgdr47z94",
+    "title": "Apple Developer tax ID case resolution",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-ifo5ah3p4",
+    "title": "None for overnight build/content sprint",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-08hi0eqto",
+    "title": "Universal app repo: `~/developer/lessoncraft-flutter/`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-b9x944p3z",
+    "title": "Native app repo: `~/developer/lessoncraft/`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-44ykedo45",
+    "title": "CFM scripts/content: `~/Jackbot/content/cfm/`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-3fi6739yk",
+    "title": "Morning Light content: `~/Jackbot/content/morning-light/`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-467o6u97f",
+    "title": "Voice/content standards: `~/Jackbot/content/content-rules.md`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-wehjv63q2",
+    "title": "`audio-pass-finalize-monitor` → `agent:ops:subagent:2b2cc9be-feec-48b7-90cf-a5088fb61f7a`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- heartbeat follow-up: SSH connectivity recovered; sub-agent now running artifact + upload pipeline verification and preparing final report.",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-nsyz4gup9",
+    "title": "heartbeat fol-up: SSH connectivity recovered; sub-agent now running artifact + upload pipeline verification and preparing final report.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- latest check: Morning Light currently at 8/10 finals (ep06–ep13 present), generation process still active for ep14–ep15.",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-eqmkv3vhl",
+    "title": "latest check: Morning Light currently at 8/10 finals (ep06–ep13 present), generation process still active for ep14–ep15.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-ydf0eqzel",
+    "title": "`cfm-next3-writing-sprint` completed and merged (commit `fcd1f3c`): Weeks 13–15 scripts + production notes + index added under `content/cfm/`.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-febvo2prt",
+    "title": "`morning-light-next10-writing-sprint` completed and merged (commit `f012779`): Morning Light episodes 06–15 scripts written and ready for tomorrow audio pass.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-hjzlkpyfc",
+    "title": "`lessoncraft-universal-v2-parity-android` completed in `lessoncraft-flutter` (commit `881d108`): review-only lock mode, title extraction hardening, paywall parity, localized translation f, and Android debug APK build validated.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-6vlp5jia7",
+    "title": "`nightly-port-native-tweaks-to-flutter` completed and verified in `lessoncraft-flutter` (branch `feat/nightly-native-parity-port-2026-02-18`, commit `7aa6bdf`): drip-feed gating, IAP ID parity, splash tap-dismiss parity; test suite green; report at `docs/overnight/native-to-flutter-parity-2026-02-18.md`.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-xulsm86t5",
+    "title": "`nightly-validate-multilang-translation-parity` completed in `lessoncraft-flutter` (branch `feat/nightly-i18n-parity-2026-02-18`, commit `2565bbe`): deterministic English fallback + locale resolution hardening + core f localization pass; report at `docs/overnight/flutter-i18n-parity-report-2026-02-18.md`.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-h7mev5kvx",
+    "title": "`morning-audio-pass-cfm13-15-ml06-15` produced partial progress (CFM complete + Morning Light mid-run) but control session hit context overf during long-log monitoring; monitoring/finalization reassigned to `audio-pass-finalize-monitor`.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-2i7pzname",
+    "title": "Native parity port shipped in `lessoncraft-flutter`:",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- Branch: `feat/nightly-native-parity-port-2026-02-18`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-g3gctp6ex",
+    "title": "Branch: `feat/nightly-native-parity-port-2026-02-18`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- Commit: `7aa6bdf`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-7sckuzscf",
+    "title": "Commit: `7aa6bdf`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- Report: `~/Jackbot/docs/overnight/native-to-flutter-parity-2026-02-18.md`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-wu61ccfyr",
+    "title": "Report: `~/Jackbot/docs/overnight/native-to-flutter-parity-2026-02-18.md`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-o1870nxln",
+    "title": "i18n parity hardening shipped and finalized in main Flutter repo:",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- Branch: `feat/nightly-i18n-parity-2026-02-18`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-y7u7r2tlo",
+    "title": "Branch: `feat/nightly-i18n-parity-2026-02-18`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- Commit: `2565bbe`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-74pyjg1fq",
+    "title": "Commit: `2565bbe`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- Report: `~/Jackbot/docs/overnight/flutter-i18n-parity-report-2026-02-18.md`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-o1w1kva12",
+    "title": "Report: `~/Jackbot/docs/overnight/flutter-i18n-parity-report-2026-02-18.md`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-rlz0laiwo",
+    "title": "Android debug APK validated:",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- `~/developer/lessoncraft-flutter/build/app/outputs/flutter-apk/app-debug.apk`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-iwci9jxc3",
+    "title": "`~/developer/lessoncraft-flutter/build/app/outputs/flutter-apk/app-debug.apk`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- SHA256 `ecd7665738a1af6c4a567cec96d88129f8b53200e8612fffa5195e00c05f621c`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-t7s7j6km1",
+    "title": "SHA256 `ecd7665738a1af6c4a567cec96d88129f8b53200e8612fffa5195e00c05f621c`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-exh99yive",
+    "title": "Morning prep completed for Jeff’s student-free pricing request:",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- `~/Jackbot/docs/appstore/student-free-plan-morning-walkthrough.md`",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-ygcb3tmbl",
+    "title": "`~/Jackbot/docs/appstore/student-free-plan-morning-walkthrough.md`",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "- Plan: hide Student SKU now, use ASC offer-code campaign on Monthly for $0 student access.",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-m7lx7ohw4",
+    "title": "Plan: hide Student SKU now, use ASC offer-code campaign on Monthly for $0 student access.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-ndjvokat4",
+    "title": "Added explicit precedence + single-thread execution override to reduce instruction conflicts.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-uod6nrddl",
+    "title": "Operational mode now: one active Jeff objective at a time until delivered/accepted.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-hw52k7mlc",
+    "title": "Heartbeat behavior constrained to active task during  execution windows.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-i4mlzt2e9",
+    "title": "Active operating model: card board with 3 lanes (Immediate / Secondary / Downtime-LongTerm).",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-vgbm68yak",
+    "title": "Jeff orders priorities daily; assistant executes top Immediate item first.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-l6c93bifd",
+    "title": "Assistant must flag competing-command conflicts immediately when they appear.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-2fo70sc75",
+    "title": "Assistant has explicit permission to challenge misaligned work against short/long-term goals and park to long-term backlog.",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "tags": []
+  },
+  {
+    "id": "active-1771545232524-x7sbssrd6",
+    "title": "Primary strategic sequence:",
+    "status": "backlog",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Active Context",
+    "source": "active_context",
+    "createdAt": "2026-02-19T23:53:52.524Z",
+    "updatedAt": "2026-02-19T23:53:52.524Z",
+    "description": "1) Ship LessonCraft Universal (iOS + Android)",
+    "tags": []
+  },
+  {
+    "id": "priority-secondary-native-appstore",
+    "title": "Native iOS App Store track: review watch + resubmission packet ready",
+    "status": "inprogress",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-19T23:02:40.179934Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 2,
+    "description": "Priority dashboard anchor card",
+    "tags": [
+      "priority-board",
+      "manual"
+    ]
+  },
+  {
+    "id": "priority-immediate-universal-ship",
+    "title": "Universal LessonCraft: close remaining parity gaps and cut next QA build",
+    "status": "inprogress",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jeff + Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-19T23:02:40.179934Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 0,
+    "description": "Priority dashboard anchor card",
+    "tags": [
+      "priority-board",
+      "manual"
+    ]
+  },
+  {
+    "id": "jd-artist-collective",
+    "title": "Set up 6 AI artist agents for JD Gallery",
+    "status": "inprogress",
+    "priority": "high",
+    "project": "JD Gallery",
+    "owner": "Jeff + Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-15T21:00:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 3,
+    "description": "Jeff creating 6 Telegram bots via BotFather. Each artist gets unique style, SOUL.md, gallery corner. Styles: Impressionist, Cinematic, Minimalist, Folk Art, Watercolor, Abstract.",
+    "tags": [
+      "art",
+      "agents"
+    ]
+  },
+  {
+    "id": "lc-ipad-screenshots",
+    "title": "Upload iPad 13\" screenshots to App Store Connect",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "LessonCraft",
+    "owner": "Jeff",
+    "source": "active_context",
+    "createdAt": "2026-02-15T18:00:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 7,
+    "description": "8 iPad screenshots generated at ~/developer/LessonCraft/Screenshots/appstore-ipad-13/. Browser automation failed. Jeff may need to upload manually.",
+    "tags": [
+      "app-store"
+    ]
+  },
+  {
+    "id": "lc-flutter-port",
+    "title": "Flutter Universal — finish remaining iOS feature ports",
+    "status": "inprogress",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-14T22:00:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 4,
+    "description": "Translation, stories, onboarding still need porting. All 6 sub-agent batches merged. Main branch clean.",
+    "tags": [
+      "flutter",
+      "critical-path"
+    ]
+  },
+  {
+    "id": "lc-google-play",
+    "title": "Get Google Play Console service account JSON key",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "LessonCraft",
+    "owner": "Jeff",
+    "source": "active_context",
+    "createdAt": "2026-02-15T09:00:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 6,
+    "description": "Account exists (ID: 5516590171868597203). Need service account key for automated APK/AAB uploads.",
+    "tags": [
+      "android",
+      "google-play"
+    ]
+  },
+  {
+    "id": "jd-new-artwork",
+    "title": "Generate new artwork (jd-169+) and upload to R2",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "JD Gallery",
+    "owner": "Jackbot",
+    "source": "todo",
+    "createdAt": "2026-02-14T12:00:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 15,
+    "description": "98 vetted pieces remain after audit. Target 250+. Use Artist Engine with SOP.",
+    "tags": [
+      "art",
+      "content"
+    ]
+  },
+  {
+    "id": "gt-swift-package",
+    "title": "GospelTunedCore shared Swift Package extraction",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "Other",
+    "owner": "Jackbot",
+    "source": "active_context",
+    "createdAt": "2026-02-13T23:00:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 12,
+    "description": "Extract shared core from LessonCraft iOS into reusable package for Catholic, Baptist, Methodist apps.",
+    "tags": [
+      "gospel-tuned",
+      "architecture"
+    ]
+  },
+  {
+    "id": "music-suno-research",
+    "title": "Research Suno AI API for sacred music generation",
+    "status": "inprogress",
+    "priority": "high",
+    "project": "Gospel Tuned Empire",
+    "owner": "Jackbot",
+    "source": "jeff-directive",
+    "createdAt": "2026-02-16T03:52:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 5,
+    "description": "Suno API is gold standard for AI music gen. Evaluate pricing, API capabilities, output quality, licensing terms for commercial use in apps.",
+    "tags": [
+      "music",
+      "research",
+      "suno"
+    ]
+  },
+  {
+    "id": "music-hymn-generation",
+    "title": "Prototype AI hymn/worship music generation per faith",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "Gospel Tuned Empire",
+    "owner": "Jackbot",
+    "source": "jeff-directive",
+    "createdAt": "2026-02-16T03:52:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 13,
+    "description": "Use Suno API to generate sample sacred music for each faith: LDS hymns, Catholic chant/Mass settings, Pentecostal praise & worship, Sikh kirtan, Buddhist meditation, Jewish Shabbat songs, Hindu bhajans. Test quality and authenticity.",
+    "tags": [
+      "music",
+      "prototype",
+      "suno"
+    ]
+  },
+  {
+    "id": "music-sheet-gen",
+    "title": "Explore AI sheet music generation tools",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "Gospel Tuned Empire",
+    "owner": "Jackbot",
+    "source": "jeff-directive",
+    "createdAt": "2026-02-16T03:52:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 9,
+    "description": "Can we generate sheet music (PDF/MusicXML) from AI-generated audio or from scratch? Investigate tools. Huge value for music directors — choir parts, piano accompaniment, custom arrangements.",
+    "tags": [
+      "music",
+      "research",
+      "sheet-music"
+    ]
+  },
+  {
+    "id": "music-tab-design",
+    "title": "Design Music tab for faith apps",
+    "status": "inprogress",
+    "priority": "low",
+    "project": "Gospel Tuned Empire",
+    "owner": "Jackbot",
+    "source": "jeff-directive",
+    "createdAt": "2026-02-16T03:52:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 11,
+    "description": "Every app gets a Music tab with AI-generated devotional music specific to that faith. Users can browse catalog, generate custom worship music for their congregation, download/share. Premium subscription tier potential.",
+    "tags": [
+      "music",
+      "design",
+      "feature"
+    ]
+  },
+  {
+    "id": "music-artist-agents",
+    "title": "Create AI musician agents for the creative team",
+    "status": "inprogress",
+    "priority": "low",
+    "project": "Gospel Tuned Empire",
+    "owner": "Jackbot",
+    "source": "jeff-directive",
+    "createdAt": "2026-02-16T03:52:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 10,
+    "description": "Add musician personas alongside visual artists (Elise Moreau, Marcus Stone, etc.). Each musician specializes in a genre: sacred choral, contemporary worship, meditative ambient, devotional folk, etc. Full creative studio.",
+    "tags": [
+      "music",
+      "agents",
+      "creative-team"
+    ]
+  },
+  {
+    "id": "lc-appstore-review",
+    "title": "LessonCraft iOS — Waiting for App Store Review",
+    "status": "inprogress",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Apple",
+    "source": "active_context",
+    "createdAt": "2026-02-15T20:29:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 14,
+    "description": "App ID 6758739994, Version 1.0, Build 1.0.4 (#8). Submitted 2:29 PM CST Feb 15. Auto-release after approval. 24-48 hour review.",
+    "tags": [
+      "app-store",
+      "blocking"
+    ]
+  },
+  {
+    "id": "music-licensing-strategy",
+    "title": "Music licensing & monetization strategy",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "Gospel Tuned Empire",
+    "owner": "Jackbot",
+    "source": "jeff-directive",
+    "createdAt": "2026-02-16T03:52:00Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 8,
+    "description": "Define ownership/licensing for AI-generated sacred music. Can congregations use it in services? Can they download/print sheet music? Revenue model: bundled with subscription vs per-track vs music-only tier. Suno commercial licensing terms.",
+    "tags": [
+      "music",
+      "business",
+      "licensing"
+    ]
+  },
+  {
+    "id": "subagent-1771547005524-977xixulx",
+    "title": "Research and intelligence gathering",
+    "status": "inprogress",
+    "priority": "high",
+    "project": "Infrastructure",
+    "owner": "Scout",
+    "source": "subagent",
+    "createdAt": "2026-02-20T00:23:25.524Z",
+    "updatedAt": "2026-02-20T00:46:40.879Z",
+    "order": 1,
+    "description": "Active subagent: Explorer, information gatherer",
+    "tags": []
+  }
+]

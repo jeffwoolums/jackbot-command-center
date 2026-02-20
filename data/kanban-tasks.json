@@ -1,0 +1,155 @@
+[
+  {
+    "id": "fe-immediate-universal-ship",
+    "title": "Ship LessonCraft Universal release candidate (iOS + Android)",
+    "status": "backlog",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jackbot + Jeff",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 0,
+    "description": "Lock release candidate build with parity checklist complete and QA pass logged.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-immediate-native-appstore",
+    "title": "Ship native LessonCraft through App Store review/approval path",
+    "status": "backlog",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jeff + Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 1,
+    "description": "Resolve review items and have resubmission package ready same-day if needed.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-immediate-content-pipeline",
+    "title": "Stand up weekly content pipeline (produce ahead, QA, publish cadence)",
+    "status": "backlog",
+    "priority": "high",
+    "project": "Content",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 2,
+    "description": "Maintain one-week-ahead production with clear handoff + QA gates.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-secondary-growth-system",
+    "title": "Build growth system: offer codes, onboarding conversion, retention loop",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "LessonCraft",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 3,
+    "description": "Deploy measurable funnel improvements and weekly KPI tracking.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-secondary-denom-core",
+    "title": "Prepare Christian shared core for Catholic + Evangelical expansion",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "Content",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 4,
+    "description": "Define reusable core modules and implementation sequence.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-secondary-reliability-ops",
+    "title": "Reliability ops: sentinel + dashboard + cron integrity",
+    "status": "inprogress",
+    "priority": "medium",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 5,
+    "description": "System checks stable, cron model errors eliminated, dashboard trustworthy.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-downtime-voice-rd",
+    "title": "Voice R&D backlog (Ali/Jarvis tuning, non-blocking)",
+    "status": "done",
+    "priority": "low",
+    "project": "Infrastructure",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 6,
+    "description": "Only after Immediate/Secondary goals are on track.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-downtime-brand-assets",
+    "title": "Brand/design extras (logos, banners, polish)",
+    "status": "done",
+    "priority": "low",
+    "project": "Other",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 7,
+    "description": "Nice-to-have visual polish tasks.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-downtime-rnd",
+    "title": "Non-revenue R&D / experiments",
+    "status": "done",
+    "priority": "low",
+    "project": "Other",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 8,
+    "description": "Parked unless explicitly promoted by Jeff.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  }
+]
