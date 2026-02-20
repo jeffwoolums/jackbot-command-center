@@ -302,6 +302,17 @@ export async function POST(request: NextRequest) {
 
         tasks.length = 0
         tasks.push(...targetOthers, ...orderedTarget)
+
+        // If client provided explicit order for this column, enforce it directly.
+        if (Array.isArray(body.orderedIds) && body.orderedIds.length) {
+          const orderMap = new Map<string, number>()
+          body.orderedIds.forEach((id: string, idx: number) => orderMap.set(id, idx))
+          tasks.forEach(t => {
+            if (t.status === newStatus && orderMap.has(t.id)) {
+              t.order = orderMap.get(t.id)
+            }
+          })
+        }
       }
     } else if (body.action === 'create') {
       // Create new manual task

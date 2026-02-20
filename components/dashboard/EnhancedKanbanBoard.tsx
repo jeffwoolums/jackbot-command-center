@@ -87,43 +87,46 @@ export default function EnhancedKanbanBoard({ className = '' }: Props) {
     const newStatus = destination.droppableId as KanbanTask['status']
     const destinationIndex = destination.index
 
-    // Optimistic update with in-column ordering
-    setTasks(prev => {
-      const moving = prev.find(t => t.id === draggableId)
-      if (!moving) return prev
+    // Build deterministic next state
+    const moving = tasks.find(t => t.id === draggableId)
+    if (!moving) return
 
-      const remaining = prev.filter(t => t.id !== draggableId)
-      const targetColumn = remaining.filter(t => t.status === newStatus)
-      const targetOthers = remaining.filter(t => t.status !== newStatus)
+    const remaining = tasks.filter(t => t.id !== draggableId)
+    const targetColumn = remaining.filter(t => t.status === newStatus)
+    const targetOthers = remaining.filter(t => t.status !== newStatus)
 
-      const movedTask: KanbanTask = {
-        ...moving,
-        status: newStatus,
-        updatedAt: new Date().toISOString()
-      }
+    const movedTask: KanbanTask = {
+      ...moving,
+      status: newStatus,
+      updatedAt: new Date().toISOString()
+    }
 
-      const insertAt = Math.max(0, Math.min(destinationIndex, targetColumn.length))
-      targetColumn.splice(insertAt, 0, movedTask)
-      const orderedTarget = targetColumn.map((t, idx) => ({ ...t, order: idx }))
+    const insertAt = Math.max(0, Math.min(destinationIndex, targetColumn.length))
+    targetColumn.splice(insertAt, 0, movedTask)
+    const orderedTarget = targetColumn.map((t, idx) => ({ ...t, order: idx }))
+    const nextTasks = [...targetOthers, ...orderedTarget]
 
-      return [...targetOthers, ...orderedTarget]
-    })
+    // Optimistic update
+    setTasks(nextTasks)
 
-    // Save to server
+    // Save to server with explicit ordered IDs for this column
     try {
-      await fetch('/api/kanban', {
+      const orderedIds = orderedTarget.map(t => t.id)
+      const res = await fetch('/api/kanban', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
+        body: JSON.stringify({
           action: 'move',
           taskId: draggableId,
           newStatus,
-          destinationIndex
+          destinationIndex,
+          orderedIds
         })
       })
+      const data = await res.json()
+      if (data?.tasks) setTasks(data.tasks)
     } catch (e) {
       console.error('Failed to move task:', e)
-      // Revert on error
       fetchKanbanData()
     }
   }
