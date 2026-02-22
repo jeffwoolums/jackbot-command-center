@@ -867,7 +867,7 @@
       "priority": "P3",
       "requester": "Jeff",
       "project": "lessoncraft-flutter",
-      "status": "pending",
+      "status": "converted",
       "createdAt": "2026-02-16T04:12:00Z",
       "notes": "Marked low priority in Feb 15 evening directives."
     },
@@ -1099,6 +1099,78 @@
       "createdAt": "2026-02-19T05:25:54Z",
       "completedAt": "2026-02-19T05:25:54Z",
       "notes": "Shipped URLs: https://command.aituned.io and https://dva-casting.pages.dev."
+    },
+    {
+      "id": "feature-20260221-1",
+      "title": "PodiumReady product scaffold (6 engineering-ready docs)",
+      "description": "Complete product scaffold: README, PRODUCT-SPEC, WEEK-1-SPEC, ARCHITECTURE, BRANDING, BUILD-SUMMARY. Faith-agnostic evolution of LessonCraft for 2B+ speaker TAM. Revenue projection: $600K Year 1.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "gospel-tuned",
+      "status": "complete",
+      "createdAt": "2026-02-22T05:13:53Z",
+      "completedAt": "2026-02-22T05:13:53Z",
+      "notes": "6 documents, 84KB, committed to ~/Jackbot/projects/podiumready/. Three modes: Research, Prepared, Freestyle. Tech: Next.js 15 + Supabase + OpenAI/Claude."
+    },
+    {
+      "id": "feature-20260221-2",
+      "title": "Easter Docuseries R2 upload (5 episodes + manifest)",
+      "description": "Upload all 5 Easter Docuseries episodes to R2 with individual JSONs, combined episodes.json, and app-discovery manifest. Release scheduled Mar 23-27, 2026.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-22T05:13:53Z",
+      "completedAt": "2026-02-22T05:13:53Z",
+      "notes": "R2 keys: lessoncraft-audio/easter-docuseries/{episode-N}.json + episodes.json + manifest.json. 6,780 words, 28 KJV refs, 3 reflection questions per ep."
+    },
+    {
+      "id": "feature-20260221-3",
+      "title": "V5 voice fix spec (from V3-V4 spectral analysis)",
+      "description": "Comprehensive spectral analysis of Emily V3 vs V4 voices. Root cause: V4 downsampled 48kHz\u219224kHz (50% spectrum loss). V5 fix: restore 48kHz, soft limiter, proper bitrate.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-22T05:13:53Z",
+      "completedAt": "2026-02-22T05:13:53Z",
+      "notes": "Deliverables: EMILY_SPECTRAL_ANALYSIS.md + V4_FAILURE_SUMMARY.md in ~/Jackbot/. ASCII spectrograms, waveform comparisons, quality gates for V5."
+    },
+    {
+      "id": "feature-20260221-4",
+      "title": "Scrollwork Week 1 Auth Foundation spec",
+      "description": "Comprehensive auth architecture spec: FastAPI backend (SQLAlchemy, JWT, bcrypt), PostgreSQL schema, Next.js frontend (auth pages, context, protected routes). 32 checkboxes.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "scrollwork",
+      "status": "complete",
+      "createdAt": "2026-02-22T05:13:53Z",
+      "completedAt": "2026-02-22T05:13:53Z",
+      "notes": "Committed cadd5c7. 7.4KB. Ready for build team when LessonCraft ships. File: ~/Jackbot/projects/scrollwork/WEEK-1-AUTH-SPEC.md."
+    },
+    {
+      "id": "feature-20260221-5",
+      "title": "EULA Section 4.5 \u2014 Entertainment/Education disclaimer",
+      "description": "Added Section 4.5 to EULA covering dual educational + entertainment purpose. Addresses AI limitations, user responsibility, theological disclaimers. All sections renumbered.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "aituned-io",
+      "status": "complete",
+      "createdAt": "2026-02-22T05:13:53Z",
+      "completedAt": "2026-02-22T05:13:53Z",
+      "notes": "Deployed to Cloudflare Pages: https://aituned.io/eula. Addresses potential App Store review concern about AI-generated religious content."
+    },
+    {
+      "id": "feature-20260221-6",
+      "title": "SSH key auth to RaceStream server",
+      "description": "Configure passwordless SSH from Mac mini to RaceStream server (100.93.38.46). Eliminates sshpass dependency for voice generation pipeline.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "racestream",
+      "status": "complete",
+      "createdAt": "2026-02-22T05:13:53Z",
+      "completedAt": "2026-02-22T05:13:53Z",
+      "notes": "ssh tred@100.93.38.46 now works without password. Key already existed, just needed copying to server."
     }
   ]
 }

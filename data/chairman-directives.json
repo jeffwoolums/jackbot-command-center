@@ -601,6 +601,32 @@
       "createdAt": "2026-02-19T05:25:54Z",
       "updatedAt": "2026-02-19T05:25:54Z",
       "notes": "References content-rules lock noted in Feb 18 daily memory."
+    },
+    {
+      "id": "directive-20260221-1",
+      "title": "TRUST LEVEL ZERO \u2014 Do not touch anything without explicit instruction",
+      "description": "Jeff explicitly set trust level to zero. Do NOT do anything autonomously. Only respond to very specific, explicit instructions. Jeff will ask for exactly what he wants.",
+      "category": "Clarification",
+      "project": "command-center",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-22T05:14:08Z",
+      "updatedAt": "2026-02-22T05:14:08Z",
+      "notes": "Jeff: 'Don't you do anything at all my trust level with you is still zero.' 'I will ask for very fucking specific things.' Context: frustration over voice comparison page being destroyed and App Store jeopardy. CRITICAL: This overrides all HEARTBEAT.md proactive behavior on ops agent."
+    },
+    {
+      "id": "directive-20260221-2",
+      "title": "Do NOT rewrite files without reading them first",
+      "description": "Before ANY file modification: READ what's currently there, UNDERSTAND structure, SHOW Jeff before structural/design changes, ONLY change what explicitly asked, PRESERVE existing design, VERIFY the change.",
+      "category": "Clarification",
+      "project": "command-center",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-22T05:14:08Z",
+      "updatedAt": "2026-02-22T05:14:08Z",
+      "notes": "Root cause: voice comparison page with spectral analysis was overwritten with a white card layout. Jeff had to look for the original."
     }
   ]
 }

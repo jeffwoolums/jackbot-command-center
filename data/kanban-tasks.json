@@ -1,56 +1,5 @@
 [
   {
-    "id": "fe-immediate-universal-ship",
-    "title": "Ship LessonCraft Universal release candidate (iOS + Android)",
-    "status": "backlog",
-    "priority": "high",
-    "project": "LessonCraft",
-    "owner": "Jackbot + Jeff",
-    "source": "manual",
-    "createdAt": "2026-02-20T01:00:51.948411+00:00",
-    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
-    "order": 0,
-    "description": "Lock release candidate build with parity checklist complete and QA pass logged.",
-    "tags": [
-      "faith-empire",
-      "priority-board"
-    ]
-  },
-  {
-    "id": "fe-immediate-native-appstore",
-    "title": "Ship native LessonCraft through App Store review/approval path",
-    "status": "backlog",
-    "priority": "high",
-    "project": "LessonCraft",
-    "owner": "Jeff + Jackbot",
-    "source": "manual",
-    "createdAt": "2026-02-20T01:00:51.948411+00:00",
-    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
-    "order": 1,
-    "description": "Resolve review items and have resubmission package ready same-day if needed.",
-    "tags": [
-      "faith-empire",
-      "priority-board"
-    ]
-  },
-  {
-    "id": "fe-immediate-content-pipeline",
-    "title": "Stand up weekly content pipeline (produce ahead, QA, publish cadence)",
-    "status": "backlog",
-    "priority": "high",
-    "project": "Content",
-    "owner": "Jackbot",
-    "source": "manual",
-    "createdAt": "2026-02-20T01:00:51.948411+00:00",
-    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
-    "order": 2,
-    "description": "Maintain one-week-ahead production with clear handoff + QA gates.",
-    "tags": [
-      "faith-empire",
-      "priority-board"
-    ]
-  },
-  {
     "id": "fe-secondary-growth-system",
     "title": "Build growth system: offer codes, onboarding conversion, retention loop",
     "status": "inprogress",
@@ -147,6 +96,57 @@
     "updatedAt": "2026-02-20T01:00:51.948411+00:00",
     "order": 8,
     "description": "Parked unless explicitly promoted by Jeff.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-immediate-universal-ship",
+    "title": "Ship LessonCraft Universal release candidate (iOS + Android)",
+    "status": "backlog",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jackbot + Jeff",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-21T22:25:26.035Z",
+    "order": 0,
+    "description": "Lock release candidate build with parity checklist complete and QA pass logged.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-immediate-native-appstore",
+    "title": "Ship native LessonCraft through App Store review/approval path",
+    "status": "backlog",
+    "priority": "high",
+    "project": "LessonCraft",
+    "owner": "Jeff + Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 1,
+    "description": "Resolve review items and have resubmission package ready same-day if needed.",
+    "tags": [
+      "faith-empire",
+      "priority-board"
+    ]
+  },
+  {
+    "id": "fe-immediate-content-pipeline",
+    "title": "Stand up weekly content pipeline (produce ahead, QA, publish cadence)",
+    "status": "backlog",
+    "priority": "high",
+    "project": "Content",
+    "owner": "Jackbot",
+    "source": "manual",
+    "createdAt": "2026-02-20T01:00:51.948411+00:00",
+    "updatedAt": "2026-02-20T01:00:51.948411+00:00",
+    "order": 2,
+    "description": "Maintain one-week-ahead production with clear handoff + QA gates.",
     "tags": [
       "faith-empire",
       "priority-board"
