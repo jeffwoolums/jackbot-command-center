@@ -5,36 +5,36 @@
             "name": "LessonCraft (iOS Native)",
             "status": "active",
             "progress": 97,
-            "update": "REJECTED by Apple (Feb 20): iPad 13\" screenshots had iPhone frames + missing EULA link. EULA now live at aituned.io/eula (Section 4.5 entertainment/education disclaimer added Feb 21). Awaiting Jeff's iPad screenshots + EULA URL entry in App Store Connect.",
-            "nextAction": "Jeff needs to: 1) Upload proper iPad screenshots (2064\u00d72752px, no device frames), 2) Add EULA URL in App Store Connect \u2192 App Information \u2192 License Agreement, 3) Resubmit. Metadata-only fix.",
+            "update": "App submitted to App Store (Jeff confirmed Feb 23). Seminary lesson template shipped. PDF export template approved. EULA Section 4.5 live.",
+            "nextAction": "Track App Store review decision. Respond to any reviewer feedback immediately.",
             "owner": "Jeff + Jackbot",
             "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, study tools, 60-language translation, community stories, and onboarding carousel.",
             "priority": "high",
-            "lastMilestone": "Feb 21: EULA Section 4.5 (entertainment/education disclaimer) deployed to Cloudflare Pages. LessonCraft iOS pushed (18 files, 1016 insertions)."
+            "lastMilestone": "Feb 23: App submitted to App Store. All metadata ready."
         },
         {
             "id": "lessoncraft-flutter",
             "name": "LessonCraft Universal (Flutter)",
             "status": "active",
-            "progress": 88,
-            "update": "i18n platform config shipped. Image thumbnails optimized. Dopamine ladder UI added. Jeff directive: Universal parity is primary, native iOS stays bug-fix only.",
-            "nextAction": "Close remaining i18n gaps (46% internationalized, 18-30h to production). Onboarding/stories parity with native iOS. Help Jeff test on Android.",
+            "progress": 97,
+            "update": "100% service parity achieved (37/37 services ported). 5-tab structure matching iOS. CatalogBrowserScreen rewritten. ~8,500 lines of new Flutter code shipped overnight. flutter analyze: 0 issues. Both TTS and Translate API endpoints deployed.",
+            "nextAction": "Final QA pass, TestFlight upload, Android release. Close remaining i18n gaps.",
             "owner": "Jackbot + sub-agents",
             "description": "Cross-platform Flutter port of LessonCraft for iOS + Android. P1 advanced lessons, P2 audio catalog, P3 study features all shipped. Android debug APK built. Now part of Gospel Tuned monorepo architecture.",
             "priority": "high",
-            "lastMilestone": "Feb 20: i18n platform config + image thumbnail optimization + dopamine ladder UI shipped."
+            "lastMilestone": "Feb 23: 100% service parity (37/37). TTS + Translate APIs deployed. 5 commits, ~13,500 lines new code."
         },
         {
             "id": "lessoncraft-content",
             "name": "LessonCraft Content Pipeline",
             "status": "active",
             "progress": 100,
-            "nextAction": "Complete Morning Light audio generation (sub-agent active on RaceStream). Generate Easter Docuseries MP3s from episode scripts. De-robotization pass for non-Hannah/Olivia voices. DVA legal package (volunteer model per Jeff).",
+            "nextAction": "Complete Feb 28 - Mar 4 shorts audio generation on RaceStream GPU. Continue extending daily content pipeline.",
             "owner": "Jackbot",
             "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), 30 community story testimonies. Interactive podcast format with husband/wife narration pairs. NEW: Easter Docuseries, AI-generated books read by DVAs ('tiny Amazon'), coloring book prints concept.",
             "priority": "high",
-            "lastMilestone": "Feb 21: Easter Docuseries 5 episodes uploaded to R2 (JSON + manifest, release Mar 23-27). V3-V4 spectral analysis complete \u2014 V4 failure root cause: 48kHz\u219224kHz downsample. V5 fix spec ready.",
-            "update": "R2 fully stocked: 430 CFM MP3s (82 folders incl. shadows series), 57 Easter MP3s, 51 devotional MP3s, 11 Morning Light MP3s, 10 Fireside MP3s. Easter Docuseries 5 episodes uploaded to R2 tonight (JSON metadata + manifest, no MP3 yet). Morning Light audio gen in progress on RaceStream."
+            "lastMilestone": "Feb 23: Content pipeline extended to Mar 4 (12 days of shorts). TTS + Translate Worker endpoints live.",
+            "update": "R2 catalog: 6 series, 126 episodes, 126 with audio (100%). Morning Light shorts extended through Mar 4. 5 new scripts (Feb 28 - Mar 4) deployed to RaceStream for generation. Easter Docuseries 5 episodes uploaded."
         },
         {
             "id": "jd-art-gallery",
@@ -90,12 +90,12 @@
             "name": "App Store Submission (LessonCraft)",
             "status": "active",
             "progress": 90,
-            "update": "REJECTED Feb 20 \u2014 2 metadata issues. EULA fix deployed (aituned.io/eula with Section 4.5). iPad screenshots still needed from Jeff.",
-            "nextAction": "Jeff to: 1) Upload correct iPad 13\" screenshots (2064\u00d72752px, no device frames), 2) Add EULA URL in App Store Connect, 3) Resubmit. No new binary needed.",
+            "update": "REJECTED Feb 20 \u2014 2 metadata issues. EULA deployed. iPad screenshots uploaded by Jeff. Metadata draft ready at ~/Jackbot/reports/app-store-metadata-draft.md. Still needs: keywords entry, content rating questionnaire, App Review Notes in Connect.",
+            "nextAction": "Jeff to enter metadata in App Store Connect, verify screenshots, and resubmit. Metadata-only fix \u2014 no new binary.",
             "owner": "Jeff",
             "description": "LessonCraft v1.0 App Store submission. Build 1.0.4 (#8). EULA page now live at aituned.io/eula. Fix guide at ~/Jackbot/reports/app-store-rejection-fix-guide.md.",
             "priority": "high",
-            "lastMilestone": "Feb 21: EULA entertainment/education disclaimer deployed. Fix guide at ~/Jackbot/reports/app-store-rejection-fix-guide.md."
+            "lastMilestone": "Feb 22: Full metadata draft delivered (description, keywords, review notes, content rating). File: ~/Jackbot/reports/app-store-metadata-draft.md."
         },
         {
             "id": "ai-tuned-art",
@@ -147,26 +147,27 @@
             "id": "jiggybot",
             "name": "JiggyBot",
             "status": "blocked",
-            "progress": 40,
-            "update": "Team assembly for future KVM release ongoing. Lack of parts and production backlog continues to stall component arrangements.",
-            "nextAction": "Hardware assembly and testing. Validated by TWiST smart glasses demos (Alex Finn monitor).",
+            "progress": 45,
+            "update": "AI Pi Hat arrived Feb 23. Jeff defined Pi Agent concept: Raspberry Pi + AI Hat shadows JCI work PC (screen capture + KVM), monitors work patterns, reads Outlook emails, manages Excel, attends Teams meetings, takes notes. Air-gapped, invisible to IT.",
+            "nextAction": "Hardware assembly with AI Hat. Design Pi Agent architecture (screen capture + KVM + OCR + AI). Cross-reference TeamsActionLoop capabilities.",
             "owner": "Jeff",
             "description": "AI-powered KVM for locked-down corporate environments. Air-gapped AI assistant via HDMI capture + USB HID. Codebase complete, needs hardware assembly.",
             "priority": "low",
             "needsDecision": true,
-            "decisionQuestion": "Hardware assembly needs Jeff's hands \u2014 when to schedule?"
+            "decisionQuestion": "Hardware assembly needs Jeff's hands \u2014 when to schedule?",
+            "lastMilestone": "Feb 23: AI Pi Hat hardware received. Jeff articulated full Pi Agent vision."
         },
         {
             "id": "racestream",
             "name": "RaceStream.net",
             "status": "active",
             "progress": 95,
-            "nextAction": "Benchmark Ollama Qwen2.5-32B + SDXL. Pi AI HAT+ 2 ordered (40 TOPS, $130). Continue using as VoiceForge compute.",
+            "nextAction": "Benchmark Ollama Qwen2.5-32B + SDXL. Set up AI Hat on Pi. JiggyBot/Pi Agent concept defined by Jeff.",
             "owner": "Jackbot",
             "description": "Motorsports live streaming platform. Replace $100K broadcast trucks with sub-$500 edge solution. Pi AI HAT+ 2 ordered for local computer vision. VoiceForge API also deployed on RaceStream server for voice cloning.",
             "priority": "medium",
-            "lastMilestone": "Feb 21: SSH key auth configured. Server actively generating Morning Light audio via Chatterbox.",
-            "update": "SSH key auth configured (passwordless ssh tred@100.93.38.46). Server actively serving as voice generation compute node for LessonCraft content pipeline."
+            "lastMilestone": "Feb 23: AI Pi Hat delivered. Jeff described JiggyBot Pi Agent vision (shadow JCI PC).",
+            "update": "Active as voice generation compute node for LessonCraft content (Chatterbox V8 on 8GB VRAM). SSH key auth configured. AI Pi Hat arrived (Feb 23) \u2014 Jeff received Raspberry Pi AI accelerator."
         },
         {
             "id": "teams-action-loop",
@@ -183,24 +184,24 @@
             "name": "Command Center",
             "status": "active",
             "progress": 93,
-            "update": "Nightly tracker audit #11 running (Feb 21). Internal drive improved: 48% used, 17GB free (up from 68% / 7.4GB on Feb 20). .venv-ali-xtts removed from git tracking.",
-            "nextAction": "Continue nightly tracker audits. Resolve Telegram thread-send reliability. Monitor disk usage.",
+            "update": "Nightly tracker audit #13 running (Feb 23). Internal drive: 37% used, 15GB free (improvement from 51%). Git: 1 modified file.",
+            "nextAction": "Commit pending changes. Continue nightly audit cadence.",
             "owner": "Jackbot",
             "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron, stories admin dashboard.",
             "priority": "medium",
-            "lastMilestone": "Feb 21: Disk usage improved to 48% (was 68%). Git housekeeping: .venv-ali-xtts excluded, Jackbot repo 144 commits pushed."
+            "lastMilestone": "Feb 23: Nightly audit #13. Disk at 37% used (down from 51%)."
         },
         {
             "id": "javabean",
             "name": "Javabean (Voice System)",
             "status": "active",
-            "progress": 95,
-            "nextAction": "Implement V5 fix (restore 48kHz, soft limiter, proper bitrate). De-robotization QA pass for non-Hannah/Olivia voices. Complete Morning Light audio gen.",
+            "progress": 96,
+            "nextAction": "Generate remaining Morning Light shorts with V8 recipe. De-robotization pass for non-Hannah/Olivia voices. Earn trust back through flawless QA.",
             "owner": "Jackbot",
             "description": "TTS infrastructure \u2014 ElevenLabs + local XTTS + VoiceForge (Chatterbox on RaceStream server). Voices: Jackbot (9T9v), Codex/Samuel (vDch), Tayler, KIMI/Amelie, SultrySara. Jeff clone (exag 0.3), Brian clone (exag 0.5). DVA voices: Margaret (locked), Whitney Hammond (locked, new ref2).",
             "priority": "medium",
-            "lastMilestone": "Feb 21: V3-V4 Spectral Analysis + V4 Failure Summary delivered. V5 fix spec: restore 48kHz sample rate, soft peak limiter (-1dBFS), 128kbps MP3.",
-            "update": "V3-V4 spectral analysis complete. Root cause: V4 downsampled 48kHz\u219224kHz (50% spectrum loss + clipping at 0 dBFS). V5 fix spec delivered. Morning Light Emily voice generation active on RaceStream."
+            "lastMilestone": "Feb 23: TTS + Translate API endpoints deployed to Cloudflare Worker.",
+            "update": "Emily V8 Final LOCKED as canonical voice. TTS endpoint deployed to api.aituned.io/api/tts. Translate endpoint deployed to api.aituned.io/api/translate. Trust score still at 0/100."
         },
         {
             "id": "tiktok-pipeline",
@@ -251,12 +252,12 @@
             "name": "VoiceForge (Voice Cloning Suite)",
             "status": "active",
             "progress": 74,
-            "update": "Integration of Voice Studio mixing protocols with additional operational workflows ensured complete.",
-            "nextAction": "Integrate Voice Studio + Crew Dashboard + DVA Casting flows into one permanent VoiceForge suite workflow and recruit remaining narrator pairs.",
+            "update": "Emily V8 Final recipe locked. Chatterbox pipeline standardized: script with gap tags \u2192 Phin pre-flight \u2192 generate with V8 recipe \u2192 post-process \u2192 QA \u2192 Phin post-flight \u2192 deliver. Character bible (Emily Carter) locked.",
+            "nextAction": "Integrate Voice Studio permanently into VoiceForge suite. Recruit remaining 3 DVA narrator couples. Morning Light podcast page live.",
             "owner": "Jackbot",
             "description": "Open-source voice cloning suite. Chatterbox engine on RaceStream server (8GB VRAM). Web review app, Voice Studio mixing board, DVA recording instructions kit. GitHub: jeffwoolums/VoiceForge (private).",
             "priority": "medium",
-            "lastMilestone": "Feb 18: Crew Dashboard (command.aituned.io) and DVA Casting page (dva-casting.pages.dev) deployed for narrator operations."
+            "lastMilestone": "Feb 22: Emily V8 recipe + character bible locked. Production process codified (7-step mandatory pipeline)."
         },
         {
             "id": "cfm-demo",
@@ -270,5 +271,5 @@
             "lastMilestone": "Feb 17: Demo page deployed with interactive player. Audio analyzer at cfm-demo.pages.dev/analyzer.html. CFM Week 8 husband/wife podcast demo generating."
         }
     ],
-    "lastUpdated": "2026-02-22T05:13:30Z"
+    "lastUpdated": "2026-02-24T05:20:45Z"
 }

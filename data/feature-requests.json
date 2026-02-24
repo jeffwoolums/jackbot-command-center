@@ -1171,6 +1171,88 @@
       "createdAt": "2026-02-22T05:13:53Z",
       "completedAt": "2026-02-22T05:13:53Z",
       "notes": "ssh tred@100.93.38.46 now works without password. Key already existed, just needed copying to server."
+    },
+    {
+      "id": "feature-20260223-1",
+      "title": "Kalshi AI Edge Finder \u2014 market discovery + scanning",
+      "description": "Event-based market discovery for Kalshi prediction markets. Fetches non-sports events, gets markets, runs AI probability estimates, identifies edge opportunities. Retry logic with fallback model. Rich context (subtitle/rules) passed to LLM.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "command-center",
+      "status": "complete",
+      "createdAt": "2026-02-24T05:20:00Z",
+      "completedAt": "2026-02-24T05:20:00Z",
+      "notes": "kalshi_edge_finder.py + kalshi_client.py updated. 2 successful scans. Reports saved to ~/Jackbot/projects/polymarket-bot/reports/. Balance: $150, no trades executed."
+    },
+    {
+      "id": "feature-20260223-2",
+      "title": "TTS API endpoint deployed (api.aituned.io/api/tts)",
+      "description": "Text-to-speech endpoint deployed to Cloudflare Worker. Returns MP3 audio from text input.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-24T05:20:00Z",
+      "completedAt": "2026-02-24T03:00:00Z",
+      "notes": "Previously returning 404. Now live and functional."
+    },
+    {
+      "id": "feature-20260223-3",
+      "title": "Translate API endpoint deployed (api.aituned.io/api/translate)",
+      "description": "Translation endpoint deployed to Cloudflare Worker. Returns translated text.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-24T05:20:00Z",
+      "completedAt": "2026-02-24T03:00:00Z",
+      "notes": "Previously returning 404. Now live and functional."
+    },
+    {
+      "id": "feature-20260223-4",
+      "title": "Flutter 100% service parity (37/37 services)",
+      "description": "All 37 services ported from native iOS to Flutter Universal: TalkParser, UnifiedLessonEngine, FactChecker, UsageTracker, OutlineGenerator, TeamLessonGenerator, FiresideGenerator, LessonArtworkStore + 29 prior services.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-flutter",
+      "status": "complete",
+      "createdAt": "2026-02-24T05:20:00Z",
+      "completedAt": "2026-02-24T05:20:00Z",
+      "notes": "2,973 new lines in final batch. flutter analyze: 0 issues. 5 commits pushed."
+    },
+    {
+      "id": "feature-20260223-5",
+      "title": "PodiumReady Week 1 MVP",
+      "description": "Next.js 15 + TypeScript + Tailwind. Auth scaffold (Supabase), Dashboard, Talk creation, Research mode (OpenAI), PDF export. 1,955 lines.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "gospel-tuned",
+      "status": "complete",
+      "createdAt": "2026-02-24T05:20:00Z",
+      "completedAt": "2026-02-24T05:20:00Z",
+      "notes": "Committed to ~/developer/podiumready/. Needs: Supabase project setup, env vars, Vercel deploy."
+    },
+    {
+      "id": "feature-20260223-6",
+      "title": "Morning Light content pipeline extended to Mar 4",
+      "description": "5 new daily short scripts written (Feb 28 - Mar 4). Generation scripts deployed to RaceStream server. Batch 1 (Feb 28-Mar 2) running on GPU, Batch 2 (Mar 3-4) queued.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "in-progress",
+      "createdAt": "2026-02-24T05:20:00Z",
+      "notes": "12 days of shorts queued (Feb 21 - Mar 4). GPU generating on RaceStream server."
+    },
+    {
+      "id": "feature-20260223-7",
+      "title": "JiggyBot Pi Agent \u2014 air-gapped AI work PC shadow",
+      "description": "Raspberry Pi + AI Hat (arrived Feb 23) shadows Jeff's JCI work PC via screen capture + KVM. Monitors work patterns, reads Outlook, manages Excel, attends Teams meetings, takes notes. Air-gapped, invisible to IT.",
+      "priority": "P2",
+      "requester": "Jeff",
+      "project": "jiggybot",
+      "status": "pending",
+      "createdAt": "2026-02-24T05:20:00Z",
+      "notes": "Jeff vision articulated Feb 23. Hardware in hand. Cross-reference TeamsActionLoop (meeting action items)."
     }
   ]
 }

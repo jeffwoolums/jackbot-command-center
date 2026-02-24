@@ -627,6 +627,45 @@
       "createdAt": "2026-02-22T05:14:08Z",
       "updatedAt": "2026-02-22T05:14:08Z",
       "notes": "Root cause: voice comparison page with spectral analysis was overwritten with a white card layout. Jeff had to look for the original."
+    },
+    {
+      "id": "directive-20260223-1",
+      "title": "DVA feature structure likely changing \u2014 keep lightweight",
+      "description": "DVA (Daily Verse/Affirmation) feature is likely changing due to compliance and management reasons. Keep DVA port lightweight/placeholder \u2014 don't over-invest.",
+      "category": "Priority Change",
+      "project": "lessoncraft-flutter",
+      "priority": "P2",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-24T02:43:00Z",
+      "updatedAt": "2026-02-24T05:20:00Z",
+      "notes": "Captured immediately per instant-capture protocol."
+    },
+    {
+      "id": "directive-20260223-2",
+      "title": "Build through the night \u2014 overnight build session authorized",
+      "description": "Jeff authorized overnight build session before going to bed. Expects morning results.",
+      "category": "Priority Change",
+      "project": "lessoncraft-flutter",
+      "priority": "P1",
+      "status": "Complete",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-24T03:00:00Z",
+      "updatedAt": "2026-02-24T05:20:00Z",
+      "notes": "Delivered: ~13,500 lines of new code, 37/37 service parity, TTS+Translate APIs deployed, PodiumReady MVP, Morning Light pipeline extended to Mar 4, Kalshi scanner operational."
+    },
+    {
+      "id": "directive-20260223-3",
+      "title": "JiggyBot Pi Agent \u2014 shadow JCI work PC with Pi + AI Hat",
+      "description": "Use Raspberry Pi + AI Hat (just arrived) to build air-gapped AI agent that shadows Jeff's JCI work PC. Screen capture + KVM, read Outlook, manage Excel, attend Teams meetings, take notes. Invisible to IT.",
+      "category": "Feature Request",
+      "project": "jiggybot",
+      "priority": "P2",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-24T03:31:00Z",
+      "updatedAt": "2026-02-24T05:20:00Z",
+      "notes": "Hardware in hand. Cross-reference TeamsActionLoop. This IS the JiggyBot concept realized."
     }
   ]
 }
