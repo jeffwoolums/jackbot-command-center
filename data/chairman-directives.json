@@ -666,6 +666,32 @@
       "createdAt": "2026-02-24T03:31:00Z",
       "updatedAt": "2026-02-24T05:20:00Z",
       "notes": "Hardware in hand. Cross-reference TeamsActionLoop. This IS the JiggyBot concept realized."
+    },
+    {
+      "id": "directive-20260224-1",
+      "title": "100% parity or nothing — no claiming done when it's not",
+      "description": "Jeff directive (9 PM): Build until Flutter parity is 100% with native iOS. NO half-finished work — must say with 100% certainty it's ready to test. Must build trust by not claiming done prematurely.",
+      "category": "Clarification",
+      "project": "lessoncraft-flutter",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-25T05:11:00Z",
+      "updatedAt": "2026-02-25T05:11:00Z",
+      "notes": "Jeff: 'Currently at 85% parity — inside each page + home page scrolling needs work. Minimum: ALL pages in complete parity.' Also set up cron to validate every 2 hours."
+    },
+    {
+      "id": "directive-20260224-2",
+      "title": "Critical content rules: NO coffee/tea, always 'Heavenly Father'",
+      "description": "Jeff corrected BOTH rules 3x today (Feb 24). 1) LDS Word of Wisdom (D&C 89) — NEVER reference coffee/tea in ANY Gospel Tuned content. 2) ALWAYS say 'Heavenly Father', NEVER just 'God' in LDS devotional content.",
+      "category": "Clarification",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-25T05:11:00Z",
+      "updatedAt": "2026-02-25T05:11:00Z",
+      "notes": "These are exhausting for Jeff to correct repeatedly. Written to MEMORY.md as CRITICAL CONTENT RULES. Apply to ALL current and future LDS/Gospel Tuned content. Only exception: direct scripture quotations."
     }
   ]
 }

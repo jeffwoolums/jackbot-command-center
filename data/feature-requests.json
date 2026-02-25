@@ -1234,14 +1234,14 @@
     },
     {
       "id": "feature-20260223-6",
-      "title": "Morning Light content pipeline extended to Mar 4",
-      "description": "5 new daily short scripts written (Feb 28 - Mar 4). Generation scripts deployed to RaceStream server. Batch 1 (Feb 28-Mar 2) running on GPU, Batch 2 (Mar 3-4) queued.",
+      "title": "Morning Light content pipeline extended to Mar 16",
+      "description": "Content pipeline now extends through Mar 16 (24 days ahead). 17 total Morning Light scripts (Feb 21 - Mar 9), plus 7 new Mar 10-16 scripts. Audio generation batch scripts deployed to GPU server.",
       "priority": "P1",
       "requester": "Jackbot",
       "project": "lessoncraft-content",
       "status": "in-progress",
       "createdAt": "2026-02-24T05:20:00Z",
-      "notes": "12 days of shorts queued (Feb 21 - Mar 4). GPU generating on RaceStream server."
+      "notes": "Updated Feb 24: Extended from Mar 4 → Mar 16 (7 more scripts committed 548e6a9e). GPU generating on RaceStream server."
     },
     {
       "id": "feature-20260223-7",
@@ -1253,6 +1253,65 @@
       "status": "pending",
       "createdAt": "2026-02-24T05:20:00Z",
       "notes": "Jeff vision articulated Feb 23. Hardware in hand. Cross-reference TeamsActionLoop (meeting action items)."
+    },
+    {
+      "id": "feature-20260224-1",
+      "title": "Ali Portal — real voice recording platform",
+      "description": "Web portal for Ali to record Morning Light episodes with her real voice (not AI). Includes calendar view, script download, audio upload, green checkmarks for completion status. Ali also doing Spanish versions.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-25T05:11:00Z",
+      "completedAt": "2026-02-24T00:00:00Z",
+      "notes": "Live at https://portal.aituned.io (ali / MorningLight2026!, jeff / Trump2025$). Backend: Cloudflare Pages + Functions + R2 (ml-uploads) + KV (ML_STATUS). Scripts include Phin voice direction notes."
+    },
+    {
+      "id": "feature-20260224-2",
+      "title": "Morning Light scripts extended to Mar 16",
+      "description": "7 new daily Morning Light short scripts written for Mar 10-16, all Old Testament. Content pipeline now 24 days ahead of schedule.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-25T05:11:00Z",
+      "completedAt": "2026-02-24T00:00:00Z",
+      "notes": "Scriptures: Joshua 1:8, Ruth 3:11, Jeremiah 29:11, Deuteronomy 33:25, 1 Kings 19:12, Psalm 84:11, Hosea 6:3. Committed 548e6a9e."
+    },
+    {
+      "id": "feature-20260224-3",
+      "title": "Store listing package — App Store + Play Store",
+      "description": "Complete store listing copy for both platforms: enhanced descriptions, What's New, subtitle, keywords, promotional text, feature graphic spec (1024x500), screenshot captions for all 8 screens.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-flutter",
+      "status": "complete",
+      "createdAt": "2026-02-25T05:11:00Z",
+      "completedAt": "2026-02-24T00:00:00Z",
+      "notes": "Committed to lessoncraft-flutter: 3d94f95. Dual variants (App Store + Play Store captions)."
+    },
+    {
+      "id": "feature-20260224-4",
+      "title": "LessonCraft Flutter Sprint 1 COMPLETE — 100% visual parity",
+      "description": "131 Dart files, 52K lines, 4 languages (EN/ES/FR/PT), 40+ screens ported, 100% visual parity with native iOS. Scrolling, header styling, intent cards, shadows all verified. Both platforms build clean.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-flutter",
+      "status": "complete",
+      "createdAt": "2026-02-25T05:11:00Z",
+      "completedAt": "2026-02-24T00:00:00Z",
+      "notes": "APK 69.5MB, iOS 34.3MB. flutter analyze: 0 errors. 5 commits pushed to github.com/jeffwoolums/lessoncraft-universal."
+    },
+    {
+      "id": "feature-20260224-5",
+      "title": "3 critical Flutter blockers awaiting Jeff decisions",
+      "description": "Sprint 2 blocked on: 1) /api/tts + /api/translate 404 on api.aituned.io (Worker deploy failed), 2) Tab count design (Flutter 6 vs iOS 5), 3) Subscription product ID alignment (different Apple/Google IDs).",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-flutter",
+      "status": "pending",
+      "createdAt": "2026-02-25T05:11:00Z",
+      "notes": "Escalated 4:53 PM Feb 24, 8 messages sent through 9 PM. Awaiting Jeff response. Blocks Android AAB build + Play Store release."
     }
   ]
 }
