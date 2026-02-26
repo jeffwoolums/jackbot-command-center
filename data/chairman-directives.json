@@ -669,8 +669,8 @@
     },
     {
       "id": "directive-20260224-1",
-      "title": "100% parity or nothing — no claiming done when it's not",
-      "description": "Jeff directive (9 PM): Build until Flutter parity is 100% with native iOS. NO half-finished work — must say with 100% certainty it's ready to test. Must build trust by not claiming done prematurely.",
+      "title": "100% parity or nothing \u2014 no claiming done when it's not",
+      "description": "Jeff directive (9 PM): Build until Flutter parity is 100% with native iOS. NO half-finished work \u2014 must say with 100% certainty it's ready to test. Must build trust by not claiming done prematurely.",
       "category": "Clarification",
       "project": "lessoncraft-flutter",
       "priority": "P1",
@@ -678,12 +678,12 @@
       "createdBy": "Jeff",
       "createdAt": "2026-02-25T05:11:00Z",
       "updatedAt": "2026-02-25T05:11:00Z",
-      "notes": "Jeff: 'Currently at 85% parity — inside each page + home page scrolling needs work. Minimum: ALL pages in complete parity.' Also set up cron to validate every 2 hours."
+      "notes": "Jeff: 'Currently at 85% parity \u2014 inside each page + home page scrolling needs work. Minimum: ALL pages in complete parity.' Also set up cron to validate every 2 hours."
     },
     {
       "id": "directive-20260224-2",
       "title": "Critical content rules: NO coffee/tea, always 'Heavenly Father'",
-      "description": "Jeff corrected BOTH rules 3x today (Feb 24). 1) LDS Word of Wisdom (D&C 89) — NEVER reference coffee/tea in ANY Gospel Tuned content. 2) ALWAYS say 'Heavenly Father', NEVER just 'God' in LDS devotional content.",
+      "description": "Jeff corrected BOTH rules 3x today (Feb 24). 1) LDS Word of Wisdom (D&C 89) \u2014 NEVER reference coffee/tea in ANY Gospel Tuned content. 2) ALWAYS say 'Heavenly Father', NEVER just 'God' in LDS devotional content.",
       "category": "Clarification",
       "project": "lessoncraft-content",
       "priority": "P1",
@@ -692,6 +692,45 @@
       "createdAt": "2026-02-25T05:11:00Z",
       "updatedAt": "2026-02-25T05:11:00Z",
       "notes": "These are exhausting for Jeff to correct repeatedly. Written to MEMORY.md as CRITICAL CONTENT RULES. Apply to ALL current and future LDS/Gospel Tuned content. Only exception: direct scripture quotations."
+    },
+    {
+      "id": "directive-20260225-1",
+      "title": "No social posts without Jeff explicit pre-approval",
+      "description": "All marketing/social posts must be previewed and explicitly approved by Jeff before publishing. No autonomous posting.",
+      "category": "Clarification",
+      "project": "tiktok-pipeline",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-26T03:26:00Z",
+      "updatedAt": "2026-02-26T03:27:00Z",
+      "notes": "Captured after Jeff correction on unapproved posts. Approval-first workflow is mandatory."
+    },
+    {
+      "id": "directive-20260225-2",
+      "title": "Jeff will own social account creation and access control",
+      "description": "Jeff will create social accounts himself first. Jackbot drafts content for review. Account access granted only after post approval workflow is established.",
+      "category": "Clarification",
+      "project": "tiktok-pipeline",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-26T03:27:00Z",
+      "updatedAt": "2026-02-26T03:27:00Z",
+      "notes": "Workflow: draft visuals \u2192 Jeff approves \u2192 Jeff grants account access \u2192 publish."
+    },
+    {
+      "id": "directive-20260225-3",
+      "title": "First priority Feb 26: media asset review and release gap plan",
+      "description": "Top priority is auditing all media assets (R2, RaceStream, local), identifying missing release items, and producing a completion plan before morning.",
+      "category": "Priority Change",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "Complete",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-26T03:05:00Z",
+      "updatedAt": "2026-02-26T04:38:00Z",
+      "notes": "Delivered overnight: media-asset-audit.md with blockers and release plan."
     }
   ]
 }

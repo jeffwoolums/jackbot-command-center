@@ -4,48 +4,48 @@
             "id": "lessoncraft",
             "name": "LessonCraft (iOS Native)",
             "status": "active",
-            "progress": 97,
-            "update": "App submitted to App Store (Jeff confirmed Feb 23). Still Waiting for Review (no decision as of Feb 24). Seminary lesson template shipped. PDF export template approved. EULA Section 4.5 live.",
-            "nextAction": "Monitor App Store review decision. Respond to any reviewer feedback immediately. iOS signing blocked by Apple account migration (Case 20000108076457).",
+            "progress": 98,
+            "update": "App APPROVED by Apple (Feb 25, 11:41 AM). Held for coordinated launch with social accounts. isDemoMode=false. All metadata ready. TestFlight public link live.",
+            "nextAction": "Jeff to do local Xcode build for final screenshots, then coordinated launch with socials. Jeff setting up social accounts himself.",
             "owner": "Jeff + Jackbot",
             "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, study tools, 60-language translation, community stories, and onboarding carousel.",
             "priority": "high",
-            "lastMilestone": "Feb 23: App submitted to App Store. All metadata ready."
+            "lastMilestone": "Feb 25: App Store APPROVED. Held for coordinated social media launch."
         },
         {
             "id": "lessoncraft-flutter",
             "name": "LessonCraft Universal (Flutter)",
             "status": "active",
             "progress": 97,
-            "update": "Sprint 1 COMPLETE (Feb 24): 131 Dart files, 52K lines, 4 languages (EN/ES/FR/PT), 40+ screens ported, 100% visual parity with iOS. APK 69.5MB, iOS 34.3MB. flutter analyze: 0 errors. 5 commits pushed. Sprint 2 BLOCKED on 3 critical Jeff decisions (TTS endpoint auth, tab count 6 vs 5, subscription product ID alignment).",
-            "nextAction": "Resolve 3 blocker decisions → build Android AAB → Play Store internal testing. iOS TestFlight blocked by Apple account migration.",
+            "update": "Sprint 1 COMPLETE (Feb 24): 131 Dart files, 52K lines, 4 languages (EN/ES/FR/PT), 40+ screens, 100% visual parity. Parity check (10:18 PM Feb 25): 38/38 views, 38 services, 13 models — Flutter is SUPERSET of iOS (12 extra screens). isDemoMode still true. No Play Store listing assets yet.",
+            "nextAction": "Flip isDemoMode=false. Build signed AAB for Play Store. Create Play Store listing assets (feature graphic, screenshots). Jeff directive: '100% parity or nothing — no claiming done when it's not.'",
             "owner": "Jackbot + sub-agents",
             "description": "Cross-platform Flutter port of LessonCraft for iOS + Android. P1 advanced lessons, P2 audio catalog, P3 study features all shipped. Android debug APK built. Now part of Gospel Tuned monorepo architecture.",
             "priority": "high",
-            "lastMilestone": "Feb 24: Sprint 1 COMPLETE. 131 files, 52K lines, 100% visual parity. Sprint 2 blocked on 3 Jeff decisions."
+            "lastMilestone": "Feb 25: Parity check confirmed 38/38 views, 38 services, Flutter superset of iOS. Scrolling, header, intent cards polished."
         },
         {
             "id": "lessoncraft-content",
             "name": "LessonCraft Content Pipeline",
             "status": "active",
             "progress": 100,
-            "nextAction": "Generate Mar 10-16 audio on RaceStream GPU (scripts deployed). Ali re-recording via portal (portal.aituned.io). Continue extending pipeline.",
+            "nextAction": "Continue voice generation on RaceStream GPU (Mar 17 - May 3 batch running). Deploy Apr 13 - May 3 voice gen scripts after batch 1 finishes.",
             "owner": "Jackbot",
-            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (49 eps), Personal Firesides (10 eps), 30 community story testimonies. Interactive podcast format with husband/wife narration pairs. NEW: Easter Docuseries, AI-generated books read by DVAs ('tiny Amazon'), coloring book prints concept.",
+            "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (72 daily shorts Feb 21 - May 3), Personal Firesides (10 eps), 30 community story testimonies, Seminary OT lessons. Interactive podcast format with husband/wife narration pairs.",
             "priority": "high",
-            "lastMilestone": "Feb 24: Content pipeline extended to Mar 16 (24 days ahead). Ali Portal live for real voice recording.",
-            "update": "R2 catalog: 6 series, 126 episodes, 126 with audio (100%). Morning Light scripts extended through Mar 16. Ali Portal live (portal.aituned.io) for real voice recording + Spanish. All 17 Morning Light OT scripts verified. Store listing package complete (App Store + Play Store). VoiceForge batch gen scripts deployed to GPU server (Mar 10-16)."
+            "lastMilestone": "Feb 25 overnight: 48 new Morning Light scripts (Mar 17 - May 3), 8 seminary OT lessons, 36+ Emily voice episodes generating on GPU.",
+            "update": "R2 catalog: 6 series, 126 episodes, 428/428 audio segments (100%). Morning Light scripts extended to May 3 (72 days of daily content). 36+ Emily voice episodes generating on RaceStream GPU overnight. 8 seminary OT lesson plans built (Genesis through Exodus). Voice gen automation tool built. Content pipeline tracker created."
         },
         {
             "id": "jd-art-gallery",
             "name": "JD Art Gallery & Print Store",
             "status": "active",
             "progress": 78,
-            "update": "Gallery at 250 pieces with enhanced Printful size options. R2 holds 999 artwork objects (PNGs + JPGs across 5 collections).",
+            "update": "Gallery at 98 vetted pieces with enhanced Printful size options. R2 holds artwork objects (PNGs + JPGs across collections). About page live at jacquedubois.art/about.",
             "nextAction": "Generate new ORIGINAL artwork via Artist Engine with SOP. Expand toward 250+ vetted pieces. Deploy Stripe webhook secret.",
             "owner": "Jackbot",
-            "description": "Jacque Dubois Fine Art Gallery \u2014 in-app gallery browser, Printful print-on-demand integration, Stripe checkout. jacquedubois.art website live with About the Artist page and JD self-portrait.",
-            "priority": "high",
+            "description": "Jacque Dubois Fine Art Gallery — in-app gallery browser, Printful print-on-demand integration, Stripe checkout. jacquedubois.art website live with About the Artist page and JD self-portrait.",
+            "priority": "medium",
             "lastMilestone": "Feb 15: Gallery at 98 vetted pieces. About page live at jacquedubois.art/about."
         },
         {
@@ -53,13 +53,13 @@
             "name": "Gospel Tuned Empire",
             "status": "active",
             "progress": 50,
-            "update": "Catholic Prototype underway seeking additional faith-based visual assets for App Store.",
+            "update": "Catholic Prototype underway. Revival Hub scaffold complete. PodiumReady spec + MVP built. Expansion order locked: Catholic → Hindu → Pentecostal → Buddhist.",
             "nextAction": "Execute Christian-first Tier 1 plan: Catholic + Evangelical in parallel with shared Christian core packages.",
             "owner": "Jackbot + sub-agents",
             "description": "Multi-faith app empire with Christian-first rollout now in effect. Tier 1: Catholic + Evangelical parallel build, then expand via shared Christian core. Non-Christian apps deferred to later phases.",
             "priority": "high",
             "needsDecision": false,
-            "lastMilestone": "Feb 18: Direction reaffirmed in sprint memory \u2014 Christian-first execution with Universal app architecture and shared package strategy."
+            "lastMilestone": "Feb 24: PodiumReady Week 1 MVP built. Revival Hub scaffold complete."
         },
         {
             "id": "parishprep",
@@ -71,31 +71,31 @@
             "owner": "Jackbot + sub-agents",
             "description": "Catholic lesson/homily preparation app. Part of Gospel Tuned empire. Domain: parishprep.faith (purchased). Largest addressable market (1.3B Catholics). Lectionary integration planned.",
             "priority": "high",
-            "lastMilestone": "Feb 17: First vertical slice committed (087ac99) \u2014 AI lesson generation via GatewayAIService, Drift local DB, lesson creation screen, result display, saved lessons, updated routing + providers."
+            "lastMilestone": "Feb 17: First vertical slice committed (087ac99) — AI lesson generation via GatewayAIService, Drift local DB, lesson creation screen, result display, saved lessons, updated routing + providers."
         },
         {
             "id": "aituned-io",
             "name": "AITuned.io Website",
             "status": "active",
             "progress": 97,
-            "nextAction": "Minor polish only. Monitor for any App Store reviewer feedback on EULA page.",
+            "nextAction": "Minor polish only. Social media content pages if needed for coordinated launch.",
             "owner": "Jackbot",
             "description": "B2B enterprise AI platform website + LessonCraft marketing/privacy/terms pages + Stories admin dashboard. Deployed on Cloudflare Pages.",
             "priority": "medium",
-            "lastMilestone": "Feb 21: EULA Section 4.5 deployed \u2014 covers AI limitations, user responsibility, theological disclaimers. All sections renumbered.",
-            "update": "EULA Section 4.5 (entertainment/education disclaimer) deployed Feb 21. Stories admin dashboard live."
+            "lastMilestone": "Feb 25: 13/14 API endpoints returning 200. LESSONCRAFT_APP_TOKEN secret configured.",
+            "update": "EULA Section 4.5 deployed. Stories admin dashboard live. 13/14 API endpoints green. LESSONCRAFT_APP_TOKEN configured. 3 new CFM endpoints + 2 documentary endpoints deployed."
         },
         {
             "id": "appstore-submission",
             "name": "App Store Submission (LessonCraft)",
             "status": "active",
-            "progress": 90,
-            "update": "REJECTED Feb 20 \u2014 2 metadata issues. EULA deployed. iPad screenshots uploaded by Jeff. Metadata draft ready at ~/Jackbot/reports/app-store-metadata-draft.md. Still needs: keywords entry, content rating questionnaire, App Review Notes in Connect.",
-            "nextAction": "Jeff to enter metadata in App Store Connect, verify screenshots, and resubmit. Metadata-only fix \u2014 no new binary.",
+            "progress": 98,
+            "update": "APPROVED by Apple (Feb 25, 11:41 AM). Held for coordinated launch with social media accounts. Jeff needs to do local Xcode build for Play Store screenshots.",
+            "nextAction": "Coordinated launch: Jeff sets up social accounts → sample posts approved → launch iOS + Android simultaneously.",
             "owner": "Jeff",
-            "description": "LessonCraft v1.0 App Store submission. Build 1.0.4 (#8). EULA page now live at aituned.io/eula. Fix guide at ~/Jackbot/reports/app-store-rejection-fix-guide.md.",
+            "description": "LessonCraft v1.0 App Store submission. APPROVED. TestFlight public link live (https://testflight.apple.com/join/SraBWFTj). Held for coordinated social media launch.",
             "priority": "high",
-            "lastMilestone": "Feb 22: Full metadata draft delivered (description, keywords, review notes, content rating). File: ~/Jackbot/reports/app-store-metadata-draft.md."
+            "lastMilestone": "Feb 25: App Store APPROVED. Awaiting coordinated launch timing."
         },
         {
             "id": "ai-tuned-art",
@@ -126,7 +126,7 @@
             "progress": 12,
             "nextAction": "Ready for build team when LessonCraft ships. Auth foundation spec at ~/Jackbot/projects/scrollwork/WEEK-1-AUTH-SPEC.md.",
             "owner": "Jackbot",
-            "description": "AI Ad Creative Platform \u2014 marketing agency in your pocket. Upload product images \u2192 AI generates scroll-stopping video ads for TikTok/Instagram/Facebook. Website live at scrollwork.net (waitlist).",
+            "description": "AI Ad Creative Platform — marketing agency in your pocket. Upload product images → AI generates scroll-stopping video ads for TikTok/Instagram/Facebook. Website live at scrollwork.net (waitlist).",
             "priority": "low",
             "needsDecision": true,
             "decisionQuestion": "When to prioritize Scrollwork vs Gospel Tuned expansion?",
@@ -154,7 +154,7 @@
             "description": "AI-powered KVM for locked-down corporate environments. Air-gapped AI assistant via HDMI capture + USB HID. Codebase complete, needs hardware assembly.",
             "priority": "low",
             "needsDecision": true,
-            "decisionQuestion": "Hardware assembly needs Jeff's hands \u2014 when to schedule?",
+            "decisionQuestion": "Hardware assembly needs Jeff's hands — when to schedule?",
             "lastMilestone": "Feb 23: AI Pi Hat hardware received. Jeff articulated full Pi Agent vision."
         },
         {
@@ -162,12 +162,12 @@
             "name": "RaceStream.net",
             "status": "active",
             "progress": 95,
-            "nextAction": "Benchmark Ollama Qwen2.5-32B + SDXL. Set up AI Hat on Pi. JiggyBot/Pi Agent concept defined by Jeff.",
+            "nextAction": "Continue as voice gen compute node. Mar 17 - May 3 audio batch generating overnight.",
             "owner": "Jackbot",
             "description": "Motorsports live streaming platform. Replace $100K broadcast trucks with sub-$500 edge solution. Pi AI HAT+ 2 ordered for local computer vision. VoiceForge API also deployed on RaceStream server for voice cloning.",
             "priority": "medium",
-            "lastMilestone": "Feb 23: AI Pi Hat delivered. Jeff described JiggyBot Pi Agent vision (shadow JCI PC).",
-            "update": "Active as voice generation compute node for LessonCraft content (Chatterbox V8 on 8GB VRAM, RTX 3060 Ti). SSH key auth configured. AI Pi Hat arrived (Feb 23). GPU idle — ready for Mar 10-16 audio generation batch."
+            "lastMilestone": "Feb 25: 36+ Emily voice episodes generating on GPU (RTX 3060 Ti). Batch running overnight.",
+            "update": "Active as voice generation compute node for LessonCraft content (Chatterbox V8 on 8GB VRAM, RTX 3060 Ti). SSH key auth configured. AI Pi Hat arrived. GPU running overnight batch generation (Mar 17 - May 3 Morning Light episodes)."
         },
         {
             "id": "teams-action-loop",
@@ -183,36 +183,37 @@
             "id": "command-center",
             "name": "Command Center",
             "status": "active",
-            "progress": 93,
-            "update": "Nightly tracker audit #14 running (Feb 24). Internal drive: 41% used, 22GB free. Git: 1 modified + 5 untracked.",
-            "nextAction": "Commit pending changes. Continue nightly audit cadence.",
+            "progress": 94,
+            "update": "Nightly tracker audit #15 running (Feb 25). Internal drive: 23% used, 38GB free (improved from 41%). 6 active cron jobs running healthy. Media asset audit + social playbook delivered.",
+            "nextAction": "Continue nightly audit cadence. Update kanban board.",
             "owner": "Jackbot",
             "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron, stories admin dashboard.",
             "priority": "medium",
-            "lastMilestone": "Feb 24: Nightly audit #14. Disk at 41% used, 22GB free."
+            "lastMilestone": "Feb 25: Nightly audit #15. Disk at 23% used, 38GB free. Media asset audit complete."
         },
         {
             "id": "javabean",
             "name": "Javabean (Voice System)",
             "status": "active",
             "progress": 96,
-            "nextAction": "Generate remaining Morning Light shorts with V8 recipe. De-robotization pass for non-Hannah/Olivia voices. Earn trust back through flawless QA.",
+            "nextAction": "Continue overnight voice generation (36+ episodes in batch). De-robotization pass for non-Hannah/Olivia voices pending.",
             "owner": "Jackbot",
-            "description": "TTS infrastructure \u2014 ElevenLabs + local XTTS + VoiceForge (Chatterbox on RaceStream server). Voices: Jackbot (9T9v), Codex/Samuel (vDch), Tayler, KIMI/Amelie, SultrySara. Jeff clone (exag 0.3), Brian clone (exag 0.5). DVA voices: Margaret (locked), Whitney Hammond (locked, new ref2).",
+            "description": "TTS infrastructure — ElevenLabs + local XTTS + VoiceForge (Chatterbox on RaceStream server). Voices: Jackbot (9T9v), Codex/Samuel (vDch), Tayler, KIMI/Amelie, SultrySara. Jeff clone (exag 0.3), Brian clone (exag 0.5). DVA voices: Margaret (locked), Whitney Hammond (locked, new ref2).",
             "priority": "medium",
-            "lastMilestone": "Feb 24: Mar 10-16 audio batch gen scripts deployed to RaceStream GPU server.",
-            "update": "Emily V8 Final LOCKED as canonical voice. TTS + Translate endpoints live on api.aituned.io. Mar 10-16 batch gen scripts deployed to GPU server. Trust score still at 0/100."
+            "lastMilestone": "Feb 25: 36+ Emily voice episodes generating on GPU overnight. Voice gen automation tool built.",
+            "update": "Emily V8 Final LOCKED as canonical voice. TTS + Translate endpoints live on api.aituned.io. Voice gen automation tool built (generate-voice-scripts.py). 36+ voice episodes generating overnight on RaceStream GPU. Voice assets backed up to G-DRIVE (2.6 GB, organized with SETTINGS.md per voice). Weekly backup cron set (Sundays 3 AM)."
         },
         {
             "id": "tiktok-pipeline",
             "name": "TikTok Content Pipeline",
             "status": "active",
-            "progress": 45,
-            "nextAction": "Get TikTok handle from Jeff. Post first batch of art reveal videos.",
-            "owner": "Jackbot",
-            "description": "TikTok + YouTube Shorts content pipeline. Brand: Gospel Tuned \u2014 Christ-centered, non-denominational, uplifting. 2-3 posts/day: art reveals, scripture cards, Morning Light clips. Account created via jackbotwoolums@gmail.com.",
+            "progress": 50,
+            "nextAction": "Jeff will set up social accounts himself and provide access after reviewing sample posts. 7 sample posts drafted for 5 platforms awaiting Jeff review.",
+            "owner": "Jeff + Jackbot",
+            "description": "TikTok + YouTube Shorts + Instagram + X content pipeline. Brand: Gospel Tuned — Christ-centered, non-denominational, uplifting. 2-3 posts/day: art reveals, scripture cards, Morning Light clips. Marketing rule: NO posts without Jeff's explicit pre-approval.",
             "priority": "medium",
-            "lastMilestone": "Feb 13: Video pipeline built. Strategy research complete. Still need TikTok handle from Jeff."
+            "lastMilestone": "Feb 25: 7 sample posts drafted for Jeff review. Social playbook + product context built. Scripture card batch (5x) generated. Jeff enforced: no posting without explicit approval.",
+            "update": "Marketing discipline locked (Feb 25): all posts require Jeff pre-approval + preview. 7 sample posts drafted across 5 platforms (awaiting Jeff review). 5 scripture cards generated. Social playbook at skills/marketing/social-creator/LESSONCRAFT-PLAYBOOK.md. Jeff will create all social accounts himself."
         },
         {
             "id": "seraphina-agent",
@@ -245,19 +246,19 @@
             "owner": "Jeff + Jackbot",
             "description": "20 domains purchased on GoDaddy for Gospel Tuned empire land grab.",
             "priority": "medium",
-            "lastMilestone": "Feb 15: 20 domains purchased \u2014 lessoncraft.faith, pulpit.faith, wesleysway.faith, parishprep.faith, homilyprep.faith, revivalprep.faith, pentecostalguide.com, vedaguide.app, sanghastudy.com, divineoffice.io."
+            "lastMilestone": "Feb 15: 20 domains purchased — lessoncraft.faith, pulpit.faith, wesleysway.faith, parishprep.faith, homilyprep.faith, revivalprep.faith, pentecostalguide.com, vedaguide.app, sanghastudy.com, divineoffice.io."
         },
         {
             "id": "voiceforge",
             "name": "VoiceForge (Voice Cloning Suite)",
             "status": "active",
-            "progress": 74,
-            "update": "Emily V8 Final recipe locked. Chatterbox pipeline standardized: script with gap tags → Phin pre-flight → generate with V8 recipe → post-process → QA → Phin post-flight → deliver. Character bible (Emily Carter) locked. Mar 10-16 batch gen scripts deployed to GPU server.",
+            "progress": 76,
+            "update": "Emily V8 Final recipe locked. Voice assets backed up to G-DRIVE with SETTINGS.md per voice. Weekly backup cron set. Automation tool built (generate-voice-scripts.py). Batch generation running overnight on RaceStream.",
             "nextAction": "Integrate Voice Studio permanently into VoiceForge suite. Recruit remaining 3 DVA narrator couples. Morning Light podcast page live.",
             "owner": "Jackbot",
             "description": "Open-source voice cloning suite. Chatterbox engine on RaceStream server (8GB VRAM). Web review app, Voice Studio mixing board, DVA recording instructions kit. GitHub: jeffwoolums/VoiceForge (private).",
             "priority": "medium",
-            "lastMilestone": "Feb 22: Emily V8 recipe + character bible locked. Production process codified (7-step mandatory pipeline)."
+            "lastMilestone": "Feb 25: Voice assets backed up to G-DRIVE (2.6GB). Weekly backup cron (Sundays 3 AM). Voice gen automation tool built."
         },
         {
             "id": "cfm-demo",
@@ -271,5 +272,5 @@
             "lastMilestone": "Feb 17: Demo page deployed with interactive player. Audio analyzer at cfm-demo.pages.dev/analyzer.html. CFM Week 8 husband/wife podcast demo generating."
         }
     ],
-    "lastUpdated": "2026-02-25T05:11:00Z"
+    "lastUpdated": "2026-02-26T05:39:00Z"
 }

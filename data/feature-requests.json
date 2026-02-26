@@ -1241,7 +1241,7 @@
       "project": "lessoncraft-content",
       "status": "in-progress",
       "createdAt": "2026-02-24T05:20:00Z",
-      "notes": "Updated Feb 24: Extended from Mar 4 → Mar 16 (7 more scripts committed 548e6a9e). GPU generating on RaceStream server."
+      "notes": "Updated Feb 24: Extended from Mar 4 \u2192 Mar 16 (7 more scripts committed 548e6a9e). GPU generating on RaceStream server."
     },
     {
       "id": "feature-20260223-7",
@@ -1256,7 +1256,7 @@
     },
     {
       "id": "feature-20260224-1",
-      "title": "Ali Portal — real voice recording platform",
+      "title": "Ali Portal \u2014 real voice recording platform",
       "description": "Web portal for Ali to record Morning Light episodes with her real voice (not AI). Includes calendar view, script download, audio upload, green checkmarks for completion status. Ali also doing Spanish versions.",
       "priority": "P1",
       "requester": "Jackbot",
@@ -1280,7 +1280,7 @@
     },
     {
       "id": "feature-20260224-3",
-      "title": "Store listing package — App Store + Play Store",
+      "title": "Store listing package \u2014 App Store + Play Store",
       "description": "Complete store listing copy for both platforms: enhanced descriptions, What's New, subtitle, keywords, promotional text, feature graphic spec (1024x500), screenshot captions for all 8 screens.",
       "priority": "P1",
       "requester": "Jackbot",
@@ -1292,7 +1292,7 @@
     },
     {
       "id": "feature-20260224-4",
-      "title": "LessonCraft Flutter Sprint 1 COMPLETE — 100% visual parity",
+      "title": "LessonCraft Flutter Sprint 1 COMPLETE \u2014 100% visual parity",
       "description": "131 Dart files, 52K lines, 4 languages (EN/ES/FR/PT), 40+ screens ported, 100% visual parity with native iOS. Scrolling, header styling, intent cards, shadows all verified. Both platforms build clean.",
       "priority": "P1",
       "requester": "Jackbot",
@@ -1305,13 +1305,83 @@
     {
       "id": "feature-20260224-5",
       "title": "3 critical Flutter blockers awaiting Jeff decisions",
-      "description": "Sprint 2 blocked on: 1) /api/tts + /api/translate 404 on api.aituned.io (Worker deploy failed), 2) Tab count design (Flutter 6 vs iOS 5), 3) Subscription product ID alignment (different Apple/Google IDs).",
+      "description": "Sprint 2 blockers updated: API endpoints now live. Remaining release blockers: 1) isDemoMode still true in Flutter config, 2) final tab/product-ID alignment decisions, 3) signed Android AAB + Play Store listing assets.",
       "priority": "P1",
       "requester": "Jackbot",
       "project": "lessoncraft-flutter",
-      "status": "pending",
+      "status": "in-progress",
       "createdAt": "2026-02-25T05:11:00Z",
-      "notes": "Escalated 4:53 PM Feb 24, 8 messages sent through 9 PM. Awaiting Jeff response. Blocks Android AAB build + Play Store release."
+      "notes": "As of Feb 25 night audit: /api/tts + /api/translate + /api/generate are fixed/deployed. Remaining blockers are release packaging + final config decisions."
+    },
+    {
+      "id": "feature-20260225-1",
+      "title": "Media asset release audit (R2 + API + app config)",
+      "description": "Complete release-readiness audit of LessonCraft media assets. Verified 428/428 audio segments with MP3 paths across 6 series, API health (13/14 green), identified launch blockers (Flutter isDemoMode=true, Play Store asset pack, signed AAB).",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "command-center",
+      "status": "complete",
+      "createdAt": "2026-02-26T03:05:00Z",
+      "completedAt": "2026-02-26T04:38:00Z",
+      "notes": "Report: ~/Jackbot/projects/lessoncraft/media-asset-audit.md"
+    },
+    {
+      "id": "feature-20260225-2",
+      "title": "Morning Light scripts batch (Mar 17 \u2013 Apr 12)",
+      "description": "Generated 27 new Morning Light daily short scripts covering Mar 17 through Apr 12 (Old Testament arc).",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-26T04:00:00Z",
+      "completedAt": "2026-02-26T05:00:00Z",
+      "notes": "Nightly build session 1 output."
+    },
+    {
+      "id": "feature-20260225-3",
+      "title": "Morning Light scripts batch (Apr 13 \u2013 May 3)",
+      "description": "Generated 21 additional Morning Light scripts covering Apr 13 through May 3 (Joseph + Moses arc), extending daily content coverage to 72 days total.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-26T05:00:00Z",
+      "completedAt": "2026-02-26T05:20:00Z",
+      "notes": "Nightly build session 2 output."
+    },
+    {
+      "id": "feature-20260225-4",
+      "title": "Overnight Emily voice generation batch on RaceStream GPU",
+      "description": "Launched automated Chatterbox generation for Morning Light episodes across Mar 17 \u2013 May 3 with auto-continuation between batches.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "javabean",
+      "status": "in-progress",
+      "createdAt": "2026-02-26T05:10:00Z",
+      "notes": "36+ episodes generated/queued overnight. RaceStream RTX 3060 Ti running batch pipeline."
+    },
+    {
+      "id": "feature-20260225-5",
+      "title": "Seminary OT lesson pack (8 lessons)",
+      "description": "Built 8 seminary-format Old Testament lessons (Genesis 1\u201350 and Exodus 1\u201317) with teacher tips, activities, and discussion guides.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-26T05:15:00Z",
+      "completedAt": "2026-02-26T05:25:00Z",
+      "notes": "Delivered during nightly build; seminary template styling preserved."
+    },
+    {
+      "id": "feature-20260225-6",
+      "title": "Sample social post pack for approval workflow",
+      "description": "Created 7 sample posts across 5 platforms plus 5 scripture cards for Jeff review before any posting.",
+      "priority": "P1",
+      "requester": "Jeff",
+      "project": "tiktok-pipeline",
+      "status": "in-progress",
+      "createdAt": "2026-02-26T03:30:00Z",
+      "notes": "Awaiting Jeff approval. Posting is blocked until explicit greenlight and account access."
     }
   ]
 }
