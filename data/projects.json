@@ -5,12 +5,12 @@
             "name": "LessonCraft (iOS Native)",
             "status": "active",
             "progress": 98,
-            "update": "App APPROVED by Apple (Feb 25, 11:41 AM). Held for coordinated launch with social accounts. isDemoMode=false. All metadata ready. TestFlight public link live.",
-            "nextAction": "Jeff to do local Xcode build for final screenshots, then coordinated launch with socials. Jeff setting up social accounts himself.",
+            "update": "App APPROVED by Apple (Feb 25). Held for coordinated launch with social accounts. isDemoMode=false. All metadata ready. TestFlight public link live. LDS Scholar Writer skill built (92 reference files). Pronunciation guide locked for TTS.",
+            "nextAction": "Jeff to do local Xcode build for final screenshots, then coordinated launch with socials. Jeff setting up social accounts himself. Voice direction approval needed (Happy Ali vs Podcaster Ali).",
             "owner": "Jeff + Jackbot",
             "description": "AI-powered LDS lesson & talk preparation app with documentary series, firesides, devotionals, live session, games, study tools, 60-language translation, community stories, and onboarding carousel.",
             "priority": "high",
-            "lastMilestone": "Feb 25: App Store APPROVED. Held for coordinated social media launch."
+            "lastMilestone": "Feb 26: LDS Scholar Writer skill shipped (92 ref files). Pronunciation guide locked."
         },
         {
             "id": "lessoncraft-flutter",
@@ -29,12 +29,12 @@
             "name": "LessonCraft Content Pipeline",
             "status": "active",
             "progress": 100,
-            "nextAction": "Continue voice generation on RaceStream GPU (Mar 17 - May 3 batch running). Deploy Apr 13 - May 3 voice gen scripts after batch 1 finishes.",
+            "nextAction": "Voice direction approval needed (Happy Ali vs Podcaster Ali) before regenerating full batch. Seminary 8 lessons built but NOT in R2 catalog — need deployment. Tyler McCoy voice clone pending.",
             "owner": "Jackbot",
             "description": "Content production: CFM Documentary (52 weeks), Easter series (3 sub-series, 15 eps), Morning Light devotionals (72 daily shorts Feb 21 - May 3), Personal Firesides (10 eps), 30 community story testimonies, Seminary OT lessons. Interactive podcast format with husband/wife narration pairs.",
             "priority": "high",
-            "lastMilestone": "Feb 25 overnight: 48 new Morning Light scripts (Mar 17 - May 3), 8 seminary OT lessons, 36+ Emily voice episodes generating on GPU.",
-            "update": "R2 catalog: 6 series, 126 episodes, 428/428 audio segments (100%). Morning Light scripts extended to May 3 (72 days of daily content). 36+ Emily voice episodes generating on RaceStream GPU overnight. 8 seminary OT lesson plans built (Genesis through Exodus). Voice gen automation tool built. Content pipeline tracker created."
+            "lastMilestone": "Feb 26: Ali confirmed as voice character (replacing Emily). Ali Garbero style guide complete (8 YouTube + 111 Spotify analyzed). Pronunciation guide locked.",
+            "update": "R2 catalog: 6 series, 126 episodes, 428/428 audio segments (100%). Ali Garbero confirmed as voice character — Emily replaced. Ali style guide complete. Voice direction choice pending (Happy Ali v1 vs Podcaster Ali v1). Seminary 8 OT lessons built but not yet in R2 catalog. Morning Light scripts through May 3 (72 days). Pronunciation guide locked (Alma, Helaman, Mosiah, Nephi, Moroni)."
         },
         {
             "id": "jd-art-gallery",
@@ -146,28 +146,28 @@
         {
             "id": "jiggybot",
             "name": "JiggyBot",
-            "status": "blocked",
-            "progress": 45,
-            "update": "AI Pi Hat arrived Feb 23. Jeff defined Pi Agent concept: Raspberry Pi + AI Hat shadows JCI work PC (screen capture + KVM), monitors work patterns, reads Outlook emails, manages Excel, attends Teams meetings, takes notes. Air-gapped, invisible to IT. Hardware in hand, awaiting Jeff's assembly time.",
-            "nextAction": "Hardware assembly with AI Hat (needs Jeff's hands). Design Pi Agent architecture (screen capture + KVM + OCR + AI). Cross-reference TeamsActionLoop capabilities.",
-            "owner": "Jeff",
-            "description": "AI-powered KVM for locked-down corporate environments. Air-gapped AI assistant via HDMI capture + USB HID. Codebase complete, needs hardware assembly.",
-            "priority": "low",
+            "status": "active",
+            "progress": 55,
+            "update": "Major Feb 26 progress: Patent research COMPLETE — 5 provisional claim drafts, white space confirmed (no existing patent combines single-cable capture + HID + PD + on-device AI + zero-install + physical isolation). Hardware VERIFIED — pass-through header working, serial TX/RX/GND wiring confirmed. Step 1 scope defined: screen capture → OCR → screen classifier → brain → Telegram.",
+            "nextAction": "Jeff to review 5 patent provisional angles and decide filing timeline. Start JiggyBot Step 1 Python (HDMI capture → OCR pipeline → screen classifier → brain summarization → Telegram alerts).",
+            "owner": "Jeff + Jackbot",
+            "description": "AI-powered KVM for locked-down corporate environments. Air-gapped AI assistant via HDMI capture + USB HID. Patent white space confirmed. Hardware verified.",
+            "priority": "medium",
             "needsDecision": true,
-            "decisionQuestion": "Hardware assembly needs Jeff's hands — when to schedule?",
-            "lastMilestone": "Feb 23: AI Pi Hat hardware received. Jeff articulated full Pi Agent vision."
+            "decisionQuestion": "Patent filing timeline + Step 1 Python build greenlight?",
+            "lastMilestone": "Feb 26: Patent research complete (5 provisional claims). Hardware verified. Step 1 scope defined."
         },
         {
             "id": "racestream",
             "name": "RaceStream.net",
             "status": "active",
             "progress": 95,
-            "nextAction": "Continue as voice gen compute node. Mar 17 - May 3 audio batch generating overnight.",
+            "nextAction": "Resume voice gen batches after Ali voice direction locked. No active Chatterbox processes currently running on GPU.",
             "owner": "Jackbot",
             "description": "Motorsports live streaming platform. Replace $100K broadcast trucks with sub-$500 edge solution. Pi AI HAT+ 2 ordered for local computer vision. VoiceForge API also deployed on RaceStream server for voice cloning.",
             "priority": "medium",
-            "lastMilestone": "Feb 25: 36+ Emily voice episodes generating on GPU (RTX 3060 Ti). Batch running overnight.",
-            "update": "Active as voice generation compute node for LessonCraft content (Chatterbox V8 on 8GB VRAM, RTX 3060 Ti). SSH key auth configured. AI Pi Hat arrived. GPU running overnight batch generation (Mar 17 - May 3 Morning Light episodes)."
+            "lastMilestone": "Feb 26: GPU idle — awaiting Ali voice direction lock before next batch. SSH reachable. Server healthy.",
+            "update": "Active as voice generation compute node (Chatterbox on 8GB VRAM, RTX 3060 Ti). SSH key auth configured. GPU currently IDLE — no active Chatterbox processes. Waiting for Ali voice direction approval before next generation batch."
         },
         {
             "id": "teams-action-loop",
@@ -184,36 +184,36 @@
             "name": "Command Center",
             "status": "active",
             "progress": 94,
-            "update": "Nightly tracker audit #15 running (Feb 25). Internal drive: 23% used, 38GB free (improved from 41%). 6 active cron jobs running healthy. Media asset audit + social playbook delivered.",
-            "nextAction": "Continue nightly audit cadence. Update kanban board.",
+            "update": "Nightly tracker audit #16 (Feb 26). Internal drive: 27% used, 32GB free. PM2 not running (needs restart). API catalog 200 OK, 428/428 audio segments verified.",
+            "nextAction": "Restart PM2 command center process. Continue nightly audit cadence.",
             "owner": "Jackbot",
             "description": "Jackbot's operational dashboard at localhost:3333. Project management, LessonCraft media dashboard, chairman directives, nightly audit cron, stories admin dashboard.",
             "priority": "medium",
-            "lastMilestone": "Feb 25: Nightly audit #15. Disk at 23% used, 38GB free. Media asset audit complete."
+            "lastMilestone": "Feb 26: Nightly audit #16. R2 catalog 100% verified. JiggyBot patent research + Ali style guide tracked."
         },
         {
             "id": "javabean",
             "name": "Javabean (Voice System)",
             "status": "active",
             "progress": 96,
-            "nextAction": "Continue overnight voice generation (36+ episodes in batch). De-robotization pass for non-Hannah/Olivia voices pending.",
+            "nextAction": "Voice direction approval needed: Happy Ali v1 vs Podcaster Ali v1 (v6-v9 test variations). Tyler McCoy voice clone reference audio downloaded, extraction pending. De-robotization pass still pending.",
             "owner": "Jackbot",
-            "description": "TTS infrastructure — ElevenLabs + local XTTS + VoiceForge (Chatterbox on RaceStream server). Voices: Jackbot (9T9v), Codex/Samuel (vDch), Tayler, KIMI/Amelie, SultrySara. Jeff clone (exag 0.3), Brian clone (exag 0.5). DVA voices: Margaret (locked), Whitney Hammond (locked, new ref2).",
+            "description": "TTS infrastructure — ElevenLabs + local XTTS + VoiceForge (Chatterbox on RaceStream server). Ali Garbero confirmed as Morning Light voice (replacing Emily). DVA voices: Margaret (locked), Whitney Hammond (locked, new ref2).",
             "priority": "medium",
-            "lastMilestone": "Feb 25: 36+ Emily voice episodes generating on GPU overnight. Voice gen automation tool built.",
-            "update": "Emily V8 Final LOCKED as canonical voice. TTS + Translate endpoints live on api.aituned.io. Voice gen automation tool built (generate-voice-scripts.py). 36+ voice episodes generating overnight on RaceStream GPU. Voice assets backed up to G-DRIVE (2.6 GB, organized with SETTINGS.md per voice). Weekly backup cron set (Sundays 3 AM)."
+            "lastMilestone": "Feb 26: Ali Garbero style guide complete (8 YouTube + 111 Spotify). Voice direction choice pending (~12 hrs). Tyler McCoy reference downloaded.",
+            "update": "Ali Garbero confirmed as voice character replacing Emily. Style guide built from 8 YouTube videos + 111 Spotify episodes with full transcripts. Voice direction choice: Happy Ali (uplifting/controlled) vs Podcaster Ali (steadier/less emotional). Tyler McCoy voice clone reference audio downloaded. Pronunciation guide locked for TTS (Alma, Helaman, Mosiah, Nephi, Moroni — all one word in TTS input)."
         },
         {
             "id": "tiktok-pipeline",
             "name": "TikTok Content Pipeline",
             "status": "active",
             "progress": 50,
-            "nextAction": "Jeff will set up social accounts himself and provide access after reviewing sample posts. 7 sample posts drafted for 5 platforms awaiting Jeff review.",
+            "nextAction": "Jeff will set up social accounts himself and provide access after reviewing sample posts. 7 sample posts + 5 scripture cards staged for review.",
             "owner": "Jeff + Jackbot",
             "description": "TikTok + YouTube Shorts + Instagram + X content pipeline. Brand: Gospel Tuned — Christ-centered, non-denominational, uplifting. 2-3 posts/day: art reveals, scripture cards, Morning Light clips. Marketing rule: NO posts without Jeff's explicit pre-approval.",
             "priority": "medium",
-            "lastMilestone": "Feb 25: 7 sample posts drafted for Jeff review. Social playbook + product context built. Scripture card batch (5x) generated. Jeff enforced: no posting without explicit approval.",
-            "update": "Marketing discipline locked (Feb 25): all posts require Jeff pre-approval + preview. 7 sample posts drafted across 5 platforms (awaiting Jeff review). 5 scripture cards generated. Social playbook at skills/marketing/social-creator/LESSONCRAFT-PLAYBOOK.md. Jeff will create all social accounts himself."
+            "lastMilestone": "Feb 26: Marketing discipline enforced — early Facebook spam deleted. All assets staged in projects/lessoncraft/marketing/ awaiting review.",
+            "update": "Marketing discipline enforced (Feb 26): deleted early Facebook spam, new rule locked — Jeff pre-approval required for ALL posts. 7 sample posts + 5 scripture cards staged in projects/lessoncraft/marketing/. Jeff will create all social accounts himself."
         },
         {
             "id": "seraphina-agent",
@@ -272,5 +272,5 @@
             "lastMilestone": "Feb 17: Demo page deployed with interactive player. Audio analyzer at cfm-demo.pages.dev/analyzer.html. CFM Week 8 husband/wife podcast demo generating."
         }
     ],
-    "lastUpdated": "2026-02-26T05:39:00Z"
+    "lastUpdated": "2026-02-27T05:31:00Z"
 }

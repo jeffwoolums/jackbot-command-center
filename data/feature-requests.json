@@ -1358,7 +1358,7 @@
       "project": "javabean",
       "status": "in-progress",
       "createdAt": "2026-02-26T05:10:00Z",
-      "notes": "36+ episodes generated/queued overnight. RaceStream RTX 3060 Ti running batch pipeline."
+      "notes": "Superseded: Ali Garbero confirmed as voice character replacing Emily (Feb 26). GPU idle awaiting Ali voice direction lock."
     },
     {
       "id": "feature-20260225-5",
@@ -1382,6 +1382,99 @@
       "status": "in-progress",
       "createdAt": "2026-02-26T03:30:00Z",
       "notes": "Awaiting Jeff approval. Posting is blocked until explicit greenlight and account access."
+    },
+    {
+      "id": "feature-20260226-1",
+      "title": "LDS Scholar Writer skill (92 reference files)",
+      "description": "Built comprehensive LDS Scholar Writer skill with 92 reference files for doctrinally accurate content generation. Tested end-to-end.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "lessoncraft",
+      "status": "complete",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "completedAt": "2026-02-27T05:31:00Z",
+      "notes": "Shipped Feb 26. Ensures all LDS content aligns with church doctrine and style."
+    },
+    {
+      "id": "feature-20260226-2",
+      "title": "JiggyBot patent research — 5 provisional claim drafts",
+      "description": "Complete patent research with 5 provisional claim drafts. White space confirmed — no existing patent combines single-cable capture + HID + PD + on-device AI + zero-install + physical isolation.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "jiggybot",
+      "status": "complete",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "completedAt": "2026-02-27T05:31:00Z",
+      "notes": "Awaiting Jeff review of 5 provisional angles + filing timeline decision."
+    },
+    {
+      "id": "feature-20260226-3",
+      "title": "JiggyBot hardware verification (pass-through header + serial wiring)",
+      "description": "Hardware verified: pass-through header working, serial TX/RX/GND wiring confirmed. Step 1 scope defined: screen capture → OCR → screen classifier → brain → Telegram.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "jiggybot",
+      "status": "complete",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "completedAt": "2026-02-27T05:31:00Z",
+      "notes": "Ready for Step 1 Python build once Jeff greenlights."
+    },
+    {
+      "id": "feature-20260226-4",
+      "title": "Ali Garbero style guide + voice analysis",
+      "description": "Complete style guide built from 8 YouTube videos + 111 Spotify episodes with full transcripts. Voice direction choice: Happy Ali (uplifting/controlled) vs Podcaster Ali (steadier/less emotional).",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "javabean",
+      "status": "complete",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "completedAt": "2026-02-27T05:31:00Z",
+      "notes": "Ali confirmed as voice character replacing Emily. ~12 hrs elapsed on voice direction choice, awaiting Jeff final call."
+    },
+    {
+      "id": "feature-20260226-5",
+      "title": "Pronunciation guide locked for TTS",
+      "description": "Standardized pronunciation for LDS names in TTS input: Alma, Helaman, Mosiah, Nephi, Moroni — all one word, no hyphens.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "complete",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "completedAt": "2026-02-27T05:31:00Z",
+      "notes": "Applied across all TTS generation pipelines."
+    },
+    {
+      "id": "feature-20260226-6",
+      "title": "Tyler McCoy voice clone",
+      "description": "Reference audio downloaded for Tyler McCoy voice clone. Extraction pending after Ali voice direction cleared.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "javabean",
+      "status": "pending",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "notes": "Blocked on Ali voice direction approval first."
+    },
+    {
+      "id": "feature-20260226-7",
+      "title": "JiggyBot Step 1 Python — screen capture pipeline",
+      "description": "Step 1 scope: HDMI capture → OCR pipeline → screen classifier → brain summarization → Telegram alerts. See the Screen capability.",
+      "priority": "P1",
+      "requester": "Jackbot",
+      "project": "jiggybot",
+      "status": "pending",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "notes": "Waiting on Jeff greenlight after patent review. Hardware verified and ready."
+    },
+    {
+      "id": "feature-20260226-8",
+      "title": "Seminary OT lessons — deploy to R2 catalog",
+      "description": "8 seminary OT lessons built but NOT in R2 catalog. Need to create seminary series in catalog API and upload lesson data.",
+      "priority": "P2",
+      "requester": "Jackbot",
+      "project": "lessoncraft-content",
+      "status": "pending",
+      "createdAt": "2026-02-27T05:31:00Z",
+      "notes": "Lessons built (Genesis 1-50 + Exodus 1-17) but seminary series missing from R2 catalog."
     }
   ]
 }
