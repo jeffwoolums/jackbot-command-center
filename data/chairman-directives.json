@@ -731,6 +731,69 @@
       "createdAt": "2026-02-26T03:05:00Z",
       "updatedAt": "2026-02-26T04:38:00Z",
       "notes": "Delivered overnight: media-asset-audit.md with blockers and release plan."
+    },
+    {
+      "id": "directive-20260227-1",
+      "title": "Weekend Sprint \u2014 CFM Companion + Deep Dive (Sunday 11 AM deadline)",
+      "description": "Focus locked: CFM Companion (Whitney+Margaret) and CFM Deep Dive production. Deadline is Sunday 11 AM before Jeff's noon church. Jeff started production ~6:15 PM Feb 27.",
+      "category": "Priority Change",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-28T00:15:00Z",
+      "updatedAt": "2026-02-28T05:25:00Z",
+      "notes": "Companion Weeks 11-13 scripted + scored. Deep Dive Weeks 09-13 scripted (09-10 scored). Audio blocked on voice recipe."
+    },
+    {
+      "id": "directive-20260227-2",
+      "title": "Morning Light / CFM Daily Thoughts brand split",
+      "description": "Morning Light = standalone shareable devotional/social content (Ali voice). CFM Daily Thoughts = curriculum-linked daily content (Beth voice). Separate products, separate voice identities.",
+      "category": "Priority Change",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "In Progress",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-28T00:00:00Z",
+      "updatedAt": "2026-02-28T05:25:00Z",
+      "notes": "App Inspired rail updated (commit 72a49ec). Schema migration + re-recording still needed."
+    },
+    {
+      "id": "directive-20260227-3",
+      "title": "6-program lineup locked with voice assignments",
+      "description": "Canonical program lineup: CFM Daily Thoughts (Beth), Morning Light (Ali), CFM Discussion (Margaret/Whitney + Ben/Beth), CFM Deep Dives (current), Featured Firesides (Ben/Beth), Easter Docuseries (Ben). Run all through Gospel Writing Pipeline before audio.",
+      "category": "Clarification",
+      "project": "lessoncraft-content",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-28T00:00:00Z",
+      "updatedAt": "2026-02-28T05:25:00Z",
+      "notes": "Matrix saved: memory/vault/program-audio-matrix.md"
+    },
+    {
+      "id": "directive-20260227-4",
+      "title": "LessonCraft v1 scope: 5 tabs, community features deferred",
+      "description": "v1 launch scope is 5 tabs with iOS parity. Community features (live sessions, advanced social) deferred to post-launch.",
+      "category": "Clarification",
+      "project": "lessoncraft",
+      "priority": "P1",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-28T00:00:00Z",
+      "updatedAt": "2026-02-28T05:25:00Z"
+    },
+    {
+      "id": "directive-20260227-5",
+      "title": "Approved Opus for ops build/rewrite tasks",
+      "description": "Jeff authorized use of Jackbot ops with Opus for build and rewrite tasks. Instruction: stay on mission, continue execution without waiting.",
+      "category": "Priority Change",
+      "project": "command-center",
+      "priority": "P2",
+      "status": "Acknowledged",
+      "createdBy": "Jeff",
+      "createdAt": "2026-02-28T00:00:00Z",
+      "updatedAt": "2026-02-28T05:25:00Z"
     }
   ]
 }
