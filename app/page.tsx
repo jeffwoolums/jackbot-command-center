@@ -227,6 +227,13 @@ export default function CommandCenter() {
               </a>
               
               <a
+                href="/meeting-room"
+                className="px-3 py-2 rounded-md text-sm font-medium border border-cyan-500/40 bg-cyan-500/10 text-cyan-200 hover:bg-cyan-500/20 transition-all"
+              >
+                🎙️ Meeting Room
+              </a>
+
+              <a
                 href="/lessoncraft"
                 className="px-3 py-2 rounded-md text-sm font-medium border border-purple-500/40 bg-purple-500/10 text-purple-200 hover:bg-purple-500/20 transition-all"
               >
