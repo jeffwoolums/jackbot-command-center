@@ -118,20 +118,27 @@ This keeps the MVP restart-safe without requiring DB migrations.
 
 ## 6) Auth + Security Model
 
-### MVP baseline
-- Runs inside existing Command Center auth boundary.
-- API route only writes whitelisted event shapes.
-- No external secrets required for scaffold operation.
+### Phase-1 implementation (now wired)
+- Invite links are signed with **HMAC SHA-256**.
+- Token payload includes:
+  - `meetingId`
+  - `role` (`host`, `participant`, `agent`)
+  - `displayName`
+  - `exp` (expiry unix timestamp)
+- Token secret source:
+  - `MEETING_ROOM_SIGNING_SECRET`
+  - falls back to local dev value when env var is missing
+- Validation endpoint returns session context and rejects expired/invalid signatures.
+- Agent webhook accepts:
+  - valid `agent` invite token, or
+  - `MEETING_ROOM_AGENT_KEY` API key
 
-### Recommended hardening for production
-- Require signed session identity per event post.
-- Add role checks:
-  - host (Jeff/Tyler)
-  - observer
-  - agent-service
-- Encrypt at-rest meeting logs if cross-venture data is sensitive.
-- Add retention policy + redaction for PII in transcript payloads.
-- Add signed webhook auth for Jarvis connector.
+### Production hardening notes
+- Set a unique strong `MEETING_ROOM_SIGNING_SECRET` in every environment.
+- Rotate `MEETING_ROOM_AGENT_KEY` periodically.
+- Keep invite TTL short (default currently 120 min).
+- Add replay protection + nonce if traffic volume/abuse risk increases.
+- Add retention policy + PII redaction before broad deployment.
 
 ---
 
@@ -157,9 +164,54 @@ This keeps the MVP restart-safe without requiring DB migrations.
 
 ---
 
+## 8) Invite Workflow (Exact)
+
+### A. Bootstrap a session
+- `POST /api/meeting-room/bootstrap`
+- Returns:
+  - generated non-guessable `meetingId`
+  - generated non-guessable Jitsi `roomName`
+  - full `roomUrl`
+  - suggested signed invite links for Jeff, Tyler, Jarvis
+  - Jarvis webhook URL (`/api/meeting-room/agent`)
+
+### B. Share invite links
+- Jeff link: role `host`
+- Tyler link: role `participant`
+- Jarvis token/link: role `agent`
+- Invite links resolve to `/meeting-room?token=...`
+
+### C. Validate participant context
+- `GET /api/meeting-room/validate?token=...`
+- Returns session context (meeting, role, displayName, expiry)
+
+### D. Agent posting flow
+- Jarvis posts to `POST /api/meeting-room/agent`
+- Auth via:
+  - `Authorization: Bearer <agent-invite-token>` or body `token`, OR
+  - `x-agent-key: <MEETING_ROOM_AGENT_KEY>`
+- Supported event types:
+  - `AgentResponse`
+  - `BackchannelMessage`
+
+## 9) Hosting Notes for aituned.io
+
+To support “secret location” style routing on aituned.io:
+- Set `NEXT_PUBLIC_MEETING_BASE_URL` to the externally reachable base path.
+- Example values:
+  - `https://aituned.io`
+  - `https://aituned.io/secret-location`
+- Invite URLs use this base directly, so tokenized links remain valid behind custom path prefixes.
+- Jitsi room URLs are generated separately (`https://meet.jit.si/<random-room>` by default).
+
 ## Implemented MVP Scaffold in This Repo
-- `app/meeting-room/page.tsx` — Meeting Room UI route
-- `app/api/meeting-room/route.ts` — GET/POST event API
+- `app/meeting-room/page.tsx` — Meeting Room UI route with session bootstrap + invite generation UX
+- `app/api/meeting-room/route.ts` — GET/POST meeting event API
+- `app/api/meeting-room/bootstrap/route.ts` — creates non-guessable room + default invites
+- `app/api/meeting-room/invite/route.ts` — creates signed per-role invite links
+- `app/api/meeting-room/validate/route.ts` — validates invite tokens and returns session context
+- `app/api/meeting-room/agent/route.ts` — authenticated Jarvis/agent event ingress
+- `lib/meeting-room/auth.ts` — HMAC token signing + validation helpers
 - `lib/meeting-room/types.ts` — event model types
 - `lib/meeting-room/store.ts` — file-backed persistence helpers
 

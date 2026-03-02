@@ -11,38 +11,56 @@ npm run dev
 
 - App runs at: `http://localhost:3333`
 
-## Agent Meeting Room MVP (Scaffold)
+## Environment Variables
+
+Add these to `.env.local` (or deployment secrets):
+
+- `MEETING_ROOM_SIGNING_SECRET` — HMAC secret used to sign/validate meeting invite tokens.
+- `MEETING_ROOM_AGENT_KEY` — optional shared key for Jarvis/agent webhook posting.
+- `NEXT_PUBLIC_MEETING_BASE_URL` — base URL used to generate invite links (supports path prefixes like `https://aituned.io/secret-location`).
+
+## Agent Meeting Room MVP (Phase-1 Wiring)
 
 ### What was added
 - Route: `/meeting-room`
 - API: `GET/POST /api/meeting-room`
+- Session bootstrap API: `POST /api/meeting-room/bootstrap`
+- Invite API: `POST /api/meeting-room/invite`
+- Token validation API: `GET/POST /api/meeting-room/validate`
+- Agent ingress API: `POST /api/meeting-room/agent`
 - Persistent store: `data/meeting-room/events.json`
-- Architecture doc: `docs/agent-meeting-room-mvp.md`
+- Architecture + workflow doc: `docs/agent-meeting-room-mvp.md`
 
-### Quick test
+### Quick UI test
 1. Start app with `npm run dev`.
 2. Open `http://localhost:3333/meeting-room`.
-3. Paste a Jitsi URL and click **Join Jitsi Room**.
-4. Add transcript chunks and action items via the right-side panel.
-5. Confirm persistence by refreshing page (events should remain).
+3. Click **Create New Session + Invites**.
+4. Copy/share Jeff/Tyler links and Jarvis token/webhook.
+5. Join generated Jitsi room and post events.
 
 ### API smoke tests
 
 ```bash
-# Fetch current room state
-curl "http://localhost:3333/api/meeting-room?meetingId=agent-room-mvp"
-
-# Post transcript chunk event
-curl -X POST "http://localhost:3333/api/meeting-room" \
+# 1) Create a meeting + invites
+curl -X POST "http://localhost:3333/api/meeting-room/bootstrap" \
   -H "Content-Type: application/json" \
+  -d '{}'
+
+# 2) Validate a token (replace <TOKEN>)
+curl "http://localhost:3333/api/meeting-room/validate?token=<TOKEN>"
+
+# 3) Post Jarvis backchannel using API key auth
+curl -X POST "http://localhost:3333/api/meeting-room/agent" \
+  -H "Content-Type: application/json" \
+  -H "x-agent-key: $MEETING_ROOM_AGENT_KEY" \
   -d '{
-    "meetingId": "agent-room-mvp",
-    "type": "TranscriptChunk",
+    "meetingId": "mr_example",
+    "type": "BackchannelMessage",
     "payload": {
-      "speaker": "Jeff",
-      "source": "human",
-      "text": "Let\"s capture this as the MVP baseline.",
-      "isFinal": true
+      "from": "jarvis",
+      "to": "jackbot",
+      "message": "Latency spike detected on ASR bridge.",
+      "severity": "warning"
     }
   }'
 ```

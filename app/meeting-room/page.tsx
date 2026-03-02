@@ -8,6 +8,31 @@ const DEFAULT_MEETING_ID = 'agent-room-mvp'
 const DEFAULT_JITSI_URL = 'https://meet.jit.si/JackbotJarvisMeetingRoomMVP'
 
 type ControlKey = 'humanOnlyMode' | 'allowAgentAudio' | 'autoNotes'
+type InviteKey = 'jeff' | 'tyler' | 'jarvis'
+
+interface InviteDetails {
+  role: 'host' | 'participant' | 'agent'
+  displayName: string
+  token: string
+  inviteUrl: string
+  expiresAt: string
+}
+
+interface SessionBundle {
+  meetingId: string
+  roomName: string
+  roomUrl: string
+  agentWebhookUrl: string
+  inviteLinks: Record<InviteKey, InviteDetails>
+}
+
+interface ViewerSessionContext {
+  meetingId: string
+  role: 'host' | 'participant' | 'agent'
+  displayName: string
+  expiresAt: string
+  issuedAt: string
+}
 
 const emptyState: MeetingRoomState = {
   meetingId: DEFAULT_MEETING_ID,
@@ -35,6 +60,13 @@ export default function MeetingRoomPage() {
   const [actionOwner, setActionOwner] = useState('Jeff')
   const [saving, setSaving] = useState(false)
 
+  const [sessionBundle, setSessionBundle] = useState<SessionBundle | null>(null)
+  const [creatingSession, setCreatingSession] = useState(false)
+  const [inviteLoading, setInviteLoading] = useState<InviteKey | null>(null)
+  const [copyLabel, setCopyLabel] = useState('')
+  const [viewerSession, setViewerSession] = useState<ViewerSessionContext | null>(null)
+  const [sessionError, setSessionError] = useState('')
+
   const fetchState = useCallback(async () => {
     try {
       const res = await fetch(`/api/meeting-room?meetingId=${encodeURIComponent(meetingId)}`, {
@@ -60,6 +92,37 @@ export default function MeetingRoomPage() {
     return () => clearInterval(interval)
   }, [fetchState])
 
+  useEffect(() => {
+    const initSessionFromToken = async () => {
+      if (typeof window === 'undefined') return
+
+      const token = new URLSearchParams(window.location.search).get('token')
+      if (!token) return
+
+      try {
+        const res = await fetch(`/api/meeting-room/validate?token=${encodeURIComponent(token)}`)
+        if (!res.ok) {
+          const errorData = await res.json().catch(() => ({}))
+          setSessionError(typeof errorData?.error === 'string' ? errorData.error : 'Invite validation failed')
+          return
+        }
+
+        const data = await res.json()
+        if (data?.session) {
+          const session = data.session as ViewerSessionContext
+          setViewerSession(session)
+          setMeetingId(session.meetingId)
+          setSessionError('')
+        }
+      } catch (error) {
+        console.error('Failed to validate meeting token:', error)
+        setSessionError('Invite validation failed')
+      }
+    }
+
+    initSessionFromToken()
+  }, [])
+
   const submitEvent = async (type: string, payload: Record<string, unknown>) => {
     setSaving(true)
     try {
@@ -79,6 +142,106 @@ export default function MeetingRoomPage() {
       console.error('Failed to submit meeting room event:', error)
     } finally {
       setSaving(false)
+    }
+  }
+
+  const createSession = async () => {
+    setCreatingSession(true)
+    setSessionError('')
+
+    try {
+      const res = await fetch('/api/meeting-room/bootstrap', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      })
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        setSessionError(typeof errorData?.error === 'string' ? errorData.error : 'Failed to create session')
+        return
+      }
+
+      const data = await res.json()
+      if (data?.session) {
+        const nextSession = data.session as SessionBundle
+        setSessionBundle(nextSession)
+        setMeetingId(nextSession.meetingId)
+        setRoomUrl(nextSession.roomUrl)
+      }
+    } catch (error) {
+      console.error('Failed to bootstrap meeting session:', error)
+      setSessionError('Failed to create session')
+    } finally {
+      setCreatingSession(false)
+    }
+  }
+
+  const createInvite = async (slot: InviteKey, role: InviteDetails['role'], displayName: string) => {
+    setInviteLoading(slot)
+    setSessionError('')
+
+    try {
+      const res = await fetch('/api/meeting-room/invite', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          meetingId,
+          role,
+          displayName,
+          ttlMinutes: 120,
+        }),
+      })
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}))
+        setSessionError(typeof errorData?.error === 'string' ? errorData.error : 'Failed to create invite')
+        return
+      }
+
+      const data = await res.json()
+      const invite = data?.invite as InviteDetails | undefined
+      if (!invite) return
+
+      setSessionBundle((prev) => {
+        if (!prev) {
+          return {
+            meetingId,
+            roomName: 'manual-room',
+            roomUrl,
+            agentWebhookUrl: `${window.location.origin}/api/meeting-room/agent`,
+            inviteLinks: {
+              jeff: slot === 'jeff' ? invite : createPlaceholderInvite('Jeff', 'host'),
+              tyler: slot === 'tyler' ? invite : createPlaceholderInvite('Tyler', 'participant'),
+              jarvis: slot === 'jarvis' ? invite : createPlaceholderInvite('Jarvis', 'agent'),
+            },
+          }
+        }
+
+        return {
+          ...prev,
+          inviteLinks: {
+            ...prev.inviteLinks,
+            [slot]: invite,
+          },
+        }
+      })
+    } catch (error) {
+      console.error('Failed to create invite:', error)
+      setSessionError('Failed to create invite')
+    } finally {
+      setInviteLoading(null)
+    }
+  }
+
+  const copyText = async (label: string, value: string) => {
+    try {
+      await navigator.clipboard.writeText(value)
+      setCopyLabel(`${label} copied`)
+      setTimeout(() => setCopyLabel(''), 1500)
+    } catch {
+      setCopyLabel('Clipboard unavailable')
+      setTimeout(() => setCopyLabel(''), 1500)
     }
   }
 
@@ -205,6 +368,80 @@ export default function MeetingRoomPage() {
               className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
             />
           </div>
+
+          {viewerSession && (
+            <div className="rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-3 py-2 text-sm text-emerald-200">
+              Authenticated as <span className="font-semibold">{viewerSession.displayName}</span> ({viewerSession.role}) • invite expires {new Date(viewerSession.expiresAt).toLocaleString()}
+            </div>
+          )}
+
+          {sessionError && (
+            <div className="rounded-lg border border-rose-500/40 bg-rose-500/10 px-3 py-2 text-sm text-rose-200">
+              {sessionError}
+            </div>
+          )}
+
+          {copyLabel && (
+            <div className="rounded-lg border border-sky-500/40 bg-sky-500/10 px-3 py-2 text-sm text-sky-200">
+              {copyLabel}
+            </div>
+          )}
+        </section>
+
+        <section className="p-4 bg-slate-900 rounded-lg border border-indigo-500/30 space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-bold text-indigo-300">🔐 Create Session</h2>
+              <p className="text-sm text-slate-400">Generate secure invite links for Jeff, Tyler, and Jarvis using short-lived signed tokens.</p>
+            </div>
+            <button
+              onClick={createSession}
+              disabled={creatingSession}
+              className="bg-indigo-500/20 border border-indigo-400/40 text-indigo-200 hover:bg-indigo-500/30 disabled:opacity-50 rounded-lg px-4 py-2 text-sm font-semibold"
+            >
+              {creatingSession ? 'Creating…' : 'Create New Session + Invites'}
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <button
+              onClick={() => createInvite('jeff', 'host', 'Jeff')}
+              disabled={inviteLoading !== null}
+              className="bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-lg px-3 py-2 text-sm text-left"
+            >
+              {inviteLoading === 'jeff' ? 'Generating…' : 'Generate Jeff host invite'}
+            </button>
+            <button
+              onClick={() => createInvite('tyler', 'participant', 'Tyler')}
+              disabled={inviteLoading !== null}
+              className="bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-lg px-3 py-2 text-sm text-left"
+            >
+              {inviteLoading === 'tyler' ? 'Generating…' : 'Generate Tyler participant invite'}
+            </button>
+            <button
+              onClick={() => createInvite('jarvis', 'agent', 'Jarvis')}
+              disabled={inviteLoading !== null}
+              className="bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-lg px-3 py-2 text-sm text-left"
+            >
+              {inviteLoading === 'jarvis' ? 'Generating…' : 'Generate Jarvis agent invite'}
+            </button>
+          </div>
+
+          {sessionBundle && (
+            <div className="space-y-3">
+              <div className="rounded-lg bg-slate-800 border border-slate-700 p-3 text-sm space-y-1">
+                <div>Meeting ID: <span className="font-mono text-amber-300">{sessionBundle.meetingId}</span></div>
+                <div>Jitsi Room: <span className="font-mono text-slate-300">{sessionBundle.roomUrl}</span></div>
+                <div>Room Name: <span className="font-mono text-slate-300">{sessionBundle.roomName}</span></div>
+              </div>
+
+              <CopyRow label="Jeff Invite" value={sessionBundle.inviteLinks.jeff.inviteUrl} onCopy={copyText} />
+              <CopyRow label="Tyler Invite" value={sessionBundle.inviteLinks.tyler.inviteUrl} onCopy={copyText} />
+              <CopyRow label="Jarvis Invite" value={sessionBundle.inviteLinks.jarvis.inviteUrl} onCopy={copyText} />
+              <CopyRow label="Jarvis Agent Token" value={sessionBundle.inviteLinks.jarvis.token} onCopy={copyText} />
+              <CopyRow label="Jarvis Agent Webhook" value={sessionBundle.agentWebhookUrl} onCopy={copyText} />
+            </div>
+          )}
         </section>
 
         <section className="grid grid-cols-1 xl:grid-cols-[2fr_1fr] gap-6">
@@ -318,6 +555,16 @@ export default function MeetingRoomPage() {
   )
 }
 
+function createPlaceholderInvite(displayName: string, role: InviteDetails['role']): InviteDetails {
+  return {
+    role,
+    displayName,
+    token: 'Generate invite to create token',
+    inviteUrl: 'Generate invite to create URL',
+    expiresAt: new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString(),
+  }
+}
+
 interface ToggleChipProps {
   label: string
   enabled: boolean
@@ -339,5 +586,31 @@ function ToggleChip({ label, enabled, onClick }: ToggleChipProps) {
         {enabled ? 'ON' : 'OFF'}
       </span>
     </button>
+  )
+}
+
+interface CopyRowProps {
+  label: string
+  value: string
+  onCopy: (label: string, value: string) => Promise<void>
+}
+
+function CopyRow({ label, value, onCopy }: CopyRowProps) {
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-[180px_1fr_auto] gap-2 items-center">
+      <div className="text-sm text-slate-300">{label}</div>
+      <input
+        type="text"
+        value={value}
+        readOnly
+        className="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2 text-xs text-slate-200"
+      />
+      <button
+        onClick={() => onCopy(label, value)}
+        className="bg-slate-800 border border-slate-600 hover:border-amber-500/50 rounded-lg px-3 py-2 text-xs"
+      >
+        Copy
+      </button>
+    </div>
   )
 }
