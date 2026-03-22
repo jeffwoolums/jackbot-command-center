@@ -19,7 +19,7 @@ export function ActivityFeed() {
       timestamp: new Date(Date.now() - 5 * 60 * 1000).toISOString(),
       type: 'build',
       agent: 'Codex',
-      message: 'Building Jackbot Command Center dashboard components',
+      message: 'Building Razor Command Center dashboard components',
       status: 'success'
     },
     {

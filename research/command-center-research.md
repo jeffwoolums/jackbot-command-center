@@ -140,9 +140,9 @@ What do executives actually need to see? Research on COO dashboards reveals a cl
 
 ---
 
-## 6. Recommendations for Jackbot Command Center
+## 6. Recommendations for Razor Command Center
 
-Based on this research, a Jackbot Command Center should prioritize:
+Based on this research, a Razor Command Center should prioritize:
 
 1. **Task-first view** — Kanban or list of active tasks, their status, and which agent owns them
 2. **Real-time event feed** — live stream of what agents are doing *right now*

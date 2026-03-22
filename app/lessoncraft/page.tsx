@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import DashboardShell from '@/components/layout/DashboardShell'
 
 interface Segment {
   index: number
@@ -168,34 +169,19 @@ export default function LessonCraftDashboard() {
   const refreshLabel = data?.generatedAt ? `Updated ${formatDate(data.generatedAt)}` : 'Waiting for data...'
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/95 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-[1700px] items-center justify-between gap-4 px-6 py-4">
-          <div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-amber-300 to-cyan-300 bg-clip-text text-transparent">
-              🎧 LessonCraft Media Asset Dashboard
-            </h1>
-            <p className="text-sm text-slate-400">Visual control panel for all LessonCraft audio + artwork assets</p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="/"
-              className="rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-200 transition hover:border-amber-400 hover:text-white"
-            >
-              ← Command Center
-            </a>
-            <button
-              onClick={fetchDashboard}
-              className="rounded-lg border border-amber-500/40 bg-amber-500/15 px-4 py-2 text-sm font-medium text-amber-200 transition hover:bg-amber-500/25"
-            >
-              Refresh
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <main className="mx-auto w-full max-w-[1700px] space-y-6 px-6 py-6">
+    <DashboardShell
+      title="LessonCraft"
+      description="Visual control panel for all LessonCraft audio and artwork assets."
+      actions={
+        <button
+          onClick={fetchDashboard}
+          className="rounded-2xl border border-[#d4a853]/40 bg-[#d4a853]/10 px-4 py-3 text-sm font-medium text-[#f4d79a] transition hover:bg-[#d4a853]/20"
+        >
+          Refresh
+        </button>
+      }
+    >
+      <div className="mx-auto w-full max-w-[1700px] space-y-6">
         <section className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
           <h2 className="mb-2 text-lg font-semibold text-emerald-300">🔐 Security Status</h2>
           <p className="text-sm text-emerald-100/90">{data?.security.apiAuth || 'Loading security profile...'}</p>
@@ -469,7 +455,7 @@ export default function LessonCraftDashboard() {
             </section>
           </>
         ) : null}
-      </main>
+      </div>
 
       {/* Asset Detail Modal */}
       {selectedAsset && (
@@ -552,6 +538,6 @@ export default function LessonCraftDashboard() {
           </div>
         </div>
       )}
-    </div>
+    </DashboardShell>
   )
 }

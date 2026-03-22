@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Jackbot Command Center',
+  title: 'Razor Command Center',
   description: 'AI Empire Operations Dashboard',
 }
 
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-slate-950 text-white min-h-screen">
+      <body className="min-h-screen bg-[#0f1117] text-white antialiased">
         {children}
       </body>
     </html>

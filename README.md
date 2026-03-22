@@ -1,6 +1,6 @@
-# Jackbot Command Center
+# Razor Command Center
 
-Internal Next.js command center for Jackbot operations.
+Internal Next.js executive operations dashboard for Razor workflows.
 
 ## Local Development
 
@@ -15,6 +15,7 @@ npm run dev
 
 Add these to `.env.local` (or deployment secrets):
 
+- `COMMAND_CENTER_PASSWORD` — required password for the login screen and auth middleware session.
 - `MEETING_ROOM_SIGNING_SECRET` — HMAC secret used to sign/validate meeting invite tokens.
 - `MEETING_ROOM_AGENT_KEY` — optional shared key for Jarvis/agent webhook posting.
 - `NEXT_PUBLIC_MEETING_BASE_URL` — base URL used to generate invite links (supports path prefixes like `https://aituned.io/secret-location`).

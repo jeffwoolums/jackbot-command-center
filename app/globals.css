@@ -4,18 +4,28 @@
 
 :root {
   --gold: #d4a853;
-  --navy: #1a365d;
+  --background: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d37;
   --success: #22c55e;
   --warning: #f59e0b;
   --error: #ef4444;
 }
 
+html {
+  background: var(--background);
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--background);
+  color: #ffffff;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .card {
-  @apply bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-xl p-6;
+  @apply rounded-xl border p-6 backdrop-blur-sm;
+  background: var(--card);
+  border-color: var(--border);
 }
 
 .card-header {
@@ -75,14 +85,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1e293b;
+  background: #131722;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #475569;
+  background: #2a2d37;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+  background: #3c414f;
 }
