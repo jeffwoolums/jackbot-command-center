@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background: #f5f0e8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    gap: 60px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8B7355;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: -40px;
+  }
+
+  /* ===== SHARE CARD (what gets shared as image) ===== */
+  .share-card {
+    width: 390px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  .share-card .artwork {
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 40%, #4A6741 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Simulated artwork overlay pattern */
+  .share-card .artwork::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 40%, rgba(218,195,142,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 60%, rgba(76,107,68,0.3) 0%, transparent 50%);
+  }
+
+  .share-card .artwork::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to top, #1a2332 0%, #1a233280 40%, transparent 100%);
+  }
+
+  .share-card .artwork-text {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    right: 24px;
+    z-index: 2;
+  }
+
+  .share-card .date-badge {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #DAC38E;
+    background: rgba(218,195,142,0.15);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  .share-card .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+
+  .share-card .content-area {
+    background: #FDFAF4;
+    padding: 24px;
+  }
+
+  .share-card .scripture-block {
+    margin-bottom: 20px;
+  }
+
+  .share-card .scripture-ref {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #8B7355;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .share-card .scripture-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-style: italic;
+    color: #2C3E50;
+    line-height: 1.5;
+    border-left: 3px solid #DAC38E;
+    padding-left: 16px;
+  }
+
+  .share-card .reflection {
+    background: rgba(218,195,142,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .share-card .reflection-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #8B7355;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .share-card .reflection-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: #4A5568;
+    line-height: 1.4;
+  }
+
+  .share-card .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(218,195,142,0.3);
+  }
+
+  .share-card .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .share-card .brand-icon {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #DAC38E, #8B7355);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .share-card .brand-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2C3E50;
+  }
+
+  .share-card .cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #8B7355, #6B5640);
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== WEB PREVIEW (what non-app users see) ===== */
+  .web-preview {
+    width: 390px;
+    background: #FDFAF4;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  }
+
+  .web-preview .hero {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 40%, #4A6741 100%);
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+  }
+
+  .web-preview .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(26,35,50,0.8), transparent);
+  }
+
+  .web-preview .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .web-preview .hero-series {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #DAC38E;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .web-preview .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin-top: 4px;
+  }
+
+  .web-preview .body {
+    padding: 24px;
+  }
+
+  .web-preview .listen-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #DAC38E, #8B7355);
+    border-radius: 14px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .web-preview .listen-btn .play-icon {
+    width: 24px;
+    height: 24px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .web-preview .listen-btn span {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .web-preview .listen-btn .duration {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  .web-preview .web-scripture {
+    border-left: 3px solid #DAC38E;
+    padding-left: 16px;
+    margin-bottom: 20px;
+  }
+
+  .web-preview .web-scripture .ref {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #8B7355;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .web-preview .web-scripture .text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: #2C3E50;
+    line-height: 1.5;
+  }
+
+  .web-preview .web-reflection {
+    background: rgba(218,195,142,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .web-preview .web-reflection .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #8B7355;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  .web-preview .web-reflection .text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: #4A5568;
+    line-height: 1.4;
+  }
+
+  .web-preview .download-section {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, transparent, rgba(218,195,142,0.08));
+    border-top: 1px solid rgba(218,195,142,0.2);
+  }
+
+  .web-preview .download-section .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 4px;
+  }
+
+  .web-preview .download-section .sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #8B7355;
+    margin-bottom: 16px;
+  }
+
+  .web-preview .app-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #000;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .web-preview .app-store-btn .apple {
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="label">Share Card (sent via iMessage / WhatsApp / Instagram)</div>
+
+<!-- SHARE CARD -->
+<div class="share-card">
+  <div class="artwork">
+    <div class="artwork-text">
+      <div class="date-badge">☀️ February 10, 2026</div>
+      <div class="title">Start the Day<br>by Listening</div>
+    </div>
+  </div>
+  <div class="content-area">
+    <div class="scripture-block">
+      <div class="scripture-ref">Scripture of the Day — Moses 8:24</div>
+      <div class="scripture-text">"And it came to pass that Noah called upon the children of men, that they should repent; but they hearkened not unto his words."</div>
+    </div>
+    <div class="reflection">
+      <div class="reflection-label">✨ Reflect</div>
+      <div class="reflection-text">Where is Heavenly Father inviting you to listen more closely today?</div>
+    </div>
+    <div class="footer">
+      <div class="brand">
+        <div class="brand-icon">📖</div>
+        <div class="brand-text">LessonCraft</div>
+      </div>
+      <a class="cta" href="#">Listen Free →</a>
+    </div>
+  </div>
+</div>
+
+<div class="label">Web Preview (what non-app users see when they tap the link)</div>
+
+<!-- WEB PREVIEW -->
+<div class="web-preview">
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-series">Morning Light · Daily Devotional</div>
+      <div class="hero-title">Start the Day by Listening</div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="listen-btn">
+      <div class="play-icon">▶</div>
+      <span>Listen to Today's Devotional</span>
+      <span class="duration">4 min</span>
+    </div>
+    <div class="web-scripture">
+      <div class="ref">Moses 8:24</div>
+      <div class="text">"And it came to pass that Noah called upon the children of men, that they should repent; but they hearkened not unto his words."</div>
+    </div>
+    <div class="web-reflection">
+      <div class="label">✨ Today's Reflection</div>
+      <div class="text">Where is Heavenly Father inviting you to listen more closely today?</div>
+    </div>
+  </div>
+  <div class="download-section">
+    <div class="tagline">Daily Inspiration, Beautifully Delivered</div>
+    <div class="sub">Join thousands studying scripture with LessonCraft</div>
+    <a class="app-store-btn" href="#">
+      <span class="apple"></span>
+      Download on the App Store
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
